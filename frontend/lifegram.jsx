@@ -6,7 +6,7 @@ import configureStore from "./store/store"
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
     const store = configureStore();
-    ReactDOM.render(<h1>Welcome to Lifegram</h1>, root);
+    ReactDOM.render(<Root store={store}/>, root);
 
     //test 
     // window.login = login

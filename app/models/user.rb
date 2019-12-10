@@ -24,6 +24,10 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :posts
+  has_many :comments 
+  has_many :likes
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user

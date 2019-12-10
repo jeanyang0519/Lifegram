@@ -35,10 +35,14 @@ class SessionForm extends React.Component {
                 <form>
                     <ul>{errors}</ul>
                     <header>Log In</header>
-                    Username: <input type="text" onChange={this.update("username")} value={this.state.username} />
                     Email: <input type="text" onChange={this.update("email")} value={this.state.email} />
+                    <br />
+                    Username: <input type="text" onChange={this.update("username")} value={this.state.username} />
+                    <br/>
                     Password: <input type="password" onChange={this.update("password")} value={this.state.password} />
+                    <br />
                     <button onClick={this.handleSubmit}>Log In</button>
+                    <br />
                     <Link to="/signup">sign up instead</Link>
                 </form>
             )
@@ -47,8 +51,9 @@ class SessionForm extends React.Component {
                 <form>
                     <ul>{errors}</ul>
                     <header>Sign Up</header>
-                    Username: <input type="text" onChange={this.update("username")} value={this.state.username} />
                     Email: <input type="text" onChange={this.update("email")} value={this.state.email} />
+                    <br />
+                    Username: <input type="text" onChange={this.update("username")} value={this.state.username} />
                     <br />
                     Password: <input type="password" onChange={this.update("password")} value={this.state.password} />
                     <br />

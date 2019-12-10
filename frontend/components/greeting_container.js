@@ -1,10 +1,13 @@
 import { connect } from 'react-redux';
 import { logout } from '../actions/session_actions';
 import Greeting from './greeting';
-
+//errors is from signup form container
 const msp = (state) => ({
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    errors: state.errors.session,
+    formType: 'signup'
 });
+
 
 const mdp = (dispatch) => ({
     logout: () => dispatch(logout())

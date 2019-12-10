@@ -32,35 +32,51 @@ class SessionForm extends React.Component {
         })
         if (this.props.formType === 'login') {
             return (
-                <form>
-                    <ul>{errors}</ul>
-                    <header>Log In</header>
-                    Email: <input type="text" onChange={this.update("email")} value={this.state.email} />
-                    <br />
-                    Username: <input type="text" onChange={this.update("username")} value={this.state.username} />
-                    <br/>
-                    Password: <input type="password" onChange={this.update("password")} value={this.state.password} />
-                    <br />
-                    <button onClick={this.handleSubmit}>Log In</button>
-                    <br />
-                    <Link to="/signup">sign up instead</Link>
-                </form>
+
+
+
+                <div className="signup">
+                    <form className="signup-right-1">
+                        <h3 className="title">Lifegram</h3>
+                        <ul>{errors}</ul>
+                        <div className="input-all">
+                            <input className="input" placeholder="Email" type="text" onChange={this.update("email")} value={this.state.email} />
+
+                            <input className="input" type="text" placeholder="Username" onChange={this.update("username")} value={this.state.username} />
+
+                            <input className="input" type="password" placeholder="Password" onChange={this.update("password")} value={this.state.password} />
+
+                            <button className="button" onClick={this.handleSubmit}>Log in</button>
+                        </div>
+
+                    </form>
+                    <form className="signup-right-2">
+                        Don't have an account? <Link to="/signup">Sign up</Link>
+                    </form>
+                </div>
             )
         } else if (this.props.formType === 'signup') {
             return (
-                <form>
-                    <ul>{errors}</ul>
-                    <header>Sign Up</header>
-                    Email: <input type="text" onChange={this.update("email")} value={this.state.email} />
-                    <br />
-                    Username: <input type="text" onChange={this.update("username")} value={this.state.username} />
-                    <br />
-                    Password: <input type="password" onChange={this.update("password")} value={this.state.password} />
-                    <br />
-                    <button onClick={this.handleSubmit}>Sign Up</button>
-                    <br />
-                    <Link to="/login">log in instead</Link>
-                </form>
+
+                <div className="signup">
+                    <form className="signup-right-1">
+                        <h3 className="title">Lifegram</h3>
+                        <ul>{errors}</ul>
+                        <div className="input-all">
+                            <input className="input" placeholder="Email" type="text" onChange={this.update("email")} value={this.state.email} />
+
+                            <input className="input" type="text" placeholder="Username" onChange={this.update("username")} value={this.state.username} />
+
+                            <input className="input" type="password" placeholder="Password" onChange={this.update("password")} value={this.state.password} />
+
+                            <button className="button" onClick={this.handleSubmit}>Sign Up</button>
+                        </div>
+
+                    </form>
+                    <form className="signup-right-2">
+                        Have an account? <Link to="/login">log in</Link>
+                    </form>
+                </div>
             )
         }
 

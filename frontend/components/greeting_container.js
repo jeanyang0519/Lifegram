@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { logout } from '../actions/session_actions';
+import { logout, signup } from '../actions/session_actions';
+
 import Greeting from './greeting';
 //errors is from signup form container
 const msp = (state) => ({
@@ -10,6 +11,7 @@ const msp = (state) => ({
 
 
 const mdp = (dispatch) => ({
+    processForm: user => dispatch(signup(user)),
     logout: () => dispatch(logout())
 });
 

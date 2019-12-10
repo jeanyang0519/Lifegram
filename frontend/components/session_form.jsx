@@ -33,52 +33,69 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'login') {
             return (
 
+                <main className="all">
+                    <div className="content">
+                        <div className="session">
+                            <form className="session-right-1">
+                                <h3 className="title">Lifegram</h3>
+                                <ul>{errors}</ul>
+                                <div className="input-all">
+                                    <input className="input" placeholder="Email" type="text" onChange={this.update("email")} value={this.state.email} />
+                                    <input className="input" type="text" placeholder="Username" onChange={this.update("username")} value={this.state.username} />
+                                    <input className="input" type="password" placeholder="Password" onChange={this.update("password")} value={this.state.password} />
+                                    <br />
+                                    <button className="button" onClick={this.handleSubmit}>Sign Up</button>
+                                </div>
+                            </form>
+                            <form className="session-right-2">
+                                Have an account? <Link className="link" to="/login">Log in</Link>
 
-
-                <div className="signup">
-                    <form className="signup-right-1">
-                        <h3 className="title">Lifegram</h3>
-                        <ul>{errors}</ul>
-                        <div className="input-all">
-                            <input className="input" placeholder="Email" type="text" onChange={this.update("email")} value={this.state.email} />
-
-                            <input className="input" type="text" placeholder="Username" onChange={this.update("username")} value={this.state.username} />
-
-                            <input className="input" type="password" placeholder="Password" onChange={this.update("password")} value={this.state.password} />
-
-                            <button className="button" onClick={this.handleSubmit}>Log in</button>
+                            </form>
                         </div>
+                    </div>
+                    <div className="footer-all">
+                        <a className="footer" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
+                        <a className="footer" href="https://github.com/jeanyang0519">GITHUB</a>
+                        <span className="span" href="#">@ 2019 LIFEGRAM FROM JEAN YANG</span>
 
-                    </form>
-                    <form className="signup-right-2">
-                        Don't have an account? <Link to="/signup">Sign up</Link>
-                    </form>
-                </div>
+                    </div>
+                </main>
             )
         } else if (this.props.formType === 'signup') {
             return (
 
-                <div className="signup">
-                    <form className="signup-right-1">
-                        <h3 className="title">Lifegram</h3>
-                        <ul>{errors}</ul>
-                        <div className="input-all">
-                            <input className="input" placeholder="Email" type="text" onChange={this.update("email")} value={this.state.email} />
 
-                            <input className="input" type="text" placeholder="Username" onChange={this.update("username")} value={this.state.username} />
+                <main className="all">
+                    <div className="content">
+                        {/* <img className="photo" src={window.signupPhoto} alt="" /> */}
+                        <div className="session">
+                            <form className="session-right-1">
+                                <h3 className="title">Lifegram</h3>
+                                <ul>{errors}</ul>
+                                <div className="input-all">
+                                    <input className="input" placeholder="Email" type="text" onChange={this.update("email")} value={this.state.email} />
+                                    <input className="input" type="text" placeholder="Username" onChange={this.update("username")} value={this.state.username} />
+                                    <input className="input" type="password" placeholder="Password" onChange={this.update("password")} value={this.state.password} />
+                                    <br />
+                                    <button className="button" onClick={this.handleSubmit}>Sign Up</button>
+                                </div>
+                            </form>
+                            <form className="session-right-2">
+                                Have an account? <Link className="link" to="/login">Log in</Link>
 
-                            <input className="input" type="password" placeholder="Password" onChange={this.update("password")} value={this.state.password} />
-
-                            <button className="button" onClick={this.handleSubmit}>Sign Up</button>
+                            </form>
                         </div>
+                    </div>
+                    <div className="footer-all">
+                        <a className="footer" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
+                        <a className="footer" href="https://github.com/jeanyang0519">GITHUB</a>
+                        <span className="span" href="#">@ 2019 LIFEGRAM FROM JEAN YANG</span>
 
-                    </form>
-                    <form className="signup-right-2">
-                        Have an account? <Link to="/login">log in</Link>
-                    </form>
-                </div>
+                    </div>
+                </main>
             )
         }
+        
 
     };
 

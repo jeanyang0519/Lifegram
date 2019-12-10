@@ -38,10 +38,11 @@ export const logout = () => dispatch => (
         .then(() => dispatch(logoutCurrentUser()))
 );
 
-export const signup = user => dispatch => (
-    APISessionUtil.signup(user)
+export const signup = user => dispatch => {
+    // debugger
+    return APISessionUtil.signup(user)
         .then(
             user => dispatch(receiveCurrentUser(user)),
             error => dispatch(receiveErrors(error.responseJSON))
         )
-);
+};

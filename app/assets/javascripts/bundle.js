@@ -145,6 +145,7 @@ var logout = function logout() {
 };
 var signup = function signup(user) {
   return function (dispatch) {
+    // debugger
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signup"](user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (error) {
@@ -284,14 +285,16 @@ function (_React$Component) {
       } else {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("main", {
           className: "all"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "content"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
           className: "photo",
-          src: window.signup,
+          src: window.signupPhoto,
           alt: ""
         }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-          className: "signup"
+          className: "session"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
-          className: "signup-right-1"
+          className: "session-right-1"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
           className: "title"
         }, "Lifegram"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, errors), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -314,14 +317,26 @@ function (_React$Component) {
           placeholder: "Password",
           onChange: this.update("password"),
           value: this.state.password
-        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
           className: "button",
           onClick: this.handleSubmit
         }, "Sign Up"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
-          className: "signup-right-2"
+          className: "session-right-2"
         }, "Have an account? ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["Link"], {
+          className: "link",
           to: "/login"
-        }, "log in"))));
+        }, "Log in")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "footer-all"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          className: "footer",
+          href: "https://www.linkedin.com/in/jean-yang-327497156"
+        }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          className: "footer",
+          href: "https://github.com/jeanyang0519"
+        }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+          className: "span",
+          href: "#"
+        }, "@ 2019 LIFEGRAM FROM JEAN YANG")));
       }
     }
   }]);
@@ -359,6 +374,9 @@ var msp = function msp(state) {
 
 var mdp = function mdp(dispatch) {
   return {
+    processForm: function processForm(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["signup"])(user));
+    },
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["logout"])());
     }
@@ -515,10 +533,14 @@ function (_React$Component) {
       });
 
       if (this.props.formType === 'login') {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "signup"
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
+          className: "all"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "content"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "session"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-          className: "signup-right-1"
+          className: "session-right-1"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           className: "title"
         }, "Lifegram"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -541,49 +563,77 @@ function (_React$Component) {
           placeholder: "Password",
           onChange: this.update("password"),
           value: this.state.password
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "button",
-          onClick: this.handleSubmit
-        }, "Log in"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-          className: "signup-right-2"
-        }, "Don't have an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/signup"
-        }, "Sign up")));
-      } else if (this.props.formType === 'signup') {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "signup"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-          className: "signup-right-1"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-          className: "title"
-        }, "Lifegram"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "input-all"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          className: "input",
-          placeholder: "Email",
-          type: "text",
-          onChange: this.update("email"),
-          value: this.state.email
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          className: "input",
-          type: "text",
-          placeholder: "Username",
-          onChange: this.update("username"),
-          value: this.state.username
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          className: "input",
-          type: "password",
-          placeholder: "Password",
-          onChange: this.update("password"),
-          value: this.state.password
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "button",
           onClick: this.handleSubmit
         }, "Sign Up"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-          className: "signup-right-2"
+          className: "session-right-2"
         }, "Have an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          className: "link",
           to: "/login"
-        }, "log in")));
+        }, "Log in")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "footer-all"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "footer",
+          href: "https://www.linkedin.com/in/jean-yang-327497156"
+        }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "footer",
+          href: "https://github.com/jeanyang0519"
+        }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "span",
+          href: "#"
+        }, "@ 2019 LIFEGRAM FROM JEAN YANG")));
+      } else if (this.props.formType === 'signup') {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
+          className: "all"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "content"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "session"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          className: "session-right-1"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+          className: "title"
+        }, "Lifegram"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "input-all"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          className: "input",
+          placeholder: "Email",
+          type: "text",
+          onChange: this.update("email"),
+          value: this.state.email
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          className: "input",
+          type: "text",
+          placeholder: "Username",
+          onChange: this.update("username"),
+          value: this.state.username
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          className: "input",
+          type: "password",
+          placeholder: "Password",
+          onChange: this.update("password"),
+          value: this.state.password
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "button",
+          onClick: this.handleSubmit
+        }, "Sign Up"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          className: "session-right-2"
+        }, "Have an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          className: "link",
+          to: "/login"
+        }, "Log in")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "footer-all"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "footer",
+          href: "https://www.linkedin.com/in/jean-yang-327497156"
+        }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "footer",
+          href: "https://github.com/jeanyang0519"
+        }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "span",
+          href: "#"
+        }, "@ 2019 LIFEGRAM FROM JEAN YANG")));
       }
     }
   }]);
@@ -645,7 +695,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
-/* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util/session_api_util */ "./frontend/util/session_api_util.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/session_actions */ "./frontend/actions/session_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
@@ -677,9 +727,9 @@ document.addEventListener("DOMContentLoaded", function () {
     store: store
   }), root); //test 
 
-  window.login = _util_session_api_util__WEBPACK_IMPORTED_MODULE_4__["login"];
-  window.signup = _util_session_api_util__WEBPACK_IMPORTED_MODULE_4__["signup"];
-  window.logout = _util_session_api_util__WEBPACK_IMPORTED_MODULE_4__["logout"];
+  window.login = _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["login"];
+  window.signup = _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["signup"];
+  window.logout = _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["logout"];
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.store = store;

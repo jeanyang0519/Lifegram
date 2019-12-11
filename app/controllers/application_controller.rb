@@ -18,11 +18,12 @@ class ApplicationController < ActionController::Base
   end
 
   def sign_out
-    current_user.try(:reset_session_token!)
+    # @current_user.try(:reset_session_token!)
+    @current_user.reset_session_token!
     session[:session_token] = nil
   end
 
   def require_signed_in!
-    redirect_to new_session_url unless signed_in?
+    redirect_to new_session_url unless signed_in? 
   end
 end

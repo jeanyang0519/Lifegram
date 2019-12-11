@@ -289,15 +289,17 @@ function (_React$Component) {
           className: "content"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
           className: "photo",
-          src: window.signupPhoto,
-          alt: ""
+          src: window.signupPhoto
         }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "session"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
           className: "session-right-1"
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
-          className: "title"
-        }, "Lifegram"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, errors), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          className: "logo",
+          src: window.logo
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+          className: "subtitle"
+        }, "Sign up to see photos and videos from your friends."), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "input-all"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
           className: "input",
@@ -320,7 +322,9 @@ function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
           className: "button",
           onClick: this.handleSubmit
-        }, "Sign Up"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
+        }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+          className: "errors"
+        }, errors))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
           className: "session-right-2"
         }, "Have an account? ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["Link"], {
           className: "link",
@@ -336,7 +340,7 @@ function (_React$Component) {
         }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
           className: "span",
           href: "#"
-        }, "@ 2019 LIFEGRAM FROM JEAN YANG")));
+        }, "\xA9 2019 LIFEGRAM FROM JEAN YANG")));
       }
     }
   }]);
@@ -541,9 +545,12 @@ function (_React$Component) {
           className: "session"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           className: "session-right-1"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-          className: "title"
-        }, "Lifegram"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "logo",
+          src: window.logo
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "subtitle"
+        }, "Sign up to see photos and videos from your friends."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "input-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "input",
@@ -566,12 +573,14 @@ function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "button",
           onClick: this.handleSubmit
-        }, "Sign Up"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        }, "Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "errors"
+        }, errors))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           className: "session-right-2"
-        }, "Have an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        }, "Don't have an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           className: "link",
-          to: "/login"
-        }, "Log in")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          to: "/signup"
+        }, "Sign up")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "footer-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "footer",
@@ -582,7 +591,7 @@ function (_React$Component) {
         }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "span",
           href: "#"
-        }, "@ 2019 LIFEGRAM FROM JEAN YANG")));
+        }, "\xA9 2019 LIFEGRAM FROM JEAN YANG")));
       } else if (this.props.formType === 'signup') {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
           className: "all"
@@ -592,9 +601,12 @@ function (_React$Component) {
           className: "session"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           className: "session-right-1"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-          className: "title"
-        }, "Lifegram"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "logo",
+          src: window.logo
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "subtitle"
+        }, "Sign up to see photos and videos from your friends."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "input-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "input",
@@ -617,7 +629,9 @@ function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "button",
           onClick: this.handleSubmit
-        }, "Sign Up"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "errors"
+        }, errors))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           className: "session-right-2"
         }, "Have an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           className: "link",
@@ -633,7 +647,7 @@ function (_React$Component) {
         }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "span",
           href: "#"
-        }, "@ 2019 LIFEGRAM FROM JEAN YANG")));
+        }, "\xA9 2019 LIFEGRAM FROM JEAN YANG")));
       }
     }
   }]);

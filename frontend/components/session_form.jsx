@@ -32,23 +32,24 @@ class SessionForm extends React.Component {
         })
         if (this.props.formType === 'login') {
             return (
-
                 <main className="all">
                     <div className="content">
+                        {/* <img className="photo" src={window.signupPhoto} /> */}
                         <div className="session">
                             <form className="session-right-1">
-                                <h3 className="title">Lifegram</h3>
-                                <ul>{errors}</ul>
+                                <img className="logo" src={window.logo} />
+                                <p className="subtitle">Sign up to see photos and videos from your friends.</p>
                                 <div className="input-all">
                                     <input className="input" placeholder="Email" type="text" onChange={this.update("email")} value={this.state.email} />
                                     <input className="input" type="text" placeholder="Username" onChange={this.update("username")} value={this.state.username} />
                                     <input className="input" type="password" placeholder="Password" onChange={this.update("password")} value={this.state.password} />
                                     <br />
-                                    <button className="button" onClick={this.handleSubmit}>Sign Up</button>
+                                    <button className="button" onClick={this.handleSubmit}>Log in</button>
+                                    <ul className="errors">{errors}</ul>
                                 </div>
                             </form>
                             <form className="session-right-2">
-                                Have an account? <Link className="link" to="/login">Log in</Link>
+                                Don't have an account? <Link className="link" to="/signup">Sign up</Link>
 
                             </form>
                         </div>
@@ -56,28 +57,27 @@ class SessionForm extends React.Component {
                     <div className="footer-all">
                         <a className="footer" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
                         <a className="footer" href="https://github.com/jeanyang0519">GITHUB</a>
-                        <span className="span" href="#">@ 2019 LIFEGRAM FROM JEAN YANG</span>
+                        <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
 
                     </div>
                 </main>
             )
         } else if (this.props.formType === 'signup') {
             return (
-
-
                 <main className="all">
                     <div className="content">
-                        {/* <img className="photo" src={window.signupPhoto} alt="" /> */}
+                        {/* <img className="photo" src={window.signupPhoto} /> */}
                         <div className="session">
                             <form className="session-right-1">
-                                <h3 className="title">Lifegram</h3>
-                                <ul>{errors}</ul>
+                                <img className="logo" src={window.logo} />
+                                <p className="subtitle">Sign up to see photos and videos from your friends.</p>
                                 <div className="input-all">
                                     <input className="input" placeholder="Email" type="text" onChange={this.update("email")} value={this.state.email} />
                                     <input className="input" type="text" placeholder="Username" onChange={this.update("username")} value={this.state.username} />
                                     <input className="input" type="password" placeholder="Password" onChange={this.update("password")} value={this.state.password} />
                                     <br />
                                     <button className="button" onClick={this.handleSubmit}>Sign Up</button>
+                                    <ul className="errors">{errors}</ul>
                                 </div>
                             </form>
                             <form className="session-right-2">
@@ -89,7 +89,7 @@ class SessionForm extends React.Component {
                     <div className="footer-all">
                         <a className="footer" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
                         <a className="footer" href="https://github.com/jeanyang0519">GITHUB</a>
-                        <span className="span" href="#">@ 2019 LIFEGRAM FROM JEAN YANG</span>
+                        <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
 
                     </div>
                 </main>

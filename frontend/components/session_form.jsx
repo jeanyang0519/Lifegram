@@ -26,6 +26,14 @@ class SessionForm extends React.Component {
         this.props.processForm(user);
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
+
+    // componentDidmount() {
+    //     this.props.clearErrors();
+    // }
+
     render() {
         const errors = this.props.errors.map((error, i) => {
             return <li key={i}>{error}</li>
@@ -34,7 +42,7 @@ class SessionForm extends React.Component {
             return (
                 <main className="all">
                     <div className="content">
-                        {/* <img className="photo" src={window.signupPhoto} /> */}
+                        
                         <div className="session">
                             <form className="session-right-1">
                                 <img className="logo" src={window.logo} />
@@ -66,7 +74,7 @@ class SessionForm extends React.Component {
             return (
                 <main className="all">
                     <div className="content">
-                        {/* <img className="photo" src={window.signupPhoto} /> */}
+                        
                         <div className="session">
                             <form className="session-right-1">
                                 <img className="logo" src={window.logo} />

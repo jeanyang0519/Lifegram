@@ -1,5 +1,4 @@
 import GreetingContainer from "./greeting_container";
-// import SessionFormContainer from "./signup_form_container"
 import React from "react";
 import { Route, Switch } from 'react-router-dom';
 import LoginFormContainer from './login_form_container';

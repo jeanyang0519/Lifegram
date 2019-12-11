@@ -138,7 +138,6 @@
 .input-all {
     display: grid;
     grid-template-columns: 1fr;
-
     justify-items: center;
     /* justify-content: center; */
     /* align-items: center; */
@@ -149,6 +148,7 @@
     color: rgb(218, 20, 20);
     justify-items: center;
     font-size: 13px;
+    margin: 20px 40px 0px;
 }
 
 .footer-all {

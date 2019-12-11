@@ -26,6 +26,15 @@ class Greeting extends React.Component {
         this.props.processForm(user);
     }
 
+    // componentDidmount() {
+    //     this.props.clearErrors();
+    // }
+
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
+
+
     render() {
         const errors = this.props.errors.map((error, i) => {
             return <li  key={i}>{error}</li>

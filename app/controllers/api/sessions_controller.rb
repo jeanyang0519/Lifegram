@@ -19,7 +19,7 @@ class Api::SessionsController < ApplicationController
       sign_out
       render "api/users/show"
     else
-      render json: ["No one is here"], status: 404
+      render json: ["Something went wrong"], status: 404
     end
   end
 end

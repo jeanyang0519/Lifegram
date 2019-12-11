@@ -22,23 +22,21 @@
         asset-url('../fonts/billabong.svg#font') format('svg');
 } */
 
-/* .photo {  */
-    /* position: relative; */
-    /* flex-direction: row; */
-/* }  */
 
-.html {
-    background-color: #FAFAFA;
-}
+
+
 .all {
     font-family: 'proxima-nova', sans-serif;  
     background-color: #FAFAFA;
+    /* background-color: red; */
 }
 .content {
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'proxima-nova', sans-serif;  
+    height: 900px; 
+    /* width: 100%; */
     /* flex-direction: column; */
 } 
 
@@ -94,20 +92,20 @@
     background-color: #fff;
     border: 1px solid #e6e6e6;
     border-radius: 3px;
-    margin: 10px auto;
-    
-    
+    margin: 10px auto; 
     padding: 20px 0;
     text-align: center;
     width: 300px;
     height: 40%;
     font-size: 15px;
+    font-weight: 300;
     
 }
 
 .link {
     text-decoration: none;
     color: #3897f0;
+    font-weight: 530;
     
 }
 
@@ -164,7 +162,9 @@
     bottom: 0;
     font-size: 12px;
     align-items: center;
-    background-color: #FAFAFA;
+    /* flex-shrink: 0; */
+    /* background-color: #FAFAFA; */
+    /* background-color: red; */
     
     /* color: light gray; */
 }

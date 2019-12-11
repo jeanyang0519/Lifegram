@@ -56,8 +56,7 @@ class Greeting extends React.Component {
                             </div>
                         </form>
                         <form className="session-right-2">
-                            Have an account? <Link className="link" to="/login">Log in</Link>
-                            
+                            Have an account?  <Link className="link" to="/login">Log in</Link>  
                         </form>
                     </div>
                     </div>

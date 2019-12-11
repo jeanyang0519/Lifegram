@@ -34,7 +34,7 @@ class Api::PostsController < ApplicationController
         if @post.destroy
             render "api/posts/show"
         else
-            json: ["Something went wrong"], status: 404
+            render json: ["Something went wrong"], status: 404
         end 
         # render to user's profile
         # redirect_to user_path(current_user)

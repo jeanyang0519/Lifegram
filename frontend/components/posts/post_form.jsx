@@ -5,35 +5,37 @@ class PostForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            selectedFile: null
+            image: null
         }
 
-        this.handleSelectedFile = this.handleSelectedFile.bind(this)
-        this.handleUploadFile = this.handleUploadFile.bind(this)
-    }
-
-    handleSelectedFile() {
-        return e => {
-            this.setState({ selectedFile: e.target.files[0] })
-        }
-
-    }
-
-    handleUploadFile() {
-        const formdata = new FormData();
-        formdata.append('image', this.state.selectedFile);
         
-        
+        this.handleImage = this.handleImage.bind(this)
     }
+
+    handleImage(e) {
+        const file = e.currentTarget.files[0];
+        this.setState({ image: file }, () => {
+            const formData = new FormData();
+            formData.append('user[avatar]', this.state.image);
+            this.props.createPost(this.props.post);
+            this.setState({ image: null });
+        });
+    }
+
+    // handleImage() {
+    //     const formdata = new FormData();
+    //     formdata.append('image', this.state.image);
+ 
+    // }
 
     render() {
         return (
             <div>
                 <input type="file" onChange={this.handleSelectedFile} />
-                <button onClick={this.handleUploadFile}>Upload</button>
+                <button onClick={this.handleImage}>Upload</button>
             </div>
         )
     }
 }
 
-export default UploadImage;
+export default PostForm;

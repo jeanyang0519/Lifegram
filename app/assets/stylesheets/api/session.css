@@ -92,32 +92,6 @@
 
 
 
-/* line {
- display: flex;
- overflow: hidden;
- text-align: center;
- padding: 30px;
- margin-bottom: 30px;
-} 
-line:before,
-line:after {
- background-color: #333;
- content: "";
- display: inline-block;
- height: 1px;
- position: relative;
- vertical-align: middle;
- width: 50%;
-}
-line:before {
- right: 0.5em;
- margin-left: -50%;
-}
-line:after {
- left: 0.5em;
- margin-right: -50%;
-} */
-
 .or {
     margin-top: -25px;
     width: 30px;

@@ -44,10 +44,12 @@ class Greeting extends React.Component {
         })
         if (this.props.currentUser) {
             return (
+                // show user's index
                 <div>
+                    
                     Welcome! {this.props.currentUser.username}
                     <button onClick={this.props.logout}>log out</button>
-                </div>
+                </div> 
             );
         } else {
             return (

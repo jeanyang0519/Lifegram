@@ -302,9 +302,11 @@ function (_React$Component) {
       });
 
       if (this.props.currentUser) {
-        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, "Welcome! ", this.props.currentUser.username, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-          onClick: this.props.logout
-        }, "log out"));
+        return (// show user's index
+          react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, "Welcome! ", this.props.currentUser.username, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+            onClick: this.props.logout
+          }, "log out"))
+        );
       } else {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("main", {
           className: "all"
@@ -595,9 +597,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "logo",
           src: window.logo
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          className: "subtitle"
-        }, "Sign up to see photos and videos from your friends."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "input-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "input",
@@ -651,9 +651,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "logo",
           src: window.logo
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          className: "subtitle"
-        }, "Sign up to see photos and videos from your friends."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "input-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "input",

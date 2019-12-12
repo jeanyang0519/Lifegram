@@ -43,7 +43,7 @@ class SessionForm extends React.Component {
                         <div className="session">
                             <form className="session-right-1">
                                 <img className="logo" src={window.logo} />
-                                <p className="subtitle">Sign up to see photos and videos from your friends.</p>
+                                
                                 <div className="input-all">
                                     <input className="input" placeholder="Email" type="text" onChange={this.update("email")} value={this.state.email} />
                                     <input className="input" type="text" placeholder="Username" onChange={this.update("username")} value={this.state.username} />
@@ -75,7 +75,7 @@ class SessionForm extends React.Component {
                         <div className="session">
                             <form className="session-right-1">
                                 <img className="logo" src={window.logo} />
-                                <p className="subtitle">Sign up to see photos and videos from your friends.</p>
+                                
                                 <div className="input-all">
                                     <input className="input" placeholder="Email" type="text" onChange={this.update("email")} value={this.state.email} />
                                     <input className="input" type="text" placeholder="Username" onChange={this.update("username")} value={this.state.username} />

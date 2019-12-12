@@ -12,6 +12,7 @@ class Greeting extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     }
 
     update(field) {
@@ -26,9 +27,11 @@ class Greeting extends React.Component {
         this.props.processForm(user);
     }
 
-    // componentDidmount() {
-    //     this.props.clearErrors();
-    // }
+    handleDemoSubmit(e) {
+        e.preventDefault();
+        const user = { email: "timmy@gmail.com", username: "Timmy", password:"123456"}
+        this.props.login(user);
+    }
 
     componentWillUnmount() {
         this.props.clearErrors();
@@ -60,7 +63,11 @@ class Greeting extends React.Component {
                                 <input className="input" type="text" placeholder="Username" onChange={this.update("username")} value={this.state.username} />                               
                                 <input className="input" type="password" placeholder="Password" onChange={this.update("password")} value={this.state.password} />
                                 <br/>
-                                <button className="button"onClick={this.handleSubmit}>Sign Up</button>
+                                <button className="button" onClick={this.handleSubmit}>Sign Up</button>
+                                    <hr className="line"/>
+                                    <span className="or"> or</span>
+
+                                <button className="button" onClick={this.handleDemoSubmit}>Demo log in</button>
                                 <ul className="errors">{errors}</ul>
                             </div>
                         </form>

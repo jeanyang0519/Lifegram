@@ -1,26 +1,4 @@
-/* .session { */
-   /* -webkit-box-flex: 1; */
-   /* flex-grow: 1; */
-   /* -webkit-box-ordinal-group: 5; */
-    /* overflow: hidden; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* align-items: center; */
 
-  /* display: grid;
-    grid-template-columns: 1fr;
-
-    justify-items: center; */
-/* } */
-
-/* @font-face {
-   font-family: billabong;
-   src: asset-url('../fonts/billabong.ttf');
-   src: asset-url('../fonts/billabong'),
-        asset-url('../fonts/billabong.ttf') format('truetype'),
-        asset-url('../fonts/billabong.svg#font') format('svg');
-} */
 
 
 
@@ -28,7 +6,7 @@
 .all {
     font-family: 'proxima-nova', sans-serif;  
     background-color: #FAFAFA;
-    /* background-color: red; */
+    
 }
 .content {
     display: flex;
@@ -40,15 +18,7 @@
     /* flex-direction: column; */
 } 
 
-/* .title {
-    font-size: xx-large;
-    /* margin: 10px 5px 30px;  */
-    /* margin: 20px 0px 25px;
-    text-align: center;
-    font-family: 'billabongregular';
-    font-weight:normal;
-    font-style:normal;
-} */ 
+
 .photo {
     margin: 30px;
 }
@@ -71,7 +41,7 @@
 .session { 
     display: flex;
     flex-direction: column;
-     font-family: 'proxima-nova', sans-serif;
+    font-family: 'proxima-nova', sans-serif;
 } 
 
 
@@ -83,9 +53,7 @@
     width: 300px;
     height: 40%;
     margin: 10px auto;
-    
-    /* display: flex;
-    flex-direction: column; */
+   
 }
 
 .session-right-2 {
@@ -119,6 +87,50 @@
     font-weight: bold;
     border-radius: 3px;
     font-size: 12px;
+    /* margin: 50px; */
+}
+
+
+
+/* line {
+ display: flex;
+ overflow: hidden;
+ text-align: center;
+ padding: 30px;
+ margin-bottom: 30px;
+} 
+line:before,
+line:after {
+ background-color: #333;
+ content: "";
+ display: inline-block;
+ height: 1px;
+ position: relative;
+ vertical-align: middle;
+ width: 50%;
+}
+line:before {
+ right: 0.5em;
+ margin-left: -50%;
+}
+line:after {
+ left: 0.5em;
+ margin-right: -50%;
+} */
+
+.or {
+    margin-top: -25px;
+    width: 30px;
+    background-color: white;
+    text-align: center;
+    color: #ccc;
+    font-size: 12px;
+}
+
+
+.line {
+    width: 80%;
+    border-color: #ccc;
 }
 
 .input {

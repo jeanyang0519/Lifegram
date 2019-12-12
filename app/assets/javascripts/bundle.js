@@ -256,6 +256,7 @@ function (_React$Component) {
       email: ""
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleDemoSubmit = _this.handleDemoSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -274,10 +275,18 @@ function (_React$Component) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.processForm(user);
-    } // componentDidmount() {
-    //     this.props.clearErrors();
-    // }
-
+    }
+  }, {
+    key: "handleDemoSubmit",
+    value: function handleDemoSubmit(e) {
+      e.preventDefault();
+      var user = {
+        email: "timmy@gmail.com",
+        username: "Timmy",
+        password: "123456"
+      };
+      this.props.login(user);
+    }
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
@@ -336,7 +345,14 @@ function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
           className: "button",
           onClick: this.handleSubmit
-        }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+        }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", {
+          className: "line"
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+          className: "or"
+        }, " or"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+          className: "button",
+          onClick: this.handleDemoSubmit
+        }, "Demo log in"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
           className: "errors"
         }, errors))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
           className: "session-right-2"
@@ -398,6 +414,9 @@ var mdp = function mdp(dispatch) {
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["logout"])());
     },
+    login: function login(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["login"])(user));
+    },
     clearErrors: function clearErrors() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["clearErrors"])());
     }
@@ -434,6 +453,9 @@ var msp = function msp(state) {
 var mdp = function mdp(dispatch) {
   return {
     processForm: function processForm(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
+    },
+    login: function login(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
     },
     clearErrors: function clearErrors() {
@@ -551,10 +573,7 @@ function (_React$Component) {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       this.props.clearErrors();
-    } // componentDidmount() {
-    //     this.props.clearErrors();
-    // }
-
+    }
   }, {
     key: "render",
     value: function render() {
@@ -714,6 +733,9 @@ var mdp = function mdp(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["signup"])(user));
+    },
+    login: function login(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
     },
     clearErrors: function clearErrors() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["clearErrors"])());

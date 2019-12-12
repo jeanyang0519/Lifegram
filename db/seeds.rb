@@ -7,9 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.destroy_all
+# User.destroy_all
 
 user1 = User.create!({
+    
     username: "Json",
     password: '123456',
     email: 'json@gmail.com',

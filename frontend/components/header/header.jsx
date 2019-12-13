@@ -8,22 +8,26 @@ class Header extends React.Component {
     render() {
         return (
             <nav className="Nav">
-                <div className="Nav-menus">
-                    <div className="Nav-brand">
+                <div className="headerLeft">
+                    <img className="icon" src={window.icon} />
+                    <div className="horizontalLine"></div>
+                    <img className="headerlogo" src={window.logo} />
+                </div>
+                    
                         
+                        
+                <div className="headerRight">
+                    <img className="add" src={window.add} onClick={() => (this.props.openModal('upload'))} />
+                    <img className="profile" src={window.profile}/>
+                    <img className="logout" src={window.setting} onClick={() => (this.props.openModal('logout'))}/>
+                    <ModalContainer />
+                </div>       
                             
-                            <img className="icon" src={window.icon}/>
-                            <img className="headerlogo" src={window.logo} />
-                            <img className="add" src={window.add} onClick={() => (this.props.openModal('upload'))} />
-                            <img className="profile" src={window.profile}/>
-                            <img className="logout" src={window.setting} onClick={() => (this.props.openModal('logout'))}/>
                             
-                            
-                            <ModalContainer />
                             {/* <PostUploadContainer/> */}
                         
-                    </div>
-                </div>
+                    
+                
             </nav>
         );
     }

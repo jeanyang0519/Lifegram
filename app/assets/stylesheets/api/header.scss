@@ -1,6 +1,7 @@
 .Nav {
-      background-color: transparent;
+    //   background-color: transparent;
       border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+      display: flex;
       position: fixed;
       top: 0;
       width: 100%;
@@ -8,24 +9,53 @@
       -webkit-transition: height 0.2s ease-in-out;
       transition: height 0.2s ease-in-out;
       height: 77px;
+      justify-content: space-between;
     }
 
-    .headerlogo {
-        height: 57px;
+    .headerLeft {
+        display: flex;
+        justify-content: center;
+        margin: 23px 100px;
     }
+
+    .headerRight {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: 23px 100px;
+    }
+
 
     .icon {
         height: 30px;
     }
+
+    .horizontalLine {
+        background-color: rgba(var(--i1d,38,38,38),1);
+    height: 28px;
+    margin: 0 16px;
+    -webkit-transition: opacity .1s ease-out;
+    transition: opacity .1s ease-out;
+    width: 1px;
+    }
+
+    .headerlogo {
+        height: 40px;
+        margin-right: 30px;
+    }
+
     .logout {
         height: 30px;
+        margin-right: 30px;
     }
 
     .profile {
         height: 30px;
+        margin-right: 30px;
     }
     .add {
         height: 30px;
+        margin-right: 30px;
     }
     // .Nav-menus {
     //   display: flex;

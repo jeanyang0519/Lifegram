@@ -388,16 +388,18 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "Nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "Nav-menus"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "Nav-brand"
+        className: "headerLeft"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "icon",
         src: window.icon
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "horizontalLine"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "headerlogo",
         src: window.logo
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "headerRight"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "add",
         src: window.add,
         onClick: function onClick() {
@@ -412,7 +414,7 @@ function (_React$Component) {
         onClick: function onClick() {
           return _this.props.openModal('logout');
         }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_1__["default"], null))));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
     }
   }]);
 
@@ -996,7 +998,7 @@ function (_React$Component) {
       if (this.props.currentUser) {
         // debugger 
         return (// show user's index
-          react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_posts_post_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_posts_post_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
             className: "willbedeleted"
           }, "Welcome! ", this.props.currentUser.username, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
             onClick: this.props.logout

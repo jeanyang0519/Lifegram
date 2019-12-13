@@ -516,17 +516,13 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "modal-background"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "modal-child"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logoutOption",
         onClick: this.handleLogout
       }, "Log Out"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "canealOption",
         onClick: this.props.closeModal
-      }, "Cancel")));
+      }, "Cancel"));
     }
   }]);
 

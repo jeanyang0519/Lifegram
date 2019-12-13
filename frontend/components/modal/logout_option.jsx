@@ -15,13 +15,9 @@ class LogoutOption extends React.Component {
 
     render() {
         return (
-            <div className="modal-background">
-                <div className="modal-child">
-                    <div className="logoutOption" onClick={this.handleLogout}>Log Out</div>
-                    <div className="canealOption" onClick={this.props.closeModal}>
-                        Cancel
-                    </div>
-                </div>
+            <div>
+                <div className="logoutOption" onClick={this.handleLogout}>Log Out</div>
+                <div className="canealOption" onClick={this.props.closeModal}>Cancel</div>    
             </div>
         )
     }

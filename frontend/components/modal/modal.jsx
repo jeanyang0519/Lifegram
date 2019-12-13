@@ -2,7 +2,8 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import PostUploadContainer from '../posts/post_upload_container';
-import LogoutFormContainer from '../session/logout_form_container';
+import LogoutOptionContainer from './logout_option_container'
+// import LogoutFormContainer from '../session/logout_form_container';
 
 
 function Modal({ modal, closeModal }) {
@@ -14,8 +15,8 @@ function Modal({ modal, closeModal }) {
         case 'upload':
             component = <PostUploadContainer />;
             break;
-        case 'logout':
-            component = <LogoutFormContainer />;
+        case 'logoutOption':
+            component = <LogoutOptionContainer />;
             break;
         default:
             return null;

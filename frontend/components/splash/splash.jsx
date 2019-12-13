@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 // import PostUploadContainer from '../posts/post_upload_container';
 // import HeaderContainer from '../header/header_container';
-import PostIndexContainer from '../posts/post_index_container';
+// import PostIndexContainer from '../posts/post_index_container';
 
 class Splash extends React.Component {
     constructor(props) {
@@ -64,7 +64,6 @@ class Splash extends React.Component {
                                     <button className="button" onClick={this.handleSubmit}>Sign Up</button>
                                     <hr className="line" />
                                     <span className="or"> or</span>
-
                                     <button className="button" onClick={this.handleDemoSubmit}>Demo log in</button>
                                     <ul className="errors">{errors}</ul>
                                 </div>
@@ -74,12 +73,14 @@ class Splash extends React.Component {
                             </form>
                         </div>
                     </div>
+                    
                     <div className="footer-all">
                         <a className="footer" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
                         <a className="footer" href="https://github.com/jeanyang0519">GITHUB</a>
                         <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
 
                     </div>
+                    
                 </main>
 
             );

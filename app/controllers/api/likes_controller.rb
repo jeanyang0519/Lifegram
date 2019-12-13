@@ -22,7 +22,7 @@ class LikesController < ApplicationController
   def destroy
     @like = current_user.likes.find(params[:id])
         if @like.destroy
-            render :show 
+            render :index 
         else
             render json: ["Something went wrong"], status: 404
         end 

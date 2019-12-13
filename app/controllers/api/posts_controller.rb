@@ -2,12 +2,10 @@ class Api::PostsController < ApplicationController
 
     def index 
         @posts = Post.all 
-        # render "api/posts/index"
     end
 
     def create
-        @post = Post.create(post_params)
-        # @post = Post.new(post_params)
+        @post = Post.new(post_params)
         
         if @post.save
             render "api/posts/index"
@@ -37,8 +35,7 @@ class Api::PostsController < ApplicationController
         else
             render json: ["Something went wrong"], status: 404
         end 
-        # render to user's profile
-        # redirect_to user_path(current_user)
+       
     end
 
     private

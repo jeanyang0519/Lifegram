@@ -50,7 +50,8 @@ post2 = Post.create!({
     body: "Chilling",
     author_id: 2
 })
-
+## post1.like << like1
+## post1.like << like2
 
 
 

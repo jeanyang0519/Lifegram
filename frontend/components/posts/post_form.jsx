@@ -15,18 +15,22 @@ class PostForm extends React.Component {
 
    
 
-    // handleSubmit() {
-    //     const formData = new FormData();
-    //     formData.append('post[photo]', this.state.files[0]);
-           
-    //     this.setState({ image: file }, () => {
-    //         this.props.createPost(formData)
-    //         .then(
-    //             image => { that.setState({ uploading: false, image }) }
-    //         );
-            
-    //     });
-    // }
+    handleSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('post[title]', this.state.title);
+        if (this.state.photoFile) {
+
+            formData.append('post[photo]', this.state.photoFile);
+        }
+        $.ajax({
+            url: '/api/posts',
+            method: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false
+        });
+    }
 
     // handleImage(e) {
     //     e.preventDefault();

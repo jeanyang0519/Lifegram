@@ -59,6 +59,7 @@ export const updatePost = post => dispatch => {
 };
 
 export const createPost = post => dispatch => {
+    // debugger
     return PostAPIUtil.createPost(post)
         .then(
             post => dispatch(receivePost(post)),

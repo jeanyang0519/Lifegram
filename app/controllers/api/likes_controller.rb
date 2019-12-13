@@ -1,4 +1,4 @@
-class LikesController < ApplicationController
+class Api::LikesController < ApplicationController
   def index
     @likes = Like.All 
   end
@@ -11,7 +11,7 @@ class LikesController < ApplicationController
   def create
     @like = Like.new(like_params)
     @like.user_id = current_user.id  
-
+# debugger
     if @like.save 
       render :show 
     else

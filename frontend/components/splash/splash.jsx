@@ -49,7 +49,7 @@ class Splash extends React.Component {
         })
         
             return (
-                <main className="all">
+                <div className="all">
                     <div className="content">
                         <img className="photo" src={window.signupPhoto} />
                         <div className="session">
@@ -81,7 +81,7 @@ class Splash extends React.Component {
 
                     </div>
                     
-                </main>
+                </div>
 
             );
     }

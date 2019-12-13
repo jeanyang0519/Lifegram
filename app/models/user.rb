@@ -33,6 +33,10 @@ class User < ApplicationRecord
   has_many :comments 
   has_many :likes
 
+  has_many :followers
+  has_many :followees
+  has_many :likes
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user

@@ -2,9 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store"
-import { login, signup, logout} from './actions/session_actions'
+// import { login, signup, logout} from './actions/session_actions'
 // import { handleImage } from './components/posts/post_form';
-import { createPost } from './actions/post_actions';
+import { createPost, removePost } from './actions/post_actions';
+import { createLike, removeLike } from './actions/like_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -28,12 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
     ReactDOM.render(<Root store={store} />, root);
 
     //test 
-    window.login = login
-    window.signup = signup
     window.logout = logout
     window.getState = store.getState;
     window.dispatch = store.dispatch; 
     window.store = store;
     // window.handleImage = handleImage;
     window.createPost = createPost;
+    window.removePost = removePost;
+    window.createLike = createLike;
+    window.removeLike = removeLike;
+
 });

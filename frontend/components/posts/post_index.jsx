@@ -22,12 +22,12 @@ class PostIndex extends React.Component {
             <li key={post.id}>{post.body}</li>
             ))
         return (
-            <main>
+            <div>
                 <HeaderContainer />
                 <ul>
                     {post}
                 </ul>
-            </main>
+            </div>
         );
     }
 }

@@ -2,11 +2,12 @@ class Api::PostsController < ApplicationController
 
     def index 
         @posts = Post.all 
-        render "api/posts/index"
+        # render "api/posts/index"
     end
 
     def create
         @post = Post.create(post_params)
+        # @post = Post.new(post_params)
         
         if @post.save
             render "api/posts/index"
@@ -44,4 +45,6 @@ class Api::PostsController < ApplicationController
     def post_params
         params.require(:post).permit(:body, :author_id, :photo, :location)
     end
+
+  
 end 

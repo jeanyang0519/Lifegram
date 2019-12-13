@@ -1,54 +1,29 @@
-/* .session { */
-   /* -webkit-box-flex: 1; */
-   /* flex-grow: 1; */
-   /* -webkit-box-ordinal-group: 5; */
-    /* overflow: hidden; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* align-items: center; */
-
-  /* display: grid;
-    grid-template-columns: 1fr;
-
-    justify-items: center; */
-/* } */
-
-/* @font-face {
-   font-family: billabong;
-   src: asset-url('../fonts/billabong.ttf');
-   src: asset-url('../fonts/billabong'),
-        asset-url('../fonts/billabong.ttf') format('truetype'),
-        asset-url('../fonts/billabong.svg#font') format('svg');
-} */
 
 
+.willbedeleted {
+    margin: 100px;
+}
 
 
 .all {
     font-family: 'proxima-nova', sans-serif;  
     background-color: #FAFAFA;
-    /* background-color: red; */
+    height: 100hv;
+    margin: 100px 250px;
+    // background-color: red;
+    
 }
 .content {
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'proxima-nova', sans-serif;  
-    height: 900px; 
+     
     /* width: 100%; */
     /* flex-direction: column; */
 } 
 
-/* .title {
-    font-size: xx-large;
-    /* margin: 10px 5px 30px;  */
-    /* margin: 20px 0px 25px;
-    text-align: center;
-    font-family: 'billabongregular';
-    font-weight:normal;
-    font-style:normal;
-} */ 
+
 .photo {
     margin: 30px;
 }
@@ -71,7 +46,7 @@
 .session { 
     display: flex;
     flex-direction: column;
-     font-family: 'proxima-nova', sans-serif;
+    font-family: 'proxima-nova', sans-serif;
 } 
 
 
@@ -83,9 +58,7 @@
     width: 300px;
     height: 40%;
     margin: 10px auto;
-    
-    /* display: flex;
-    flex-direction: column; */
+   
 }
 
 .session-right-2 {
@@ -119,6 +92,24 @@
     font-weight: bold;
     border-radius: 3px;
     font-size: 12px;
+    /* margin: 50px; */
+}
+
+
+
+.or {
+    margin-top: -25px;
+    width: 30px;
+    background-color: white;
+    text-align: center;
+    color: #ccc;
+    font-size: 12px;
+}
+
+
+.line {
+    width: 80%;
+    border-color: #ccc;
 }
 
 .input {
@@ -151,22 +142,29 @@
     margin: 20px 40px 0px;
 }
 
+// .footer-parent {
+//     min-height: 100%;
+//   display: grid;
+//   grid-template-rows: 1fr auto;
+// }
+
 .footer-all {
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 75px;
     margin-top: 100px;
-    justify-content: space-evenly;
-    position: absolute;
+    justify-content: space-around;
     bottom: 0;
     font-size: 12px;
     align-items: center;
-    /* flex-shrink: 0; */
+    flex-shrink: 0;
+    
     /* background-color: #FAFAFA; */
     /* background-color: red; */
     
-    /* color: light gray; */
+//     grid-row-start: 2;
+//   grid-row-end: 3;
 }
 
 .footer {

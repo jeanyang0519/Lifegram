@@ -13,7 +13,10 @@
 class Post < ApplicationRecord
     validates :author_id, presence: :true
     has_one_attached :photo
-    belongs_to :user
+    belongs_to :author,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: :User
     has_many :comments
-    has_many :likes
+    has_many :likes, as: :likeable
 end 

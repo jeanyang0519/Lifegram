@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import GreetingContainer from './greeting_container';
+import SplashContainer from '../splash/splash_container';
 
 
 class SessionForm extends React.Component {
@@ -12,6 +14,8 @@ class SessionForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
+    
     }
 
     update(field) {
@@ -26,14 +30,18 @@ class SessionForm extends React.Component {
         this.props.processForm(user);
     }
 
+    handleDemoSubmit(e) {
+        e.preventDefault();
+        const user = { email: "timmy@gmail.com", username: "Timmy", password: "123456" }
+        this.props.login(user);
+    }
+
+
     componentWillUnmount() {
         this.props.clearErrors();
     }
 
-    // componentDidmount() {
-    //     this.props.clearErrors();
-    // }
-
+    
     render() {
         const errors = this.props.errors.map((error, i) => {
             return <li key={i}>{error}</li>
@@ -46,18 +54,22 @@ class SessionForm extends React.Component {
                         <div className="session">
                             <form className="session-right-1">
                                 <img className="logo" src={window.logo} />
-                                <p className="subtitle">Sign up to see photos and videos from your friends.</p>
+                                
                                 <div className="input-all">
-                                    <input className="input" placeholder="Email" type="text" onChange={this.update("email")} value={this.state.email} />
+                                    
                                     <input className="input" type="text" placeholder="Username" onChange={this.update("username")} value={this.state.username} />
                                     <input className="input" type="password" placeholder="Password" onChange={this.update("password")} value={this.state.password} />
                                     <br />
                                     <button className="button" onClick={this.handleSubmit}>Log in</button>
+                                    <hr className="line" />
+                                    <span className="or"> or</span>
+                                    <button className="button" onClick={this.handleDemoSubmit}>Demo log in</button>
                                     <ul className="errors">{errors}</ul>
                                 </div>
                             </form>
                             <form className="session-right-2">
                                 Don't have an account? <Link className="link" to="/signup">Sign up</Link>
+                                
 
                             </form>
                         </div>
@@ -85,6 +97,9 @@ class SessionForm extends React.Component {
                                     <input className="input" type="password" placeholder="Password" onChange={this.update("password")} value={this.state.password} />
                                     <br />
                                     <button className="button" onClick={this.handleSubmit}>Sign Up</button>
+                                    <hr className="line" />
+                                    <span className="or"> or</span>
+                                    <button className="button" onClick={this.handleDemoSubmit}>Demo log in</button>
                                     <ul className="errors">{errors}</ul>
                                 </div>
                             </form>
@@ -101,6 +116,14 @@ class SessionForm extends React.Component {
 
                     </div>
                 </main>
+            )
+        }  else if (this.props.formType === 'logout') {
+            return (
+                <div>
+                    <SplashContainer />
+                </div>
+
+                //create splash 
             )
         }
         

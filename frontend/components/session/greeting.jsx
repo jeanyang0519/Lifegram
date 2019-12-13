@@ -55,8 +55,10 @@ class Greeting extends React.Component {
                     <PostIndexContainer/>
                     {/* <HeaderContainer/> */}
                     {/* <PostUploadContainer/> */}
+                    <div className="willbedeleted">
                     Welcome! {this.props.currentUser.username}
                     <button onClick={this.props.logout}>log out</button>
+                    </div>
                 </div> 
             );
         } else {

@@ -1,7 +1,7 @@
-export const fetchAllPosts = (posts) => (
+export const fetchAllPosts = () => (
     $.ajax({
         url: "/api/posts/",
-        data: {posts}
+        // data: {posts}
     })
 );
 
@@ -15,9 +15,9 @@ export const createPost = post => (
     $.ajax({
         url: `/api/posts/`,
         method: 'POST',
-        data: { post },
-        contentType: false,
-        processData: false
+        data: { post }
+        // contentType: false,
+        // processData: false
     })
 );
 

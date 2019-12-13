@@ -1,23 +1,21 @@
 import { connect } from 'react-redux';
-import { logout, signup, clearErrors, login } from '../../actions/session_actions';
+import { logout, clearErrors} from '../../actions/session_actions';
+// import SessionForm from './session_form'
 // import { openModal, closeModal } from '../../actions/modal_actions';
 
 import Greeting from './greeting';
 
 const msp = (state) => ({
-    currentUser: state.entities.users[state.session.id],
+    // currentUser: state.entities.users[state.session.id],
     errors: state.errors.session,
-    formType: 'signup'
+    formType: 'logout'
 });
 
 
 const mdp = (dispatch) => ({
-    processForm: user => dispatch(signup(user)),
+    processForm: () => dispatch(logout()),
     logout: () => dispatch(logout()),
-    login: user => dispatch(login(user)),
-    clearErrors: () => dispatch(clearErrors()),
-    
-    
+    clearErrors: () => dispatch(clearErrors())
 
 });
 

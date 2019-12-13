@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import GreetingContainer from './greeting_container';
 
 
 class SessionForm extends React.Component {
@@ -98,6 +99,12 @@ class SessionForm extends React.Component {
 
                     </div>
                 </main>
+            )
+        } else if (this.props.formType === 'logout') {
+            return (
+                <div>
+                    <GreetingContainer />
+                </div>
             )
         }
         

@@ -9,7 +9,7 @@ const msp = state => ({
 });
 
 const mdp = dispatch => ({
-    logout: () => dispatch(logout()),
+    // logout: () => dispatch(logout()),
     openModal: modal => dispatch(openModal(modal))
 
 });

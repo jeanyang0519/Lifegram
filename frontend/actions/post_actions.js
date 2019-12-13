@@ -28,7 +28,7 @@ const receivePostErrors = errors => ({
 
 
 export const fetchAllPosts = () => dispatch => {
-    return PostAPIUtil.fetchPosts()
+    return PostAPIUtil.fetchAllPosts()
         .then(
             posts => dispatch(receiveAllPosts(posts)),
             error => dispatch(receivePostErrors(error.responseJSON))

@@ -5,34 +5,72 @@ class PostForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            image: null
+            image: [],
+            uploading: false
         }
 
-        
+        // this.handleSubmit = this.handleSubmit.bind(this)
         this.handleImage = this.handleImage.bind(this)
     }
 
-    handleImage(e) {
-        const file = e.currentTarget.files[0];
-        this.setState({ image: file }, () => {
-            const formData = new FormData();
-            formData.append('user[avatar]', this.state.image);
-            this.props.createPost(this.props.post);
-            this.setState({ image: null });
-        });
+   
+
+    // handleSubmit() {
+    //     const formData = new FormData();
+    //     formData.append('post[photo]', this.state.files[0]);
+           
+    //     this.setState({ image: file }, () => {
+    //         this.props.createPost(formData)
+    //         .then(
+    //             image => { that.setState({ uploading: false, image }) }
+    //         );
+            
+    //     });
+    // }
+
+    // handleImage(e) {
+    //     e.preventDefault();
+    //     this.setState({ files: e.currentTarget.files }, this.handleSubmit)
+    // }
+
+    handleImage() {
+        // const file = e.target.files[0];
+        // const fileReader = new FileReader();
+        // fileReader.onloadend = () => {
+        //     this.setState({ photo: file, preview: fileReader.result });
+        // };
+
+        // if (file) {
+        //     fileReader.readAsDataURL(file);
+        // }
+
+        const preview = document.querySelector('img');
+        const file = document.querySelector('input[type=file]').files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener("load", () => {
+            preview.src = reader.result;
+        }, false);
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
     }
 
-    // handleImage() {
-    //     const formdata = new FormData();
-    //     formdata.append('image', this.state.image);
- 
-    // }
+
+
+    handleCancel() {
+        this.props.closeModal();
+    }
 
     render() {
         return (
             <div>
-                <input type="file" onChange={this.handleSelectedFile} />
-                <button onClick={this.handleImage}>Upload</button>
+                
+                <label htmlFor="upload">Upload
+                <input type="file" accept="image/*" onChange={this.handleImage} />
+                <img src="" height="200" alt="image preview"/>
+                </label>
             </div>
         )
     }

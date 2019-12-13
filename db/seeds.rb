@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# User.destroy_all
+User.destroy_all
 
 user1 = User.create!({
     
@@ -32,6 +32,12 @@ user3 = User.create!({
     email: 'patrick@gmail.com',
     name: 'Patrick',
     bio: 'beer pong!!!'
+})
+
+post1 = Post.create!({
+    location: "New York",
+    body: "Chilling",
+    author_id: 1
 })
 
 

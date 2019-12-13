@@ -1,8 +1,8 @@
-import GreetingContainer from "./greeting_container";
+import GreetingContainer from "./session/greeting_container";
 import React from "react";
 import { Route, Switch } from 'react-router-dom';
-import LoginFormContainer from './login_form_container';
-import SignupFormContainer from './signup_form_container';
+import LoginFormContainer from './session/login_form_container';
+import SignupFormContainer from './session/signup_form_container';
 import { AuthRoute } from '../util/route_util';
 
 const App = () => (

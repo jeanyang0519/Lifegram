@@ -100,11 +100,13 @@ class SessionForm extends React.Component {
                     </div>
                 </main>
             )
-        } else if (this.props.formType === 'logout') {
+        }  else if (this.props.formType === 'logout') {
             return (
                 <div>
                     <GreetingContainer />
                 </div>
+
+                //create splash 
             )
         }
         

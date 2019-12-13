@@ -1,5 +1,5 @@
 import React from "react";
-import PostUploadContainer from '../posts/post_upload_container';
+// import PostUploadContainer from '../posts/post_upload_container';
 // import { openModal } from '../../actions/modal_actions';
 import ModalContainer from '../modal/modal';
 
@@ -17,7 +17,7 @@ class Header extends React.Component {
                             <img className="add" src={window.add} onClick={() => (this.props.openModal('upload'))} />
                             <img className="profile" src={window.profile}/>
                             <img className="logout" src={window.setting} onClick={() => (this.props.openModal('logout'))}/>
-                            <button></button>
+                            
                             
                             <ModalContainer />
                             {/* <PostUploadContainer/> */}

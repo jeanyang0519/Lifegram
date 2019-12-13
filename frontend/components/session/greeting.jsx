@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
-import PostUploadContainer from '../posts/post_upload_container';
-import HeaderContainer from '../header/header_container';
+// import PostUploadContainer from '../posts/post_upload_container';
+// import HeaderContainer from '../header/header_container';
 import PostIndexContainer from '../posts/post_index_container';
 
 class Greeting extends React.Component {

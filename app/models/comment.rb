@@ -11,4 +11,9 @@
 #
 
 class Comment < ApplicationRecord
+    validates :comment_body, :user_id, :post_id, presence: :true
+
+    has_many :likes, as: :likeable
+    belongs_to :user
+    belongs_to :post
 end

@@ -19,7 +19,7 @@ class Header extends React.Component {
                 <div className="headerRight">
                     <img className="add" src={window.add} onClick={() => (this.props.openModal('upload'))} />
                     <img className="profile" src={window.profile}/>
-                    <img className="logout" src={window.setting} onClick={() => (this.props.openModal('logout'))}/>
+                    <img className="logout" src={window.setting} onClick={() => (this.props.openModal('logoutOption'))}/>
                     <ModalContainer />
                 </div>       
                             

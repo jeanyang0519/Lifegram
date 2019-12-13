@@ -30,10 +30,10 @@ class Greeting extends React.Component {
                         {/* <HeaderContainer/> */}
                         {/* <PostUploadContainer/> */}
                     </div> 
-                    <div className="willbedeleted">
+                    {/* <div className="willbedeleted">
                         Welcome! {this.props.currentUser.username}
                         <button onClick={this.props.logout}>log out</button>
-                    </div>
+                    </div> */}
                 </div>
             );
         } else {

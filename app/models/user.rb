@@ -24,7 +24,12 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_many :posts, dependent: :destroy
+  has_many :posts,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Post,
+    dependent: :destroy
+    
   has_many :comments 
   has_many :likes
 

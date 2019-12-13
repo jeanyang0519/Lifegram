@@ -412,7 +412,7 @@ function (_React$Component) {
         className: "logout",
         src: window.setting,
         onClick: function onClick() {
-          return _this.props.openModal('logout');
+          return _this.props.openModal('logoutOption');
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
     }
@@ -516,12 +516,16 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logoutOption",
         onClick: this.handleLogout
       }, "Log Out"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "canealOption",
-        onClick: this.props.closeModal
+        className: "cancelOption",
+        onClick: function onClick() {
+          return _this2.props.closeModal();
+        }
       }, "Cancel"));
     }
   }]);
@@ -814,9 +818,12 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var posts = Object.values(this.props.posts);
+      var posts = Object.values(this.props.posts); // debugger
+
       var post = posts.map(function (post) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, post);
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: post.id
+        }, post.body);
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, post));
     }
@@ -994,11 +1001,7 @@ function (_React$Component) {
       if (this.props.currentUser) {
         // debugger 
         return (// show user's index
-          react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_posts_post_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-            className: "willbedeleted"
-          }, "Welcome! ", this.props.currentUser.username, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-            onClick: this.props.logout
-          }, "log out")))
+          react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_posts_post_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)))
         );
       } else {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_splash_splash_container__WEBPACK_IMPORTED_MODULE_3__["default"], null));

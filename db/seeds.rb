@@ -10,7 +10,7 @@
 User.destroy_all
 
 user1 = User.create!({
-    
+    id: 1,
     username: "Json",
     password: '123456',
     email: 'json@gmail.com',
@@ -19,6 +19,7 @@ user1 = User.create!({
 })
 
 user2 = User.create!({
+    id: 2,
     username: "Timmy",
     password: '123456',
     email: 'timmy@gmail.com',
@@ -40,12 +41,11 @@ post1 = Post.create!({
     author_id: 1
 })
 
+post2 = Post.create!({
+    location: "Chicago",
+    body: "Can we go back inside?",
+    author_id: 2
+})
 
-# testing
-# let user11 = {
-#     username: "Json1",
-#     password: '123456',
-#     email: 'json1@gmail.com',
-#     name: 'Json',
-#     bio: 'woah this a coool keyboard'
-# }
+
+

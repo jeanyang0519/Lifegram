@@ -18,7 +18,8 @@ class PostIndex extends React.Component {
 
     render() {
         const posts = Object.values(this.props.posts);
-        const post = posts.map(post => <li>{post}</li>)
+        // debugger
+        const post = posts.map(post => <li key={post.id}>{post.body}</li>)
         return (
             <main>
                 <HeaderContainer />

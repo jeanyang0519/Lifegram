@@ -818,8 +818,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var posts = Object.values(this.props.posts); // debugger
-
+      var posts = Object.values(this.props.posts);
       var post = posts.map(function (post) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: post.id

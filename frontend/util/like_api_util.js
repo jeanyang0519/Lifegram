@@ -6,7 +6,7 @@ export const createLike = like => {
     });
 };
 
-export const destroyLike = id => {
+export const removeLike = id => {
     return $.ajax({
         url: `/api/likes/${id}`,
         method: 'DELETE'

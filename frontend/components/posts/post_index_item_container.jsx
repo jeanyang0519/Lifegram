@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { fetchPosts } from '../../actions/post_actions';
-import PostIdex from './post_index'
+import { fetchPost } from '../../actions/post_actions';
+import PostIdexItem from './post_index_item'
 
 
 const msp = state => ({
@@ -10,7 +10,10 @@ const msp = state => ({
 })
 
 const mdp = dispatch => ({
-    fetchPosts: () => (dispatch(fetchPosts()))
+    // fetchPosts: () => (dispatch(fetchPosts()))
+    fetchPost: (postId) => dispatch(fetchPost(postId)),
+    createLike: (like) => dispatch(createLike(like)),
+    removeLike: (id) => dispatch(removeLike(id))
 })
 
-export default connect(msp, mdp)(PostIdex)
+export default connect(msp, mdp)(PostIdexItem)

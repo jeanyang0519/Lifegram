@@ -92,10 +92,17 @@
     font-weight: bold;
     border-radius: 3px;
     font-size: 12px;
+    cursor: pointer;
     /* margin: 50px; */
 }
 
+button {
+    cursor: pointer;
+}
 
+button:focus {
+    outline:0;
+}
 
 .or {
     margin-top: -25px;

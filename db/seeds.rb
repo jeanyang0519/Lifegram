@@ -10,10 +10,17 @@
 User.destroy_all
 Post.destroy_all
 
+User1 = User.create!({
+    id: 1, 
+    username: "Jean",
+    password: '123456',
+    email: 'jean@gmail.com',
+    name: 'Jean',
+    bio: 'Nature lover'
+})
 
-
-user1 = User.create!({
-    id: 1,
+user2 = User.create!({
+    id: 2,
     username: "Timmy",
     password: '123456',
     email: 'timmy@gmail.com',
@@ -21,8 +28,8 @@ user1 = User.create!({
     bio: 'I prefer staying in'
 })
 
-user2 = User.create!({
-    id: 2,
+user3 = User.create!({
+    id: 3,
     username: "Patrick",
     password: '123456',
     email: 'patrick@gmail.com',
@@ -30,8 +37,8 @@ user2 = User.create!({
     bio: 'beer pong!!!'
 })
 
-user3 = User.create!({
-    id: 3,
+user4 = User.create!({
+    id: 4,
     username: "Json",
     password: '123456',
     email: 'json@gmail.com',
@@ -42,13 +49,19 @@ user3 = User.create!({
 post1 = Post.create!({
     location: "Chicago",
     body: "Can we go back inside?",
-    author_id: 1
+    author_id: 2
 })
 
 post2 = Post.create!({
     location: "Canada",
     body: "Chilling",
-    author_id: 2
+    author_id: 3
+})
+
+post3 = Post.create!({
+    location: 'New York',
+    body: "Chilling in the sunshine",
+    author_id: 1
 })
 ## post1.like << like1
 ## post1.like << like2

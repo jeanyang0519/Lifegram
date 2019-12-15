@@ -125,10 +125,10 @@ var createLike = function createLike(like) {
     });
   };
 };
-var removeLike = function removeLike(like) {
+var removeLike = function removeLike(id) {
   return function (dispatch) {
-    return _util_like_api_util__WEBPACK_IMPORTED_MODULE_0__["destroyLike"](like.id).then(function () {
-      return dispatch(deleteLike(like));
+    return _util_like_api_util__WEBPACK_IMPORTED_MODULE_0__["removeLike"](id).then(function () {
+      return dispatch(deleteLike(id));
     });
   };
 };
@@ -833,28 +833,48 @@ function (_React$Component) {
       }) : null;
 
       if (this.state.photoFile === null) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Upload a Photo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-          htmlFor: "photo"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Upload"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "upload-1"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "polaroid",
+          src: window.polaroidPhoto
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "uploadsign1"
+        }, "Upload a Photo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "uploadsign2"
+        }, "Share with your friends"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          htmlFor: "file-upload",
+          className: "nextbutton"
+        }, "Upload", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          id: "file-upload",
           type: "file",
           accept: "image/*",
           onChange: this.handleFile
         })));
       } else {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, preview, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "upload-2"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "preview"
+        }, preview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "previewContent"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "newPost"
+        }, "New Post"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          className: "addLocation",
           type: "text",
           value: this.state.location,
           placeholder: "Add location",
           onChange: this.handleInput('location')
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+          className: "body",
           value: this.state.body,
           placeholder: "Write a caption...",
           onChange: this.handleInput('body')
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "postButton",
           onClick: this.handleSubmit
-        }, "Post"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: this.handleCancel
-        }, "Cancel"));
+        }, "Post")));
       }
     }
   }]);
@@ -877,7 +897,8 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _header_header_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../header/header_container */ "./frontend/components/header/header_container.js");
+/* harmony import */ var _post_index_item_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_index_item_container */ "./frontend/components/posts/post_index_item_container.jsx");
+/* harmony import */ var _header_header_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../header/header_container */ "./frontend/components/header/header_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -896,9 +917,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
- // import PostIndexItemContainer from './post_index_item_container';
 
 
+ // import PostIndexItem from './post_index_item';
 
 var PostIndex =
 /*#__PURE__*/
@@ -919,17 +940,23 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var posts = Object.values(this.props.posts);
-      var post = posts.map(function (post) {
-        return (// <li key={post.id}>{post.potoUrl}</li>
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-            key: post.id
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-            src: post.photoUrl
-          }))
-        );
-      });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, post));
+      var _this = this;
+
+      var posts = Object.values(this.props.posts); // const post = posts.map(post => (
+      //     <li key={post.id}>{post.body}</li>
+      // <li key={post.id}><img src={post.photoUrl} /></li>
+      // ))
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feed"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), posts.map(function (post, idx) {
+        var user = _this.props.users[post.author_id];
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_index_item_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          key: idx,
+          user: user,
+          post: post
+        });
+      }));
     }
   }]);
 
@@ -972,6 +999,80 @@ var mdp = function mdp(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(msp, mdp)(_post_index__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/posts/post_index_item.js":
+/*!******************************************************!*\
+  !*** ./frontend/components/posts/post_index_item.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/jean/Desktop/Lifegram/frontend/components/posts/post_index_item.js: Unexpected token (13:8)\n\n\u001b[0m \u001b[90m 11 | \u001b[39m        \u001b[90m//     <li key={post.id}>{post.location}</li>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 12 | \u001b[39m            \u001b[90m// <li key={post.id}>{post.location}</li>\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 | \u001b[39m        ))\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 | \u001b[39m        \u001b[90m// const location = posts.map(post => (\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 15 | \u001b[39m        \u001b[90m//     <li key={post.id}>{post.location}</li>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 | \u001b[39m        \u001b[90m// ))\u001b[39m\u001b[0m\n    at Object.raise (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:6983:17)\n    at Object.unexpected (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:8376:16)\n    at Object.parseExprAtom (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:9637:20)\n    at Object.parseExprAtom (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:4097:20)\n    at Object.parseExprSubscripts (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:9213:23)\n    at Object.parseMaybeUnary (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:9193:21)\n    at Object.parseExprOps (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:9059:23)\n    at Object.parseMaybeConditional (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:9032:23)\n    at Object.parseMaybeAssign (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:8978:21)\n    at Object.parseExpression (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:8928:23)\n    at Object.parseStatementContent (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:10795:23)\n    at Object.parseStatement (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:10666:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:11242:25)\n    at Object.parseBlockBody (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:11229:10)\n    at Object.parseBlock (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:11213:10)\n    at Object.parseFunctionBody (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:10232:24)\n    at Object.parseFunctionBodyAndFinish (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:10202:10)\n    at Object.parseMethod (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:10156:10)\n    at Object.pushClassMethod (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:11647:30)\n    at Object.parseClassMemberWithIsStatic (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:11566:12)\n    at Object.parseClassMember (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:11508:10)\n    at /Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:11463:14\n    at Object.withTopicForbiddingContext (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:10541:14)\n    at Object.parseClassBody (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:11440:10)\n    at Object.parseClass (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:11414:22)\n    at Object.parseStatementContent (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:10708:21)\n    at Object.parseStatement (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:10666:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:11242:25)\n    at Object.parseBlockBody (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:11229:10)\n    at Object.parseTopLevel (/Users/jean/Desktop/Lifegram/node_modules/@babel/parser/lib/index.js:10597:10)");
+
+/***/ }),
+
+/***/ "./frontend/components/posts/post_index_item_container.jsx":
+/*!*****************************************************************!*\
+  !*** ./frontend/components/posts/post_index_item_container.jsx ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/post_actions */ "./frontend/actions/post_actions.js");
+/* harmony import */ var _post_index_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./post_index_item */ "./frontend/components/posts/post_index_item.js");
+
+
+
+
+var msp = function msp(state) {
+  return {
+    currentUser: state.entities.users[state.session.id],
+    posts: state.entities.posts,
+    users: state.entities.users
+  };
+};
+
+var mdp = function mdp(dispatch) {
+  return {
+    // fetchPosts: () => (dispatch(fetchPosts()))
+    fetchPost: function fetchPost(postId) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["fetchPost"])(postId));
+    },
+    createLike: function (_createLike) {
+      function createLike(_x) {
+        return _createLike.apply(this, arguments);
+      }
+
+      createLike.toString = function () {
+        return _createLike.toString();
+      };
+
+      return createLike;
+    }(function (like) {
+      return dispatch(createLike(like));
+    }),
+    removeLike: function (_removeLike) {
+      function removeLike(_x2) {
+        return _removeLike.apply(this, arguments);
+      }
+
+      removeLike.toString = function () {
+        return _removeLike.toString();
+      };
+
+      return removeLike;
+    }(function (id) {
+      return dispatch(removeLike(id));
+    })
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_post_index_item__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -1563,8 +1664,8 @@ function (_React$Component) {
     value: function handleDemoSubmit(e) {
       e.preventDefault();
       var user = {
-        email: "timmy@gmail.com",
-        username: "Timmy",
+        email: "jean@gmail.com",
+        username: "Jean",
         password: "123456"
       };
       this.props.login(user);
@@ -2096,13 +2197,13 @@ var configureStore = function configureStore() {
 /*!****************************************!*\
   !*** ./frontend/util/like_api_util.js ***!
   \****************************************/
-/*! exports provided: createLike, destroyLike */
+/*! exports provided: createLike, removeLike */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLike", function() { return createLike; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyLike", function() { return destroyLike; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeLike", function() { return removeLike; });
 var createLike = function createLike(like) {
   return $.ajax({
     url: '/api/likes',
@@ -2112,7 +2213,7 @@ var createLike = function createLike(like) {
     }
   });
 };
-var destroyLike = function destroyLike(id) {
+var removeLike = function removeLike(id) {
   return $.ajax({
     url: "/api/likes/".concat(id),
     method: 'DELETE'

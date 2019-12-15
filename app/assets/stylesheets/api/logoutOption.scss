@@ -4,7 +4,7 @@
     justify-content: center;
     padding: 4px 8px;
     background-color: white;
-    color: #ec1b1b;
+    color: #0000009c;
     font-weight: 500;
     width: 240px;
     height: 47px;
@@ -13,6 +13,7 @@
     font-family: 'proxima-nova', sans-serif;  
     font-size: 13px;
     border-bottom: 1px solid #e6e6e6;
+    cursor: pointer;
 }
 
 .cancelOption {
@@ -22,10 +23,10 @@
     background-color: white;
     padding: 4px 8px;
     width: 240px;
-    height: 47px;
+    height: 55px;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
-    color: #000000c5;
+    color: #0000009c;
     font-family: 'proxima-nova', sans-serif;  
     font-size: 13px;
     cursor: pointer;

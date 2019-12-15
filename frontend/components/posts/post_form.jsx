@@ -79,22 +79,32 @@ class PostForm extends React.Component {
 
         if (this.state.photoFile === null) {
             return (
-                <div>
-                    <h3>Upload a Photo</h3>
-                    <label htmlFor="photo">
-                        <h3>Upload</h3>
-                        <input type="file" accept="image/*" onChange={this.handleFile} />
+                <div className="upload-1">
+                    <img className="polaroid" src={window.polaroidPhoto} />
+                    <span className="uploadsign1">Upload a Photo</span>
+                        
+                    <span className="uploadsign2">Share with your friends</span>
+                    <label htmlFor="file-upload" className="nextbutton">
+                        Upload
+                        <input id="file-upload" type="file" accept="image/*" onChange={this.handleFile} />
                     </label>
+                    {/* <label htmlFor="photo"></label> */}
+                    
                 </div>
             )
         } else {
             return (
-                <div>
-                    {preview}
-                    <input type="text" value={this.state.location} placeholder="Add location" onChange={this.handleInput('location')}/>
-                    <textarea value={this.state.body} placeholder="Write a caption..." onChange={this.handleInput('body')}></textarea>
-                    <button onClick={this.handleSubmit}>Post</button>
-                    <button onClick={this.handleCancel}>Cancel</button>
+                <div className="upload-2">
+                    <div className="preview">{preview}</div>
+                    <div className="previewContent">
+                        <span className="newPost">New Post</span>
+                        <input className="addLocation" type="text" value={this.state.location} placeholder="Add location" onChange={this.handleInput('location')}/>
+                        <textarea className="body" value={this.state.body} placeholder="Write a caption..." onChange={this.handleInput('body')}></textarea>
+                        
+                        <button className="postButton" onClick={this.handleSubmit}>Post</button>
+                        
+                        {/* <button onClick={this.handleCancel}>Cancel</button> */}
+                    </div>
                 </div>
             )
         }

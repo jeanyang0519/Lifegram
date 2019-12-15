@@ -5,12 +5,18 @@ import { closeModal } from '../../actions/modal_actions';
 // import { withRouter } from 'react-router-dom';
 
 
-const msp = ({ session, entities: { users } }) => ({
-    currentUser: users[session.id]
+const msp = (state) => ({
+    currentUser: state.entities.users[state.session.id]
+    // post: {
+    //     location: "",
+    //     body: '',
+    //     photo: null,
+    //     preview: null
+    // }
 });
 
 const mdp = dispatch => ({
-    createPost: (formData, id) => dispatch(createPost(formData, id)),
+    createPost: (formData) => dispatch(createPost(formData)),
     closeModal: () => dispatch(closeModal())
 });
 

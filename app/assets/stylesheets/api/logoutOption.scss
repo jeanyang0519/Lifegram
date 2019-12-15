@@ -1,0 +1,32 @@
+.logoutOption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    background-color: white;
+    color: #ec1b1b;
+    font-weight: 500;
+    width: 240px;
+    height: 47px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    font-family: 'proxima-nova', sans-serif;  
+    font-size: 13px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.cancelOption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 4px 8px;
+    width: 240px;
+    height: 47px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    color: #000000c5;
+    font-family: 'proxima-nova', sans-serif;  
+    font-size: 13px;
+    cursor: pointer;
+}

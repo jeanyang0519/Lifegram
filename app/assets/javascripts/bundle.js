@@ -712,6 +712,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -728,7 +730,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-
+ // import { Redirect } from 'react-router-dom';
 
 var PostForm =
 /*#__PURE__*/
@@ -742,58 +744,81 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(PostForm).call(this, props));
     _this.state = {
-      image: [],
-      uploading: false
-    }; // this.handleSubmit = this.handleSubmit.bind(this)
-
-    _this.handleImage = _this.handleImage.bind(_assertThisInitialized(_this));
+      body: '',
+      location: '',
+      photoFile: null,
+      photoUrl: null
+    };
+    _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
+    _this.handleFile = _this.handleFile.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleCancel = _this.handleCancel.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(PostForm, [{
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      e.preventDefault();
-      var formData = new FormData();
-      formData.append('post[title]', this.state.title);
+    key: "handleInput",
+    value: function handleInput(field) {
+      var _this2 = this;
 
-      if (this.state.photoFile) {
-        formData.append('post[photo]', this.state.photoFile);
-      }
-
-      $.ajax({
-        url: '/api/posts',
-        method: 'POST',
-        data: formData,
-        contentType: false,
-        processData: false
-      });
-    } // handleImage(e) {
-    //     e.preventDefault();
-    //     this.setState({ files: e.currentTarget.files }, this.handleSubmit)
-    // }
-
+      return function (e) {
+        _this2.setState(_defineProperty({}, field, e.currentTarget.value));
+      };
+    }
   }, {
-    key: "handleImage",
-    value: function handleImage() {
-      // const file = e.target.files[0];
-      // const fileReader = new FileReader();
-      // fileReader.onloadend = () => {
-      //     this.setState({ photo: file, preview: fileReader.result });
-      // };
-      // if (file) {
-      //     fileReader.readAsDataURL(file);
-      // }
-      var preview = document.querySelector('img');
-      var file = document.querySelector('input[type=file]').files[0];
+    key: "handleFile",
+    value: function handleFile(e) {
+      var _this3 = this;
+
+      // debugger
+      var file = e.currentTarget.files[0];
       var reader = new FileReader();
-      reader.addEventListener("load", function () {
-        preview.src = reader.result;
-      }, false);
+
+      reader.onloadend = function () {
+        return _this3.setState({
+          photoFile: file,
+          photoUrl: reader.result
+        });
+      };
 
       if (file) {
         reader.readAsDataURL(file);
+      } else {
+        this.setState({
+          photoUrl: "",
+          photoFile: null
+        });
       }
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      var _this4 = this;
+
+      e.preventDefault();
+      var formData = new FormData(); // debugger
+
+      formData.append('post[body]', this.state.body);
+      formData.append('post[location]', this.state.location); // debugger
+
+      if (this.state.photoFile) {
+        // debugger
+        formData.append('post[photo]', this.state.photoFile);
+      } // debugger
+
+
+      this.props.createPost(formData).then(function () {
+        _this4.setState({
+          body: '',
+          location: '',
+          photoFile: null,
+          photoUrl: null
+        }); // debugger
+        // <Redirect to="/"/>
+
+
+        _this4.props.closeModal();
+      });
     }
   }, {
     key: "handleCancel",
@@ -803,17 +828,34 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "upload"
-      }, "Upload", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "file",
-        accept: "image/*",
-        onChange: this.handleImage
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "",
-        height: "200",
-        alt: "image preview"
-      })));
+      var preview = this.state.photoUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.state.photoUrl
+      }) : null;
+
+      if (this.state.photoFile === null) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Upload a Photo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          htmlFor: "photo"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Upload"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "file",
+          accept: "image/*",
+          onChange: this.handleFile
+        })));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, preview, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "text",
+          value: this.state.location,
+          placeholder: "Add location",
+          onChange: this.handleInput('location')
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+          value: this.state.body,
+          placeholder: "Write a caption...",
+          onChange: this.handleInput('body')
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: this.handleSubmit
+        }, "Post"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: this.handleCancel
+        }, "Cancel"));
+      }
     }
   }]);
 
@@ -879,9 +921,13 @@ function (_React$Component) {
     value: function render() {
       var posts = Object.values(this.props.posts);
       var post = posts.map(function (post) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: post.id
-        }, post.body);
+        return (// <li key={post.id}>{post.potoUrl}</li>
+          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+            key: post.id
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+            src: post.photoUrl
+          }))
+        );
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, post));
     }
@@ -947,18 +993,22 @@ __webpack_require__.r(__webpack_exports__);
 
  // import { withRouter } from 'react-router-dom';
 
-var msp = function msp(_ref) {
-  var session = _ref.session,
-      users = _ref.entities.users;
+var msp = function msp(state) {
   return {
-    currentUser: users[session.id]
+    currentUser: state.entities.users[state.session.id] // post: {
+    //     location: "",
+    //     body: '',
+    //     photo: null,
+    //     preview: null
+    // }
+
   };
 };
 
 var mdp = function mdp(dispatch) {
   return {
-    createPost: function createPost(formData, id) {
-      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["createPost"])(formData, id));
+    createPost: function createPost(formData) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["createPost"])(formData));
     },
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"])());
@@ -2096,15 +2146,13 @@ var fetchPost = function fetchPost(postId) {
     url: "/api/posts/".concat(postId, "/")
   });
 };
-var createPost = function createPost(post) {
+var createPost = function createPost(formData) {
   return $.ajax({
     url: "/api/posts/",
     method: 'POST',
-    data: {
-      post: post
-    } // contentType: false,
-    // processData: false
-
+    data: formData,
+    contentType: false,
+    processData: false
   });
 };
 var updatePost = function updatePost(post) {

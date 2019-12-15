@@ -1,5 +1,6 @@
 @posts.each do |post|
     json.set! post.id do
-        json.extract!(post, :id, :body, :location, :author_id)
+        json.partial!('post', post: post)
     end 
 end
+

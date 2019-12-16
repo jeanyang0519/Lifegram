@@ -5,11 +5,14 @@ import PostIndexItem from './post_index_item';
 import { createLike, removeLike } from '../../actions/like_actions';
 
 
-const msp = state => ({
+const msp = state => {
+    
+    return ({
     currentUser: state.entities.users[state.session.id],
     posts: state.entities.posts,
     users: state.entities.users
-})
+    })
+}
 
 const mdp = dispatch => ({
     // fetchPosts: () => (dispatch(fetchPosts()))

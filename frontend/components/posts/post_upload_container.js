@@ -7,12 +7,7 @@ import { closeModal } from '../../actions/modal_actions';
 
 const msp = (state) => ({
     currentUser: state.entities.users[state.session.id]
-    // post: {
-    //     location: "",
-    //     body: '',
-    //     photo: null,
-    //     preview: null
-    // }
+    
 });
 
 const mdp = dispatch => ({

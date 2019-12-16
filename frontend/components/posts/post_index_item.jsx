@@ -6,13 +6,14 @@ class PostIndexItem extends React.Component {
     }
 
     render() {
+        
         return(
             <div className="post-item">
                 
             
                 
-                {/* {this.props.user.username} */}
                 <div className="post-header">
+                    {this.props.user.username}
                     {this.props.post.location}
                     <img className="post-option" src={window.option}
                         onClick={() => this.props.openModal('postOption')} />

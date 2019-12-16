@@ -1,5 +1,6 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_USER } from '../actions/user_action';
+import { RECEIVE_USER, RECEIVE_USERS } from '../actions/user_action';
+import { merge } from 'lodash';
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -9,6 +10,8 @@ const usersReducer = (state = {}, action) => {
             return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
         case RECEIVE_USER:
             return merge({}, state, { [action.user.id]: action.user }); 
+        case RECEIVE_USERS:
+            return action.users
         default:
             return state;
     }

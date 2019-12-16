@@ -1,0 +1,15 @@
+.post-show {
+    font-family: 'proxima-nova', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 110px;
+    font-size: 14px;
+}
+
+.post-show-content {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+}

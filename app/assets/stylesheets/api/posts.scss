@@ -1,8 +1,9 @@
 .feed {
     font-family: 'proxima-nova', sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
     margin-top: 55px;
+    font-size: 14px;
 }

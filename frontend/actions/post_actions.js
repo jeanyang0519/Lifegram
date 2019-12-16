@@ -11,9 +11,10 @@ const receiveAllPosts = posts => ({
     posts
 });
 
-const receivePost = post => ({
+const receivePost = ({post, user}) => ({
     type: RECEIVE_POST,
-    post
+    post,
+    user
 });
 
 const deletePost = postId => ({
@@ -36,12 +37,17 @@ export const fetchAllPosts = () => dispatch => {
 };
 
 export const fetchPost = postId => dispatch => {
+    
     return PostAPIUtil.fetchPost(postId)
         .then(
-            post => dispatch(receivePost(post)),
+            
+            post => {
+                
+                dispatch(receivePost(post))
+            },
+            
             error => dispatch(receivePostErrors(error.responseJSON))
         )
-        
 };
 
 export const removePost = postId => dispatch => {

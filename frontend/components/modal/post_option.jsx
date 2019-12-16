@@ -9,8 +9,7 @@ class PostOption extends React.Component {
     }
 
     handleClick() {
-        // <Redirect to={`/post/${this.props.post.id}`}/>
-        // this.props.closeModal();
+        <Redirect to={`/post/${this.props.post.id}`}/>
     }
 
 

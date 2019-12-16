@@ -4,10 +4,8 @@ import { closeModal } from '../../actions/modal_actions';
 
 
 const msp = (state, ownProps) => ({
-    // post: state.posts[ownProps.match.params.postId],
-    // currentUser: state.entities.users[post.author_id]
+    post: state.entities.posts[ownProps.match.params.postId]
 
-    // currentUser: state.entities.users[state.session.id],
 });
 
 const mdp = dispatch => ({

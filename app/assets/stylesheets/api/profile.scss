@@ -1,0 +1,19 @@
+.profile {
+    font-family: 'proxima-nova', sans-serif;  
+    display: flex;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+}
+
+.profile-photo {
+    height: 140px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}

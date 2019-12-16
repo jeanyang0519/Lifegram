@@ -17,10 +17,8 @@ class PostIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchAllPosts() 
-        // debugger
         this.props.fetchUsers()
             .then(() => {
-                // debugger
                 this.setState({loaded: true})
             });
     }

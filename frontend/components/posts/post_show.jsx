@@ -9,13 +9,10 @@ class PostShow extends React.Component {
 
     }
     componentDidMount() {
-        
         this.props.fetchPost(this.props.match.params.id)
     }
 
     render() {
-        
-
         if (this.props.post === undefined || this.props.currentUser === undefined ) {
             return null
         } else {

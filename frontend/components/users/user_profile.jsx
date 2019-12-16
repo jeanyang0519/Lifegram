@@ -15,8 +15,12 @@ class UserProfile extends React.Component {
     }
 
     // componentDidMount() {
-    //     this.props.fetchAllPosts()
-    //     this.props.fetchUsers()
+    //     debugger
+    //     // this.props.fetchUser(this.props.match.params.id)
+    //     // this.props.fetchPost(this.props.match.params.id)
+
+    //     // this.props.fetchAllPosts()
+    //     this.props.fetchUser(id)
     //         .then(() => {
     //             this.setState({ loaded: true })
     //         });
@@ -25,17 +29,36 @@ class UserProfile extends React.Component {
 
 
     render() {
-        return (
-            <div>
-                <HeaderContainer />
-                    
-                <div className="footer-all">
-                    <a className="footer" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
-                    <a className="footer" href="https://github.com/jeanyang0519">GITHUB</a>
-                    <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
+        // const { user } = this.props.user
+        // debugger
+        // if (this.props.user === undefined) {
+        //     // debugger
+        //     return null
+        // } else {
+            debugger
+            return (
+                <div className="profile">
+                    <HeaderContainer />
+                    <div className="profile-header">
+                        <img className="profile-photo" src={this.props.user.profilePhoto} /> 
+                        <div className="user-info">
+                            {this.props.user.username}
+                            {this.props.user.name}
+                            {this.props.user.bio}
+                        </div>
+                    </div>
+                    <div>
+                        
+                    </div>
+                    <div className="footer-all">
+                        <a className="footer" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
+                        <a className="footer" href="https://github.com/jeanyang0519">GITHUB</a>
+                        <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        // }
+
         // const posts = Object.values(this.props.posts);
 
         // debugger

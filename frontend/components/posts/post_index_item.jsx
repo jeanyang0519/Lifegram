@@ -13,8 +13,12 @@ class PostIndexItem extends React.Component {
             
                 
                 <div className="post-header">
-                    {this.props.user.username}
-                    {this.props.post.location}
+                    <img className="feed-profile-photo" src={this.props.user.profilePhoto} /> 
+                    <div className="feed-user-info">
+                        {this.props.user.username}
+                        <br/>
+                        <span>{this.props.post.location}</span> 
+                    </div>
                     <img className="post-option" src={window.option}
                         onClick={() => this.props.openModal('postOption')} />
                 </div>

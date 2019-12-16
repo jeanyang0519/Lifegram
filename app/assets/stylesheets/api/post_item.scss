@@ -6,11 +6,27 @@
     overflow: hidden;
 }
 .post-header {
-    height: 60px;
-    width: 600px;
+    height: 30px;
+    padding: 16px;
     display: flex;
     
 }
+
+.feed-profile-photo {
+    height: 30px;
+    margin-right: 13px;
+}
+.feed-user-info {
+    display: flex;
+    flex-direction: column;
+
+    span {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+}
+
+
 
 .post-option {
     height: 13px;

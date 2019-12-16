@@ -827,7 +827,7 @@ function (_React$Component) {
     key: "handleClick",
     value: function handleClick() {
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
-        to: "/post/".concat(this.props.post.id)
+        to: "/posts/".concat(this.props.post.id)
       });
     }
   }, {
@@ -875,6 +875,7 @@ __webpack_require__.r(__webpack_exports__);
 var msp = function msp(state, ownProps) {
   debugger;
   return {
+    // currentUser: state.entities.users[state.session.id],
     post: state.entities.posts[ownProps.match.params.postId]
   };
 };
@@ -1264,7 +1265,12 @@ function (_React$Component) {
         className: "post-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-header"
-      }, this.props.user.username, this.props.post.location, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "feed-profile-photo",
+        src: this.props.user.profilePhoto
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feed-user-info"
+      }, this.props.user.username, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.post.location)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "post-option",
         src: window.option,
         onClick: function onClick() {

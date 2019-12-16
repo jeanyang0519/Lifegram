@@ -1,6 +1,6 @@
 .post-item {
     background: white;
-    border: 1px solid #ebebeb;
+    border: 0.8px solid #d8d8d8d7;
     border-radius: 3px;
     margin-top: 60px;
     overflow: hidden;
@@ -9,7 +9,13 @@
     height: 30px;
     padding: 16px;
     display: flex;
+    justify-content: space-between;
     
+}
+
+.post-header-user-info {
+    display: flex;
+    flex-direction: row;
 }
 
 .feed-profile-photo {
@@ -17,8 +23,8 @@
     margin-right: 13px;
 }
 .feed-user-info {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
 
     span {
         font-size: 12px;
@@ -26,12 +32,15 @@
     }
 }
 
-
+// .testtest {
+//     display: flex;
+//     justify-content: flex-end;
+// }
 
 .post-option {
-    height: 13px;
+    height: 15px;
     display: flex;
-    justify-content: flex-end;
+    margin: 5px 8px;
 }
 .photoUrl {
     width: 600px;

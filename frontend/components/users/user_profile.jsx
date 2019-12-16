@@ -10,33 +10,36 @@ class UserProfile extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.state = {
-        //     loaded: false
-        // }
+        this.state = {
+            loaded: false
+        }
     }
 
-    // componentDidMount() {
-    //     debugger
-    //     // this.props.fetchUser(this.props.match.params.id)
-    //     // this.props.fetchPost(this.props.match.params.id)
+    componentDidMount() {
+        // debugger
+        // this.props.fetchUser(this.props.match.params.id)
+        // this.props.fetchPost(this.props.match.params.id)
 
-    //     // this.props.fetchAllPosts()
-    //     this.props.fetchUser(id)
-    //         .then(() => {
-    //             this.setState({ loaded: true })
-    //         });
-    // }
+        this.props.fetchAllPosts()
+            .then(() => {
+                this.setState({ loaded: true })
+            });
+        // this.props.fetchUser(id)
+        //     .then(() => {
+        //         this.setState({ loaded: true })
+        //     });
+    }
 
 
 
     render() {
         // const { user } = this.props.user
         // debugger
-        // if (this.props.user === undefined) {
-        //     // debugger
-        //     return null
-        // } else {
-            // debugger
+        if (this.state.loaded === false) {
+            
+            return null
+        } else {
+            
             return (
                 <div className="profile">
                     <HeaderContainer />
@@ -63,7 +66,7 @@ class UserProfile extends React.Component {
                     </div>
                 </div>
             )
-        // }
+        }
 
         // const posts = Object.values(this.props.posts);
 

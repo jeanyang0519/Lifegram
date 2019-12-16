@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 
 class PostOption extends React.Component {
     constructor(props) {
@@ -9,8 +9,8 @@ class PostOption extends React.Component {
     }
 
     handleClick() {
-        <Redirect to={`/posts/${this.props.post.id}`}/>
-
+        // <Redirect to={`/posts/${this.props.post.id}`}/>
+        
     }
 
 

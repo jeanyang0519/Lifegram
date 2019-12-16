@@ -10,8 +10,9 @@ class PostShow extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="post-show">
                 <HeaderContainer/>
+                
                 {this.props.post.photoUrl}
                 {this.props.currentUser.username}
                 {this.props.post.location}

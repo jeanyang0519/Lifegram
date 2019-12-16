@@ -123,7 +123,7 @@ class SessionForm extends React.Component {
                     <SplashContainer />
                 </div>
 
-                //create splash 
+                
             )
         }
         

@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import { fetchPost } from '../../actions/post_actions';
-import PostIdexItem from './post_index_item'
+import { openModal } from '../../actions/modal_actions';
+import PostIndexItem from './post_index_item';
+// import {  }
 
 
 const msp = state => ({
@@ -12,8 +14,9 @@ const msp = state => ({
 const mdp = dispatch => ({
     // fetchPosts: () => (dispatch(fetchPosts()))
     fetchPost: (postId) => dispatch(fetchPost(postId)),
-    createLike: (like) => dispatch(createLike(like)),
-    removeLike: (id) => dispatch(removeLike(id))
+    // createLike: (like) => dispatch(createLike(like)),
+    // removeLike: (id) => dispatch(removeLike(id)),
+    openModal: modal => dispatch(openModal(modal))
 })
 
-export default connect(msp, mdp)(PostIdexItem)
+export default connect(msp, mdp)(PostIndexItem);

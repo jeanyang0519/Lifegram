@@ -22,11 +22,7 @@ class Header extends React.Component {
                     <img className="logout" src={window.setting} onClick={() => (this.props.openModal('logoutOption'))}/>
                     <ModalContainer />
                 </div>       
-                            
-                            
-                            {/* <PostUploadContainer/> */}
-                        
-                    
+                 
                 
             </nav>
         );

@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import PostUploadContainer from '../posts/post_upload_container';
 import LogoutOptionContainer from './logout_option_container'
+import PostOptionContainer from './post_option_container';
 // import LogoutFormContainer from '../session/logout_form_container';
 
 
@@ -17,6 +18,9 @@ function Modal({ modal, closeModal }) {
             break;
         case 'logoutOption':
             component = <LogoutOptionContainer />;
+            break;
+        case 'postOption':
+            component = <PostOptionContainer/>
             break;
         default:
             return null;

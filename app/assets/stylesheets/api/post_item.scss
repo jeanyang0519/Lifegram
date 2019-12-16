@@ -1,11 +1,42 @@
 .post-item {
-        background: white;
+    background: white;
     border: 1px solid #ebebeb;
     border-radius: 3px;
     margin-top: 60px;
     overflow: hidden;
 }
+.post-header {
+    height: 60px;
+    width: 600px;
+    display: flex;
+    
+}
 
+.post-option {
+    height: 13px;
+    display: flex;
+    justify-content: flex-end;
+}
 .photoUrl {
-    height: 500px;
+    width: 600px;
+    
+}
+
+.post-icon {
+    
+    margin: 10px 20px;
+   
+}
+
+.like-icon {
+    height: 24px;
+    margin-right: 12px;
+}
+
+.comment-icon {
+    height: 28px;
+}
+
+.post-body {
+    margin: 0 20px;
 }

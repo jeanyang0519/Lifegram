@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { updatePost, fetchPost } from '../../actions/post_actions';
+import { updatePost, fetchPost, removePost } from '../../actions/post_actions';
 import PostShow from './post_show';
 
 const msp = (state, ownProps) => {
@@ -14,7 +14,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => ({
     fetchPost: postId => dispatch(fetchPost(postId)),
-    updatePost: post => dispatch(updatePost(post))
+    updatePost: post => dispatch(updatePost(post)),
+    removePost: postId => dispatch(removePost(postId))
     
 });
 

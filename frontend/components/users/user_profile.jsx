@@ -1,6 +1,7 @@
 import React from 'react';
 // import PostIndexItemContainer from './post_index_item_container'
 import HeaderContainer from '../header/header_container';
+import UserProfileItem from './user_profile_item';
 // import PostIndexItem from './post_index_item';
 
 class UserProfile extends React.Component {
@@ -35,7 +36,7 @@ class UserProfile extends React.Component {
         //     // debugger
         //     return null
         // } else {
-            debugger
+            // debugger
             return (
                 <div className="profile">
                     <HeaderContainer />
@@ -48,6 +49,11 @@ class UserProfile extends React.Component {
                         </div>
                     </div>
                     <div>
+                        {this.props.posts.map((post, idx) =>
+                            <UserProfileItem
+                                key={idx}
+                                post={post} />
+                        )} 
                         
                     </div>
                     <div className="footer-all">

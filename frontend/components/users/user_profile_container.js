@@ -7,17 +7,18 @@ import UserProfile from './user_profile';
 
 
 const msp = (state, ownProps) => {
+    debugger
     const user = state.entities.users[ownProps.match.params.id];
-    // debugger
+    // const posts =  state.entities.posts
     return ({
         user
     })
-    // const posts;
-
+    // let posts = [];
     // if (user) {
-    //     posts = user.postId.map(id => state.entities.posts[id])
+    //     debugger
+    //      posts = user.postId.map(id => state.entities.posts[id])
     // } else {
-    //     posts = [undefined];
+    //     posts = [null];
     // }
 
     // return ({

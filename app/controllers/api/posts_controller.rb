@@ -1,7 +1,8 @@
 class Api::PostsController < ApplicationController
 
     def index 
-        @posts = Post.all 
+        @posts = Post.all
+        @likes = Like.all 
     end
 
     def create

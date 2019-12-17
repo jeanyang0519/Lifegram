@@ -7,10 +7,15 @@ export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
 export const CLEAR_POST_ERRORS = 'CLEAR_POST_ERRORS'
 // export const RECEIVE_CURRENT_POST = 'RECEIVE_CURRENT_POST'
 
-const receiveAllPosts = posts => ({
-    type: RECEIVE_ALL_POSTS,
-    posts
-});
+const receiveAllPosts = ({posts, likes}) => {
+    // debugger
+    return ({
+
+        type: RECEIVE_ALL_POSTS,
+        posts,
+        likes
+    })
+};
 
 const receivePost = ({post, user}) => ({
     type: RECEIVE_POST,
@@ -38,8 +43,9 @@ const receivePostErrors = errors => ({
 export const fetchAllPosts = () => dispatch => {
     return PostAPIUtil.fetchAllPosts()
         .then(
-            posts => dispatch(receiveAllPosts(posts)),
+            payload => dispatch(receiveAllPosts(payload)),
             error => dispatch(receivePostErrors(error.responseJSON))
+            
         )
 };
 

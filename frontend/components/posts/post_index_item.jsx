@@ -6,7 +6,7 @@ class PostIndexItem extends React.Component {
     }
 
     render() {
-        
+        debugger
         return(
             <div className="post-item">
                 

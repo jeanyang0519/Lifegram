@@ -150,7 +150,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeModal", function() { return closeModal; });
 var OPEN_MODAL = 'OPEN_MODAL';
 var CLOSE_MODAL = 'CLOSE_MODAL';
-var openModal = function openModal(modal, postId) {
+var openModal = function openModal(modal) {
+  var postId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   // debugger
   return {
     type: OPEN_MODAL,
@@ -193,16 +194,20 @@ var REMOVE_POST = 'REMOVE_POST';
 var RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
 var CLEAR_POST_ERRORS = 'CLEAR_POST_ERRORS'; // export const RECEIVE_CURRENT_POST = 'RECEIVE_CURRENT_POST'
 
-var receiveAllPosts = function receiveAllPosts(posts) {
+var receiveAllPosts = function receiveAllPosts(_ref) {
+  var posts = _ref.posts,
+      likes = _ref.likes;
+  // debugger
   return {
     type: RECEIVE_ALL_POSTS,
-    posts: posts
+    posts: posts,
+    likes: likes
   };
 };
 
-var receivePost = function receivePost(_ref) {
-  var post = _ref.post,
-      user = _ref.user;
+var receivePost = function receivePost(_ref2) {
+  var post = _ref2.post,
+      user = _ref2.user;
   return {
     type: RECEIVE_POST,
     post: post,
@@ -230,8 +235,8 @@ var receivePostErrors = function receivePostErrors(errors) {
 
 var fetchAllPosts = function fetchAllPosts() {
   return function (dispatch) {
-    return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllPosts"]().then(function (posts) {
-      return dispatch(receiveAllPosts(posts));
+    return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllPosts"]().then(function (payload) {
+      return dispatch(receiveAllPosts(payload));
     }, function (error) {
       return dispatch(receivePostErrors(error.responseJSON));
     });
@@ -1271,6 +1276,7 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2660,6 +2666,9 @@ var likesReducer = function likesReducer() {
   var newState = Object(lodash__WEBPACK_IMPORTED_MODULE_2__["merge"])({}, state);
 
   switch (action.type) {
+    case _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_POSTS"]:
+      return action.likes;
+
     case _actions_like_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_LIKE"]:
       newState[action.like.id] = action.like;
       return newState;

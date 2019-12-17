@@ -7,6 +7,9 @@ const likesReducer = (state = {}, action) => {
     let newState = merge({}, state);
 
     switch (action.type) {
+        case RECEIVE_ALL_POSTS:
+            return action.likes
+        
         case RECEIVE_LIKE:
             newState[action.like.id] = action.like
             return newState;

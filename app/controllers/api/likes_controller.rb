@@ -1,6 +1,7 @@
 class Api::LikesController < ApplicationController
   def index
-    @likes = Like.All 
+    @likes = Like.all
+    render :index
   end
 
   def show

@@ -304,10 +304,13 @@ var LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 var RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 var CLEAR_ERRORS = 'CLEAR_ERRORS';
 
-var receiveCurrentUser = function receiveCurrentUser(currentUser) {
+var receiveCurrentUser = function receiveCurrentUser(_ref) {
+  var user = _ref.user,
+      posts = _ref.posts;
   return {
     type: RECEIVE_CURRENT_USER,
-    currentUser: currentUser
+    currentUser: user,
+    posts: posts
   };
 };
 
@@ -318,6 +321,7 @@ var logoutCurrentUser = function logoutCurrentUser() {
 };
 
 var receiveErrors = function receiveErrors(errors) {
+  debugger;
   return {
     type: RECEIVE_ERRORS,
     errors: errors
@@ -331,8 +335,8 @@ var clearErrors = function clearErrors() {
 };
 var login = function login(user) {
   return function (dispatch) {
-    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"](user).then(function (user) {
-      return dispatch(receiveCurrentUser(user));
+    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"](user).then(function (payload) {
+      return dispatch(receiveCurrentUser(payload));
     }, function (error) {
       return dispatch(receiveErrors(error.responseJSON));
     });
@@ -590,6 +594,17 @@ var mdp = function mdp(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_header__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/likes/like_container.js":
+/*!*****************************************************!*\
+  !*** ./frontend/components/likes/like_container.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 
@@ -887,7 +902,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var msp = function msp(state, ownProps) {
-  debugger;
+  // debugger
   return {
     // currentUser: state.entities.users[state.session.id],
     // post: state.entities.posts[ownProps.match.params.postId]
@@ -1141,6 +1156,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(PostIndex).call(this, props));
     _this.state = {
+      _isMounted: false,
       loaded: false
     };
     return _this;
@@ -1151,6 +1167,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
+      this.state._isMounted = true;
       this.props.fetchAllPosts();
       this.props.fetchUsers().then(function () {
         _this2.setState({
@@ -1240,6 +1257,8 @@ var mdp = function mdp(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _likes_like_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../likes/like_container */ "./frontend/components/likes/like_container.js");
+/* harmony import */ var _likes_like_container__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_likes_like_container__WEBPACK_IMPORTED_MODULE_1__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1260,6 +1279,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var PostIndexItem =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1276,7 +1296,8 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      debugger;
+      var profilePhoto = this.props.user.profilePhoto ? this.props.user.profilePhoto : window.italy; // debugger
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1285,7 +1306,7 @@ function (_React$Component) {
         className: "post-header-user-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "feed-profile-photo",
-        src: this.props.user.profilePhoto
+        src: profilePhoto
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feed-user-info"
       }, this.props.user.username, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.post.location))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -2406,7 +2427,7 @@ var msp = function msp(state, ownProps) {
   var posts = [];
 
   if (user) {
-    debugger;
+    // debugger
     posts = user.post_ids.map(function (id) {
       return state.entities.posts[id];
     });
@@ -2849,6 +2870,7 @@ var sessionReducer = function sessionReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
+      // debugger
       return Object.assign({}, state, {
         id: action.currentUser.id
       });

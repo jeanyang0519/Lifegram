@@ -5,7 +5,7 @@ import { withRouter } from 'react-router';
 
 
 const msp = (state, ownProps) => {
-    debugger
+    // debugger
     return ({
         // currentUser: state.entities.users[state.session.id],
         // post: state.entities.posts[ownProps.match.params.postId]

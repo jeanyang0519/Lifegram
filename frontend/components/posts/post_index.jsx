@@ -5,17 +5,20 @@ import HeaderContainer from '../header/header_container';
 // import PostIndexItem from './post_index_item';
 
 class PostIndex extends React.Component {
-
-
+    
     constructor(props) {
         super(props);
         
         this.state = {
+            _isMounted: false,
             loaded: false
         }
     }
 
     componentDidMount() {
+        this.state._isMounted = true;
+
+
         this.props.fetchAllPosts() 
         this.props.fetchUsers()
             .then(() => {

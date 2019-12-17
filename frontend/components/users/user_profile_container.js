@@ -13,7 +13,7 @@ const msp = (state, ownProps) => {
     
     let posts = [];
     if (user) {
-        debugger
+        // debugger
          posts = user.post_ids.map(id => state.entities.posts[id])
     } else {
         posts = [null];

@@ -1,4 +1,5 @@
 import React from 'react';
+import LikeContainer from '../likes/like_container';
 
 class PostIndexItem extends React.Component {
     constructor(props) {
@@ -6,7 +7,10 @@ class PostIndexItem extends React.Component {
     }
 
     render() {
-        debugger
+        const profilePhoto = this.props.user.profilePhoto ? 
+        (this.props.user.profilePhoto) : (window.italy)
+
+        // debugger
         return(
             <div className="post-item">
                 
@@ -14,7 +18,7 @@ class PostIndexItem extends React.Component {
                 <div className="post-header">
                     <div className="post-header-user-info">
                         
-                        <img className="feed-profile-photo" src={this.props.user.profilePhoto} /> 
+                        <img className="feed-profile-photo" src={profilePhoto} /> 
                         
                         <div className="feed-user-info">
                             {this.props.user.username}
@@ -33,6 +37,7 @@ class PostIndexItem extends React.Component {
                 <img className="photoUrl" src={this.props.post.photoUrl} />
                 <div>
                     <div className="post-icon">
+                        {/* <LikeContainer/> */}
                         <img className="like-icon" src={window.like}></img>
                         <img className="comment-icon" src={window.comment}></img>
                     </div>

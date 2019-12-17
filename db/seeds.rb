@@ -6,11 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
 
 User.destroy_all
 Post.destroy_all
 
-User1 = User.create!({
+user1 = User.create!({
     id: 1, 
     username: "Jean",
     password: '123456',
@@ -47,22 +48,43 @@ user4 = User.create!({
 })
 
 post1 = Post.create!({
+    id: 1,
     location: "Chicago",
     body: "Can we go back inside?",
     author_id: 2
 })
 
 post2 = Post.create!({
+    id:2,
     location: "Canada",
     body: "Chilling",
     author_id: 3
 })
 
 post3 = Post.create!({
+    id: 3,
     location: 'New York',
     body: "Chilling in the sunshine",
     author_id: 1
 })
+
+like1 = Like.create!({
+    user_id: 1,
+    likeable_type: 'Post',
+    likeable_id: post1.id
+})
+
+file1 = open('https://lifegram-seeds.s3.amazonaws.com/profile1.jpg')
+user1.profile_photo.attach(io: file1, filename: 'profile1.jpg')
+
+file2 = open('https://lifegram-seeds.s3.amazonaws.com/ny1.jpg')
+post3.photo.attach(io: file2, filename: 'ny1.jpg')
+
+
+
+
+# post3
+
 ## post1.like << like1
 ## post1.like << like2
 

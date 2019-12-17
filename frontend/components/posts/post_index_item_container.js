@@ -19,7 +19,7 @@ const mdp = dispatch => ({
     fetchPost: (postId) => dispatch(fetchPost(postId)),
     createLike: (like) => dispatch(createLike(like)),
     removeLike: (id) => dispatch(removeLike(id)),
-    openModal: modal => dispatch(openModal(modal))
+    openModal: (modal, postId) => dispatch(openModal(modal, postId))
 })
 
 export default connect(msp, mdp)(PostIndexItem);

@@ -5,6 +5,7 @@ export const RECEIVE_POST = 'RECEIVE_POST';
 export const REMOVE_POST = 'REMOVE_POST';
 export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
 export const CLEAR_POST_ERRORS = 'CLEAR_POST_ERRORS'
+// export const RECEIVE_CURRENT_POST = 'RECEIVE_CURRENT_POST'
 
 const receiveAllPosts = posts => ({
     type: RECEIVE_ALL_POSTS,
@@ -26,6 +27,12 @@ const receivePostErrors = errors => ({
     type: RECEIVE_POST_ERRORS,
     errors
 });
+
+// const receiveCurrentPost = postId => ({
+//     type: RECEIVE_CURRENT_POST,
+//     postId
+// })
+
 
 
 export const fetchAllPosts = () => dispatch => {

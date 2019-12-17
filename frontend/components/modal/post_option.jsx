@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 class PostOption extends React.Component {
     constructor(props) {
@@ -9,8 +9,7 @@ class PostOption extends React.Component {
     }
 
     handleClick() {
-        // <Redirect to={`/posts/${this.props.post.id}`}/>
-        
+        this.props.closeModal();
     }
 
 
@@ -18,7 +17,9 @@ class PostOption extends React.Component {
     render() {
         return (
             <div>
-                <div className="option-1" onClick={this.handleClick}>Go to Post</div>
+                <Link to={`/posts/${this.props.postId}`}>
+                    <div className="option-1" onClick={this.handleClick}>Go to Post</div>
+                </Link>
                 <div className="option-2" onClick={() => (this.props.closeModal())}>Cancel</div>
             </div>
         )

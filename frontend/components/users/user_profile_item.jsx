@@ -7,8 +7,8 @@ class UserProfileItem extends React.Component {
 
     render() {
         return (
-            <div>
-                <img src={this.props.post.photoUrl} />
+            <div >
+                <img className="profile-post"src={this.props.post.photoUrl} />
             </div>
         )
     }

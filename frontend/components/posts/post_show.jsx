@@ -21,32 +21,44 @@ class PostShow extends React.Component {
                     <HeaderContainer/>
 
 
-                    {/* <div className="post-show">
-                        {this.props.user.username}
-                        {this.props.post.location}
-                        
-                    </div>
-
-                    <img className="photoUrl" src={this.props.post.photoUrl} />
-                    <div>
-                        <div className="post-icon">
-                            <img className="like-icon" src={window.like}></img>
-                            <img className="comment-icon" src={window.comment}></img>
-                        </div>
-                        <div className="post-body">{this.props.post.body}</div>
-                    </div> */}
+                
 
                     <div className="post-show">
-                            <img className="photoUrl" src={this.props.post.photoUrl} />
+                            <img className="post-show-photo" src={this.props.post.photoUrl} />
+
+                            
                             <div className="post-show-content">
-                                {/* <div> */}
-                                    {this.props.currentUser.username}
-                                    {this.props.post.location}
-                                {/* </div> */}
-                                {/* <div> */}
-                                    {this.props.currentUser.username}
-                                    {this.props.post.body}
-                                {/* </div> */}
+
+                            {/* post-header is the same as post-index-item */}
+                            <div className="post-header">
+                                <div className="post-header-user-info">
+                                    <img className="feed-profile-photo" src={this.props.currentUser.profilePhoto} />
+                                    <div className="feed-user-info">
+                                        {this.props.currentUser.username}
+                                        <br />
+                                        <span>{this.props.post.location}</span>
+                                    </div>
+                                </div>
+
+                                <img className="post-option" src={window.option}
+                                    onClick={() => {
+                                        this.props.openModal('postOption', this.props.post.id)
+                                    }} />
+
+                            </div>
+                            
+                                <div className="post-show-body">
+                                    <img className="feed-profile-photo" src={this.props.currentUser.profilePhoto} />
+                                    <div className="post-show-body-info">
+                                    <div className="post-show-body-username">
+                                        {this.props.currentUser.username}
+                                    </div>
+                                        
+                                    <div className="post-show-body-detail">
+                                            {this.props.post.body}
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="post-icon">
                                     <img className="like-icon" src={window.like}></img>
                                     <img className="comment-icon" src={window.comment}></img>

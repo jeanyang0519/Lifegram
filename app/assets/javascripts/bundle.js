@@ -150,10 +150,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeModal", function() { return closeModal; });
 var OPEN_MODAL = 'OPEN_MODAL';
 var CLOSE_MODAL = 'CLOSE_MODAL';
-var openModal = function openModal(modal) {
+var openModal = function openModal(modal, postId) {
+  // debugger
   return {
     type: OPEN_MODAL,
-    modal: modal
+    modal: modal,
+    postId: postId
   };
 };
 var closeModal = function closeModal() {
@@ -189,7 +191,7 @@ var RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
 var RECEIVE_POST = 'RECEIVE_POST';
 var REMOVE_POST = 'REMOVE_POST';
 var RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
-var CLEAR_POST_ERRORS = 'CLEAR_POST_ERRORS';
+var CLEAR_POST_ERRORS = 'CLEAR_POST_ERRORS'; // export const RECEIVE_CURRENT_POST = 'RECEIVE_CURRENT_POST'
 
 var receiveAllPosts = function receiveAllPosts(posts) {
   return {
@@ -220,7 +222,11 @@ var receivePostErrors = function receivePostErrors(errors) {
     type: RECEIVE_POST_ERRORS,
     errors: errors
   };
-};
+}; // const receiveCurrentPost = postId => ({
+//     type: RECEIVE_CURRENT_POST,
+//     postId
+// })
+
 
 var fetchAllPosts = function fetchAllPosts() {
   return function (dispatch) {
@@ -758,13 +764,15 @@ function Modal(_ref) {
   }, component));
 }
 
-var mapStateToProps = function mapStateToProps(state) {
+var msp = function msp(state) {
+  // debugger
   return {
-    modal: state.modal
+    modal: state.modal,
+    postId: state.ui.currentPostId
   };
 };
 
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+var mdp = function mdp(dispatch) {
   return {
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__["closeModal"])());
@@ -772,7 +780,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Modal));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(msp, mdp)(Modal));
 
 /***/ }),
 
@@ -787,6 +795,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -805,7 +814,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
- // import { Redirect } from 'react-router-dom';
+
+
 
 var PostOption =
 /*#__PURE__*/
@@ -824,17 +834,20 @@ function (_React$Component) {
 
   _createClass(PostOption, [{
     key: "handleClick",
-    value: function handleClick() {// <Redirect to={`/posts/${this.props.post.id}`}/>
+    value: function handleClick() {
+      this.props.closeModal();
     }
   }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/posts/".concat(this.props.postId)
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "option-1",
         onClick: this.handleClick
-      }, "Go to Post"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Go to Post")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "option-2",
         onClick: function onClick() {
           return _this2.props.closeModal();
@@ -872,7 +885,8 @@ var msp = function msp(state, ownProps) {
   debugger;
   return {
     // currentUser: state.entities.users[state.session.id],
-    post: state.entities.posts[ownProps.match.params.postId]
+    // post: state.entities.posts[ownProps.match.params.postId]
+    postId: state.ui.currentPostId
   };
 };
 
@@ -1268,15 +1282,13 @@ function (_React$Component) {
         src: this.props.user.profilePhoto
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feed-user-info"
-      }, this.props.user.username, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.post.location))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "testtest"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, this.props.user.username, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.post.location))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "post-option",
         src: window.option,
         onClick: function onClick() {
-          return _this.props.openModal('postOption');
+          _this.props.openModal('postOption', _this.props.post.id);
         }
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "photoUrl",
         src: this.props.post.photoUrl
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1340,8 +1352,8 @@ var mdp = function mdp(dispatch) {
     removeLike: function removeLike(id) {
       return dispatch(Object(_actions_like_actions__WEBPACK_IMPORTED_MODULE_4__["removeLike"])(id));
     },
-    openModal: function openModal(modal) {
-      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(modal));
+    openModal: function openModal(modal, postId) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(modal, postId));
     }
   };
 };
@@ -1402,17 +1414,45 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       if (this.props.post === undefined || this.props.currentUser === undefined) {
         return null;
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "post-show"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "photoUrl",
+          className: "post-show-photo",
           src: this.props.post.photoUrl
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "post-show-content"
-        }, this.props.currentUser.username, this.props.post.location, this.props.currentUser.username, this.props.post.body, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "post-header"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "post-header-user-info"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "feed-profile-photo",
+          src: this.props.currentUser.profilePhoto
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "feed-user-info"
+        }, this.props.currentUser.username, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.post.location))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "post-option",
+          src: window.option,
+          onClick: function onClick() {
+            _this.props.openModal('postOption', _this.props.post.id);
+          }
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "post-show-body"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "feed-profile-photo",
+          src: this.props.currentUser.profilePhoto
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "post-show-body-info"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "post-show-body-username"
+        }, this.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "post-show-body-detail"
+        }, this.props.post.body))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "post-icon"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "like-icon",
@@ -2276,21 +2316,25 @@ function (_React$Component) {
       if (this.state.loaded === false) {
         return null;
       } else {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "profile"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "profile-all"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "profile-header"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "profile-photo",
           src: this.props.user.profilePhoto
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "user-info"
-        }, this.props.user.username, this.props.user.name, this.props.user.bio)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.posts.map(function (post, idx) {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.user.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.user.bio))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "profile-grid"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "profile-items"
+        }, this.props.posts.map(function (post, idx) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_user_profile_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
             key: idx,
             post: post
           });
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "footer-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "footer",
@@ -2301,7 +2345,7 @@ function (_React$Component) {
         }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "span",
           href: "#"
-        }, "\xA9 2019 LIFEGRAM FROM JEAN YANG")));
+        }, "\xA9 2019 LIFEGRAM FROM JEAN YANG"))));
       } // const posts = Object.values(this.props.posts);
       // debugger
       // if (this.state.loaded === false) {
@@ -2434,6 +2478,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "profile-post",
         src: this.props.post.photoUrl
       }));
     }
@@ -2507,6 +2552,41 @@ document.addEventListener("DOMContentLoaded", function () {
   window.createLike = _actions_like_actions__WEBPACK_IMPORTED_MODULE_5__["createLike"];
   window.removeLike = _actions_like_actions__WEBPACK_IMPORTED_MODULE_5__["removeLike"];
 });
+
+/***/ }),
+
+/***/ "./frontend/reducers/current_post_reducer.js":
+/*!***************************************************!*\
+  !*** ./frontend/reducers/current_post_reducer.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+// import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+// import { RECEIVE_USER, RECEIVE_USERS } from '../actions/user_action';
+// import { merge } from 'lodash';
+// import { RECEIVE_CURRENT_POST } from '../actions/post_actions'; 
+
+
+var currentPostReducer = function currentPostReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__["OPEN_MODAL"]:
+      // debugger
+      return action.postId;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (currentPostReducer);
 
 /***/ }),
 
@@ -2685,6 +2765,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _entities_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./entities_reducer */ "./frontend/reducers/entities_reducer.js");
 /* harmony import */ var _errors_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./errors_reducer */ "./frontend/reducers/errors_reducer.js");
 /* harmony import */ var _modals_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modals_reducer */ "./frontend/reducers/modals_reducer.js");
+/* harmony import */ var _ui_reducer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ui_reducer */ "./frontend/reducers/ui_reducer.js");
+
 
 
 
@@ -2694,7 +2776,8 @@ var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])(
   entities: _entities_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
   session: _session_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   errors: _errors_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
-  modal: _modals_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
+  modal: _modals_reducer__WEBPACK_IMPORTED_MODULE_4__["default"],
+  ui: _ui_reducer__WEBPACK_IMPORTED_MODULE_5__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (rootReducer);
 
@@ -2772,6 +2855,26 @@ var sessionReducer = function sessionReducer() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (sessionReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/ui_reducer.js":
+/*!*****************************************!*\
+  !*** ./frontend/reducers/ui_reducer.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var _current_post_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./current_post_reducer */ "./frontend/reducers/current_post_reducer.js");
+
+
+var uiReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
+  currentPostId: _current_post_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+});
+/* harmony default export */ __webpack_exports__["default"] = (uiReducer);
 
 /***/ }),
 

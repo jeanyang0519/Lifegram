@@ -41,29 +41,42 @@ class UserProfile extends React.Component {
         } else {
             
             return (
-                <div className="profile">
+                <div>
                     <HeaderContainer />
+                <div className="profile-all">
                     <div className="profile-header">
-                        <img className="profile-photo" src={this.props.user.profilePhoto} /> 
+                        {/* <div className="profile-photo-grid"> */}
+                            <img className="profile-photo" src={this.props.user.profilePhoto} /> 
+                        {/* </div> */}
                         <div className="user-info">
-                            {this.props.user.username}
-                            {this.props.user.name}
-                            {this.props.user.bio}
+                            <div>
+                                {this.props.user.username}
+                            </div>
+                            <div>
+                                {this.props.user.name}
+                            </div>
+                            <div>
+                                {this.props.user.bio}
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        {this.props.posts.map((post, idx) =>
-                            <UserProfileItem
-                                key={idx}
-                                post={post} />
-                        )} 
-                        
+                    
+                    <div className="profile-grid">
+                        <div className="profile-items">
+                            {this.props.posts.map((post, idx) =>
+                                <UserProfileItem
+                                    key={idx}
+                                    post={post} />
+                            )} 
+                        </div>
                     </div>
+                    
                     <div className="footer-all">
                         <a className="footer" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
                         <a className="footer" href="https://github.com/jeanyang0519">GITHUB</a>
                         <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
                     </div>
+                </div>
                 </div>
             )
         }

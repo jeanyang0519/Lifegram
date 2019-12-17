@@ -1,19 +1,108 @@
-.profile {
+.profile-all {
+    display: grid;
+        // grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(2, auto);
+        grid-column-gap: 3rem;
+        align-items: center;
+        margin-top: 130px;
+        grid-row-gap: 100px;
+
+
+
     font-family: 'proxima-nova', sans-serif;  
-    display: flex;
+    // justify-content: center;
+    // align-items: all;
+    // padding: 0 70px;
+    // display: flex;
+    // margin-top: 130px;
 }
 
 .profile-header {
-    display: flex;
-    flex-direction: row;
-    margin-top: 100px;
+        display: grid;
+    grid-template-columns: 1fr 2fr;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-around;
+    // margin: 60px 0 50px;
+    // min-width: 800px;
+    
+    
+    // display: flex;
+    // flex-direction: row;
+    // margin-top: 100px;
 }
 
+// .profile-posts-all{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-start;
+//     margin: auto;
+//     width: 80%;
+//     max-width: 940px;
+// }
+
 .profile-photo {
-    height: 140px;
+    // grid-row: 1 / -1;
+
+    height: 150px;
+    border-radius: 50%;
 }
 
 .user-info {
-    display: flex;
-    flex-direction: column;
+    // width: auto;
+        // margin: 0;
+    // display: flex;
+    // flex-direction: column;
+    // width: 613px;
+    // height: 150px;
+    // padding: 30px 50px;
 }
+
+// .profile-grid {
+//     width: 100%;
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: flex-start;
+//     min-height: 40vh;
+//     box-sizing: border-box;
+//     min-width: 800px;
+// }
+.profile-items {
+
+        display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-auto-rows: 300px; */
+    grid-gap: 4%;
+    grid-auto-flow: column
+
+    // display: gird;
+    // width: 80%;
+    // margin: 0 auto;
+    // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    // display: inline-block;
+    // box-sizing: content-box;
+    // width: 30.7%;
+    // height: 0px;
+    // padding-bottom: 30.7%;
+    // margin: 1.3%;
+    // position: relative;
+}
+
+.profile-post {
+        max-width: 108%;
+    object-fit: cover;
+    /* height: 200px; */
+    align-self: center;
+
+    // width: 200px;
+    // // height: 200px;
+    // object-fit: cover;
+    // // width: 100%;
+    // height: 100%;
+    // position: absolute;
+    // object-fit: cover;
+
+    // height: 50px; 
+}
+

@@ -8,7 +8,8 @@ const msp = (state, ownProps) => {
     debugger
     return ({
         // currentUser: state.entities.users[state.session.id],
-        post: state.entities.posts[ownProps.match.params.postId]
+        // post: state.entities.posts[ownProps.match.params.postId]
+        postId: state.ui.currentPostId
     })
     
 

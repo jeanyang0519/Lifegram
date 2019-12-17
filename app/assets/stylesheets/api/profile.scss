@@ -2,34 +2,21 @@
     display: grid;
         // grid-template-columns: 1fr 2fr;
         grid-template-rows: repeat(2, auto);
-        grid-column-gap: 3rem;
+        grid-column-gap: 1.5rem;
         align-items: center;
-        margin-top: 130px;
+        margin-top: 134px;
         grid-row-gap: 100px;
 
-
+    padding: 0px 20%;
 
     font-family: 'proxima-nova', sans-serif;  
-    // justify-content: center;
-    // align-items: all;
-    // padding: 0 70px;
-    // display: flex;
-    // margin-top: 130px;
+    
 }
 
 .profile-header {
-        display: grid;
-    grid-template-columns: 1fr 2fr;
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-around;
-    // margin: 60px 0 50px;
-    // min-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     
-    
-    // display: flex;
-    // flex-direction: row;
-    // margin-top: 100px;
 }
 
 // .profile-posts-all{
@@ -42,38 +29,38 @@
 // }
 
 .profile-photo {
-    // grid-row: 1 / -1;
-
     height: 150px;
     border-radius: 50%;
+    grid-column-start: 2;
+    // place-self: center;
 }
 
+
 .user-info {
-    // width: auto;
-        // margin: 0;
-    // display: flex;
-    // flex-direction: column;
-    // width: 613px;
-    // height: 150px;
-    // padding: 30px 50px;
+    grid-column-start: 3;
+    display: grid;
+
+    div {
+        place-self: center stretch;
+    }
 }
 
 // .profile-grid {
-//     width: 100%;
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: flex-start;
-//     min-height: 40vh;
-//     box-sizing: border-box;
-//     min-width: 800px;
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+//     grid-gap: 3rem;
 // }
 .profile-items {
 
-        display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    /* grid-auto-rows: 300px; */
-    grid-gap: 4%;
-    grid-auto-flow: column
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(293px, 1fr));
+    grid-gap: 1rem;
+
+    //     display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // /* grid-auto-rows: 300px; */
+    // grid-gap: 4%;
+    // grid-auto-flow: column
 
     // display: gird;
     // width: 80%;
@@ -90,19 +77,11 @@
 }
 
 .profile-post {
-        max-width: 108%;
+        max-width: 100%;
     object-fit: cover;
-    /* height: 200px; */
+    
     align-self: center;
 
-    // width: 200px;
-    // // height: 200px;
-    // object-fit: cover;
-    // // width: 100%;
-    // height: 100%;
-    // position: absolute;
-    // object-fit: cover;
-
-    // height: 50px; 
+    
 }
 

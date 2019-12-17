@@ -24,7 +24,9 @@ class PostShow extends React.Component {
                 
 
                     <div className="post-show">
-                            <img className="post-show-photo" src={this.props.post.photoUrl} />
+                            <div className="post-show-left">
+                                <img className="post-show-photo" src={this.props.post.photoUrl} />
+                            </div>
 
                             
                             <div className="post-show-content">

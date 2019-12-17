@@ -11,13 +11,29 @@
 }
 
 .post-show-photo {
+    // display: flex;
+    // max-width: 480px;
+    // overflow: hidden;
+    // max-height: 600px;
+    // min-width: 400px;
+    // background-color: black;
+    // border: 1px solid #ccc;
+    // min-width: 400px;
+
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.post-show-left {
     display: flex;
-    max-width: 480px;
-    overflow: hidden;
-    max-height: 600px;
+    width: 480px;
+    // overflow: hidden;
+    height: 600px;
     min-width: 400px;
     background-color: black;
     border: 1px solid #ccc;
+
 }
 
 // .post-show-header {

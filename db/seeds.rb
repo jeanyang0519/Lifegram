@@ -74,6 +74,18 @@ like1 = Like.create!({
     likeable_id: post1.id
 })
 
+like2 = Like.create!({
+    user_id: 2,
+    likeable_type: 'Post',
+    likeable_id: post2.id
+})
+
+like3 = Like.create!({
+    user_id: 3,
+    likeable_type: 'Post',
+    likeable_id: post3.id
+})
+
 file1 = open('https://lifegram-seeds.s3.amazonaws.com/profile1.jpg')
 user1.profile_photo.attach(io: file1, filename: 'profile1.jpg')
 

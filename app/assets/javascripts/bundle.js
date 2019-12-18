@@ -2513,7 +2513,9 @@ function (_React$Component) {
       if (this.state.loaded === false) {
         return null;
       } else {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: ""
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "profile-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "profile-header"
@@ -2522,7 +2524,21 @@ function (_React$Component) {
           src: this.props.user.profilePhoto
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "user-info"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.user.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.user.bio))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "user-info-username"
+        }, this.props.user.username, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: window.settings
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "user-info-name"
+        }, this.props.user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "user-info-bio"
+        }, this.props.user.bio))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "profile-middle-line"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+          className: "profile-middle"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: window.grid
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "POSTS"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "profile-grid"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "profile-items"
@@ -2531,7 +2547,7 @@ function (_React$Component) {
             key: idx,
             post: post
           });
-        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "footer-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "footer",
@@ -2542,7 +2558,7 @@ function (_React$Component) {
         }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "span",
           href: "#"
-        }, "\xA9 2019 LIFEGRAM FROM JEAN YANG"))));
+        }, "\xA9 2019 LIFEGRAM FROM JEAN YANG")));
       } // const posts = Object.values(this.props.posts);
       // debugger
       // if (this.state.loaded === false) {

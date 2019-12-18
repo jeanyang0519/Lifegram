@@ -41,33 +41,46 @@ class UserProfile extends React.Component {
         } else {
             
             return (
-                <div>
+                <div className=""> 
                     <HeaderContainer />
-                <div className="profile-all">
-                    <div className="profile-header">
-                        {/* <div className="profile-photo-grid"> */}
+                    <div className="profile-all">
+                        <div className="profile-header">
+                            
                             <img className="profile-photo" src={this.props.user.profilePhoto} /> 
-                        {/* </div> */}
-                        <div className="user-info">
-                            <div>
-                                {this.props.user.username}
+                            
+                            <div className="user-info">
+                                <div className="user-info-username">
+                                    {this.props.user.username}
+                                    <img src={window.settings} />
+                                    
+                                </div>
+                                <div className="user-info-name">
+                                    {this.props.user.name}
+                                </div>
+                                <div className="user-info-bio">
+                                    {this.props.user.bio}
+                                </div>
                             </div>
-                            <div>
-                                {this.props.user.name}
-                            </div>
-                            <div>
-                                {this.props.user.bio}
-                            </div>
+
+                            {/* <div className='profile-setting'>
+                                
+                            </div> */}
+                            
                         </div>
-                    </div>
-                    
-                    <div className="profile-grid">
-                        <div className="profile-items">
-                            {this.props.posts.map((post, idx) =>
-                                <UserProfileItem
-                                    key={idx}
-                                    post={post} />
-                            )} 
+                        <div className="profile-middle-line">
+                            <section className="profile-middle">    
+                                <img src={window.grid} /><span>POSTS</span> 
+                            </section>
+                        </div>
+                        
+                        <div className="profile-grid">
+                            <div className="profile-items">
+                                {this.props.posts.map((post, idx) =>
+                                    <UserProfileItem
+                                        key={idx}
+                                        post={post} />
+                                )} 
+                            </div>
                         </div>
                     </div>
                     
@@ -77,7 +90,7 @@ class UserProfile extends React.Component {
                         <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
                     </div>
                 </div>
-                </div>
+                
             )
         }
 

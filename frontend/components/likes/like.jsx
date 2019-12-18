@@ -13,7 +13,8 @@ class Like extends React.Component {
     }
 
     handlecreate() {
-        this.props.handlecreate({
+
+        this.props.createLike({
             post_id: this.props.postId
         });
     }
@@ -21,7 +22,7 @@ class Like extends React.Component {
     handleremove() {
         for (let i = 0; i < likes.length; i++) {
             if (this.props.likes[i].user_id === this.props.currentUser) {
-                this.props.handleremove(likes[i]);
+                this.props.removeLike(likes[i]);
                 return;
             }
         }
@@ -34,16 +35,20 @@ class Like extends React.Component {
 
 
         if (likeUsers.includes(currentUser)) {
-            debugger;
-            <div className="like-comment-bar">
+            // debugger;
+            return (
+            <div >
                 <img className="like-icon" src={window.redlike} onClick={this.handleremove} />
                 <img className="comment-icon" src={window.comment} />
             </div>
+            )
         } else {
-            <div className="like-comment-bar">
-                <img className="like-icon" src={window.redlike} onClick={this.handlecreate} />
+            return (
+            <div >
+                <img className="like-icon" src={window.like} onClick={this.handlecreate} />
                 <img className="comment-icon" src={window.comment} />
             </div>
+            )
         }
     }
 
@@ -64,7 +69,7 @@ class Like extends React.Component {
 
     render() {
         return (
-            <div className='icon-bar'>
+            <div >
                 {this.showLike()}
                 {this.showLikeNum()}
             </div>

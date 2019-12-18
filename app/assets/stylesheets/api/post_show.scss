@@ -72,7 +72,7 @@
     flex-direction: column;
     // height: 600px;
     // width: 335px;
-    border : 1px solid #ccc;
+    border : 1px solid #d8d8d8d7;
     border-left : none;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
@@ -87,7 +87,7 @@
 
 .post-show-body {
     padding: 16px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #d8d8d8d7;
     
 
     display: flex;
@@ -111,7 +111,7 @@
 .post-show-comment {
     display: grid;
     grid-template-columns: 6fr 1fr;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #d8d8d8d7;
     
 
     input:focus {
@@ -121,7 +121,7 @@
     input {
         border: 0;
         padding: 0 21px;
-        color: #ccc;
+        color: #d8d8d8d7;
         font-size: 14px;
     }
 

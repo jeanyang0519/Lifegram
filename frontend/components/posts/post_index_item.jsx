@@ -40,9 +40,9 @@ class PostIndexItem extends React.Component {
 
                 <div>
                     <div className="post-icon">
-                        {/* <LikeContainer post={this.props.post}/> */}
-                        {<img className="like-icon" src={window.like}></img>}
-                        <img className="comment-icon" src={window.comment}></img>
+                        <LikeContainer post={this.props.post}/>
+                        {/* {<img className="like-icon" src={window.like}></img>} */}
+                        {/* <img className="comment-icon" src={window.comment}></img> */}
                     </div>
                     
                 </div>

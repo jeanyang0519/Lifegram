@@ -152,7 +152,6 @@ var OPEN_MODAL = 'OPEN_MODAL';
 var CLOSE_MODAL = 'CLOSE_MODAL';
 var openModal = function openModal(modal) {
   var postId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  // debugger
   return {
     type: OPEN_MODAL,
     modal: modal,
@@ -649,7 +648,7 @@ function (_React$Component) {
   _createClass(Like, [{
     key: "handlecreate",
     value: function handlecreate() {
-      this.props.handlecreate({
+      this.props.createLike({
         post_id: this.props.postId
       });
     }
@@ -658,7 +657,7 @@ function (_React$Component) {
     value: function handleremove() {
       for (var i = 0; i < likes.length; i++) {
         if (this.props.likes[i].user_id === this.props.currentUser) {
-          this.props.handleremove(likes[i]);
+          this.props.removeLike(likes[i]);
           return;
         }
       }
@@ -671,10 +670,8 @@ function (_React$Component) {
           currentUser = _this$props.currentUser;
 
       if (likeUsers.includes(currentUser)) {
-        debugger;
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "like-comment-bar"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        // debugger;
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "like-icon",
           src: window.redlike,
           onClick: this.handleremove
@@ -683,11 +680,9 @@ function (_React$Component) {
           src: window.comment
         }));
       } else {
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "like-comment-bar"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "like-icon",
-          src: window.redlike,
+          src: window.like,
           onClick: this.handlecreate
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "comment-icon",
@@ -717,9 +712,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "icon-bar"
-      }, this.showLike(), this.showLikeNum());
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.showLike(), this.showLikeNum());
     }
   }]);
 
@@ -1495,12 +1488,8 @@ function (_React$Component) {
         src: this.props.post.photoUrl
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-icon"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "like-icon",
-        src: window.like
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "comment-icon",
-        src: window.comment
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_likes_like_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        post: this.props.post
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.user.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.post.body)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3257,8 +3246,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
 var fetchAllPosts = function fetchAllPosts() {
   return $.ajax({
-    url: "/api/posts/" // data: {posts}
-
+    url: "/api/posts/"
   });
 };
 var fetchPost = function fetchPost(postId) {

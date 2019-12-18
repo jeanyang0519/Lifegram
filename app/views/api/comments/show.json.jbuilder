@@ -1,1 +1,3 @@
-json.extract! comment, :id, :comment_body, :user_id, :post_id
+json.comment do 
+    json.partial!('comment', comment: @comment)
+end 

@@ -657,9 +657,11 @@ function (_React$Component) {
   }, {
     key: "handleremove",
     value: function handleremove() {
-      for (var i = 0; i < likes.length; i++) {
-        if (this.props.likes[i].user_id === this.props.currentUser) {
-          this.props.removeLike(likes[i]);
+      debugger;
+
+      for (var i = 0; i < this.props.likes.length; i++) {
+        if (this.props.likes[i].user_id === this.props.currentUser.id) {
+          this.props.removeLike(this.props.likes[i].id);
           return;
         }
       }
@@ -671,7 +673,7 @@ function (_React$Component) {
           likeUsers = _this$props.likeUsers,
           currentUser = _this$props.currentUser;
 
-      if (likeUsers.includes(currentUser)) {
+      if (likeUsers.includes(currentUser.id)) {
         debugger;
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "like-icon",
@@ -682,7 +684,7 @@ function (_React$Component) {
           src: window.comment
         }));
       } else {
-        debugger;
+        // debugger;
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "like-icon",
           src: window.like,
@@ -700,15 +702,15 @@ function (_React$Component) {
 
       if (likes.length === 0) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "num-likes"
+          className: "likes-count"
         }, "Be the first to like this");
       } else if (likes.length === 1) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "num-likes"
+          className: "likes-count"
         }, "1 like");
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "num-likes"
+          className: "likes-count"
         }, likes.length, " likes");
       }
     }
@@ -753,8 +755,8 @@ var msp = function msp(state, ownProps) {
   var likeUsers = ownProps.post.like_ids.map(function (id) {
     return state.entities.likes[id].user_id;
   });
-  var currentUser = state.entities.users[state.session.id]; // debugger
-
+  var currentUser = state.entities.users[state.session.id];
+  debugger;
   return {
     likes: likes,
     likeUsers: likeUsers,

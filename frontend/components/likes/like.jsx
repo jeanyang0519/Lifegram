@@ -19,13 +19,14 @@ class Like extends React.Component {
             likeable_id: this.props.post.id,
             likeable_type: "Post"
             
-        });
+        })
     }
 
     handleremove() {
-        for (let i = 0; i < likes.length; i++) {
-            if (this.props.likes[i].user_id === this.props.currentUser) {
-                this.props.removeLike(likes[i]);
+        debugger
+        for (let i = 0; i < this.props.likes.length; i++) {
+            if (this.props.likes[i].user_id === this.props.currentUser.id) {
+                this.props.removeLike(this.props.likes[i].id);
                 return;
             }
         }
@@ -37,7 +38,7 @@ class Like extends React.Component {
         const { likeUsers, currentUser } = this.props;
 
 
-        if (likeUsers.includes(currentUser)) {
+        if (likeUsers.includes(currentUser.id)) {
             debugger;
             return (
             <div >
@@ -46,7 +47,7 @@ class Like extends React.Component {
             </div>
             )
         } else {
-            debugger;
+            // debugger;
             return (
             <div >
                 <img className="like-icon" src={window.like} onClick={this.handlecreate} />
@@ -60,14 +61,14 @@ class Like extends React.Component {
         const { likes } = this.props;
         if (likes.length === 0) {
             return (
-                <div className="num-likes">
+                <div className="likes-count">
                     Be the first to like this
                 </div>
             );
         } else if (likes.length === 1) {
-            return (<div className="num-likes">1 like</div>);
+            return (<div className="likes-count">1 like</div>);
         } else {
-            return (<div className="num-likes">{likes.length} likes</div>);
+            return (<div className="likes-count">{likes.length} likes</div>);
         }
     }
 

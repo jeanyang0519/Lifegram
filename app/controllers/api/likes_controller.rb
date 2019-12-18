@@ -21,8 +21,9 @@ class Api::LikesController < ApplicationController
   end
 
   def destroy
-    @like = current_user.likes.find(params[:id])
-        if @like.destroy
+    @like = Like.find(params[:id])
+    # debugger
+        if @like.destroy && @like.user_id === current_user.id
             render :index 
         else
             render json: ["Something went wrong"], status: 404

@@ -34,15 +34,35 @@ class PostIndexItem extends React.Component {
                     
                 </div>
 
-                <img className="photoUrl" src={this.props.post.photoUrl} />
+                <div>
+                    <img className="photoUrl" src={this.props.post.photoUrl} />
+                </div>
+
                 <div>
                     <div className="post-icon">
-                        <LikeContainer post={this.props.post}/>
-                        {/* {<img className="like-icon" src={window.like}></img>}
-                        <img className="comment-icon" src={window.comment}></img> */}
+                        {/* <LikeContainer post={this.props.post}/> */}
+                        {<img className="like-icon" src={window.like}></img>}
+                        <img className="comment-icon" src={window.comment}></img>
                     </div>
-                    <div className="post-body">{this.props.post.body}</div>
+                    
                 </div>
+
+                <div className="post-body">
+                    <div>{this.props.user.username}</div>
+                    <p>{this.props.post.body}</p>
+    
+                    
+                </div>
+
+                <div className="time">
+                    {this.props.post.created_at}
+                </div>
+
+                <div className="post-show-comment">
+                    <input type="text" placeholder="Add a Comment..." />
+                    <a href="#">Post</a>
+                </div>
+
             </div>
 
         )

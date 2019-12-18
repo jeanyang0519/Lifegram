@@ -1,13 +1,26 @@
+.post-show-all {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 40px;
+    grid-gap: 4rem;
+    
+}
+
+
 .post-show {
     font-family: 'proxima-nova', sans-serif;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     margin-top: 110px;
     font-size: 14px;
-    max-width: 815px;
-    max-height: 600px;
+
+    
+    max-width: 933px;
+    
+
+    justify-self: center;
+    border-radius: 3px;
+
 }
 
 .post-show-photo {
@@ -23,16 +36,23 @@
     object-fit: cover;
     height: 100%;
     width: 100%;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    
 }
 
 .post-show-left {
-    display: flex;
-    width: 480px;
-    // overflow: hidden;
-    height: 600px;
-    min-width: 400px;
-    background-color: black;
+    // display: flex;
+    // width: 480px;
+    // // overflow: hidden;
+    // height: 600px;
+    // min-width: 400px;
+    background-color: #fafafa;
     border: 1px solid #ccc;
+    // border-right : none;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    // border: 1px solid #ccc;
 
 }
 
@@ -47,12 +67,15 @@
 // }
 
 .post-show-content {
-    display: flex;
+    display: grid;
+    grid-template-rows: 72px auto 48px 56px;
     flex-direction: column;
-    height: 600px;
-    width: 335px;
-    border: 1px solid #ccc;
-
+    // height: 600px;
+    // width: 335px;
+    border : 1px solid #ccc;
+    border-left : none;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 
@@ -83,4 +106,29 @@
 
 .post-show-body-detail {
     margin: 10px 0;
+}
+
+.post-show-comment {
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    border-top: 1px solid #ccc;
+    
+
+    input:focus {
+        outline: none;
+    }
+
+    input {
+        border: 0;
+        padding: 0 21px;
+        color: #ccc;
+        font-size: 14px;
+    }
+
+    a {
+        text-decoration: none;
+        align-self: center;
+        color: #3897f0;
+        justify-self: center;
+    }
 }

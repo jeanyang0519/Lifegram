@@ -17,7 +17,7 @@ class PostOption extends React.Component {
     render() {
         return (
             <div>
-                <Link to={`/posts/${this.props.postId}`}>
+                <Link to={`/posts/${this.props.postId}`} style={{ textDecoration: 'none' }}>
                     <div className="option-1" onClick={this.handleClick}>Go to Post</div>
                 </Link>
                 <div className="option-2" onClick={() => (this.props.closeModal())}>Cancel</div>

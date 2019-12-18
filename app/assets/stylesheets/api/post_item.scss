@@ -4,6 +4,12 @@
     border-radius: 3px;
     margin-top: 60px;
     overflow: hidden;
+
+
+    display: grid;
+    grid-template-rows: 60px auto 40px auto 20px 56px;
+    max-width: 600px;
+    grid-gap: 6px;
 }
 .post-header {
     height: 30px;
@@ -37,20 +43,16 @@
     }
 }
 
-// .testtest {
-//     display: flex;
-//     justify-content: flex-end;
-// }
+
 
 .post-option {
     height: 15px;
     display: flex;
     margin: 5px 8px;
-
-
-
     margin-top: 10px;
 }
+
+
 .photoUrl {
     width: 600px;
     
@@ -58,7 +60,7 @@
 
 .post-icon {
     
-    margin: 10px 20px;
+    margin: 0px 20px;
    
 }
 
@@ -73,4 +75,25 @@
 
 .post-body {
     margin: 0 20px;
+
+        div {
+            font-weight: 600;
+        }
+
+        p {
+            margin: 5px 0;
+        }
 }
+
+.time {
+    font-size: 12px;
+    color: #ccc;
+    margin: 0 20px;
+    align-self: center;
+}
+
+// .post-show-comment {
+//     a {
+//         justify-self: center;
+//     }
+// }

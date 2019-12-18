@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Redirect } from 'react-router-dom';
+
 
 
 class PostForm extends React.Component {
@@ -24,7 +24,7 @@ class PostForm extends React.Component {
     }
 
     handleFile(e) {
-        // debugger
+        
         const file = e.currentTarget.files[0];
         const reader = new FileReader();
         reader.onloadend = () =>
@@ -42,15 +42,15 @@ class PostForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
-        // debugger
+        
         formData.append('post[body]', this.state.body);
         formData.append('post[location]', this.state.location);
-        // debugger
+        
         if (this.state.photoFile) {
-            // debugger
+            
             formData.append('post[photo]', this.state.photoFile);
         }
-        // debugger
+        
         this.props.createPost(formData)
             .then( () => {
                 this.setState({
@@ -59,8 +59,8 @@ class PostForm extends React.Component {
                     photoFile: null,
                     photoUrl: null
                 });
-                // debugger
-                // <Redirect to="/"/>
+                
+                
                 this.props.closeModal()
             })
 

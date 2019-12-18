@@ -584,51 +584,23 @@ function (_React$Component) {
   function CommentIndex(props) {
     _classCallCheck(this, CommentIndex);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(CommentIndex).call(this, props)); // this.renderComments = this.renderComments.bind(this);
-    // this.state = {
-    // //     _isMounted: false,
-    //     // loaded: false
-    // }
-  } // componentDidMount() {
-  //     // this.state._isMounted = true;
-  //     // this.props.fetchAllPosts()
-  //     this.props.fetchUsers()
-  //         // .then(() => {
-  //         //     this.setState({ loaded: true })
-  //         // });
-  // }
-  // renderComments() {
-  //     const { comments } = this.props;
-  //     let showCommentsObj = [];
-  //     for (let i = 0; i < comments.length; i++) {
-  //         showCommentsObj.push(comments[i])
-  //     }
-  //     return showCommentsObj.map(commentObj => commentObj.comment_body)
-  //     // this.props.comments.map(comment => {
-  //     //     comment
-  //     // })
-  // }
-
+    return _possibleConstructorReturn(this, _getPrototypeOf(CommentIndex).call(this, props));
+  }
 
   _createClass(CommentIndex, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchUsers();
+    }
+  }, {
     key: "render",
     value: function render() {
-      // debugger
-      // const commenter = this.props.commenterIds.forEach(commenterId => {
-      //     if (this.props.user.id === commenterId) {
-      //         // debugger
-      //        return <li> {this.props.user.username}</li>
-      //     }
-      // })
-      // const commenter = this.props.users.forEach(user => {
-      //     if (this.props.user.id === comm)
-      // })
-      // this.props.allComments.map(comment => comment)
-      debugger;
+      var _this = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: ""
       }, this.props.comments.map(function (comment) {
-        comment.comment_body;
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, comment.comment_body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, _this.props.users[comment.user_id].username));
       }));
     }
   }]);
@@ -670,9 +642,9 @@ var msp = function msp(state, ownProps) {
   // })
 
   return {
-    comments: comments // commenterIds,
-    // users: state.entities.users
-
+    comments: comments,
+    // commenterIds,
+    users: state.entities.users
   };
 };
 
@@ -1364,7 +1336,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
- // import { Redirect } from 'react-router-dom';
+
 
 var PostForm =
 /*#__PURE__*/
@@ -1404,7 +1376,6 @@ function (_React$Component) {
     value: function handleFile(e) {
       var _this3 = this;
 
-      // debugger
       var file = e.currentTarget.files[0];
       var reader = new FileReader();
 
@@ -1430,16 +1401,13 @@ function (_React$Component) {
       var _this4 = this;
 
       e.preventDefault();
-      var formData = new FormData(); // debugger
-
+      var formData = new FormData();
       formData.append('post[body]', this.state.body);
-      formData.append('post[location]', this.state.location); // debugger
+      formData.append('post[location]', this.state.location);
 
       if (this.state.photoFile) {
-        // debugger
         formData.append('post[photo]', this.state.photoFile);
-      } // debugger
-
+      }
 
       this.props.createPost(formData).then(function () {
         _this4.setState({
@@ -1447,9 +1415,7 @@ function (_React$Component) {
           location: '',
           photoFile: null,
           photoUrl: null
-        }); // debugger
-        // <Redirect to="/"/>
-
+        });
 
         _this4.props.closeModal();
       });

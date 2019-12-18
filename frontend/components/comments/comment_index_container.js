@@ -13,9 +13,9 @@ debugger
     //     return state.entities.comments[id].user_id
     // })
     return ({
-        comments
+        comments,
         // commenterIds,
-        // users: state.entities.users
+        users: state.entities.users
     });
 };
 

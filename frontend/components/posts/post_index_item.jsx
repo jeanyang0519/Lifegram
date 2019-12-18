@@ -1,5 +1,6 @@
 import React from 'react';
 import LikeContainer from '../likes/like_container';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 class PostIndexItem extends React.Component {
     constructor(props) {
@@ -41,8 +42,13 @@ class PostIndexItem extends React.Component {
                 <div>
                     <div className="post-icon">
                         <LikeContainer post={this.props.post}/>
+
                         {/* {<img className="like-icon" src={window.like}></img>} */}
                         {/* <img className="comment-icon" src={window.comment}></img> */}
+                    </div>
+
+                    <div>
+                        <CommentIndexContainer post={this.props.post} />
                     </div>
                     
                 </div>

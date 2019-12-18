@@ -25,15 +25,15 @@ export const deleteComment = id => (
 
 
 
-// export const fetchAllPosts = () => (
-//     $.ajax({
-//         url: "/api/posts/"
+export const fetchAllComments = () => (
+    $.ajax({
+        url: "/api/comments/"
 
-//     })
-// );
+    })
+);
 
-// export const fetchPost = postId => (
-//     $.ajax({
-//         url: `/api/posts/${postId}/`
-//     })
-// );
+export const fetchComment = id => (
+    $.ajax({
+        url: `/api/comments/${id}/`
+    })
+);

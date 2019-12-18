@@ -12,6 +12,13 @@ class Like extends React.Component {
 
     }
 
+    // componentDidUpdate(prevProps) {
+    //     // Typical usage (don't forget to compare props):
+    //     if (this.props.userID !== prevProps.userID) {
+    //         this.fetchData(this.props.userID);
+    //     }
+    // }
+
     handlecreate() {
 // debugger
         this.props.createLike({
@@ -23,7 +30,7 @@ class Like extends React.Component {
     }
 
     handleremove() {
-        debugger
+        // debugger
         for (let i = 0; i < this.props.likes.length; i++) {
             if (this.props.likes[i].user_id === this.props.currentUser.id) {
                 this.props.removeLike(this.props.likes[i].id);
@@ -39,7 +46,7 @@ class Like extends React.Component {
 
 
         if (likeUsers.includes(currentUser.id)) {
-            debugger;
+            // debugger;
             return (
             <div >
                 <img className="like-icon" src={window.redlike} onClick={this.handleremove} />

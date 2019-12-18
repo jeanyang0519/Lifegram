@@ -17,8 +17,8 @@ class PostIndex extends React.Component {
 
     componentDidMount() {
         this.state._isMounted = true;
-
-
+        // debugger
+        this.props.fetchAllComments()
         this.props.fetchAllPosts() 
         this.props.fetchUsers()
             .then(() => {
@@ -41,10 +41,12 @@ class PostIndex extends React.Component {
                 <HeaderContainer />
                 {posts.map((post, idx) => {
                     let user = this.props.users[post.author_id];
+                    
                     return <PostIndexItemContainer
                         key={idx}
                         user={user}
-                        post={post} />;
+                        post={post}
+                        />;
                 })}
                 
             </div>

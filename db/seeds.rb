@@ -95,10 +95,6 @@ post3.photo.attach(io: file2, filename: 'ny1.jpg')
 
 
 
-# post3
-
-## post1.like << like1
-## post1.like << like2
 
 
 

@@ -2,7 +2,7 @@
     display: grid;
     // grid-template-columns: 1fr 2fr;
     grid-template-rows: repeat(2, auto);
-    grid-column-gap: 1.5rem;
+    // grid-column-gap: 1.5rem;
     align-items: center;
     margin-top: 134px;
     grid-row-gap: 50px;
@@ -120,8 +120,6 @@
         height: 100%;
     object-fit: cover;
     
-    
-
-    
+  
 }
 

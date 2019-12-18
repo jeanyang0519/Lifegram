@@ -755,8 +755,8 @@ var msp = function msp(state, ownProps) {
   var likeUsers = ownProps.post.like_ids.map(function (id) {
     return state.entities.likes[id].user_id;
   });
-  var currentUser = state.entities.users[state.session.id];
-  debugger;
+  var currentUser = state.entities.users[state.session.id]; // debugger
+
   return {
     likes: likes,
     likeUsers: likeUsers,
@@ -2585,7 +2585,7 @@ function (_React$Component) {
             key: idx,
             post: post
           });
-        })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "footer-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "footer-all"
@@ -2598,7 +2598,7 @@ function (_React$Component) {
         }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "span",
           href: "#"
-        }, "\xA9 2019 LIFEGRAM FROM JEAN YANG"))));
+        }, "\xA9 2019 LIFEGRAM FROM JEAN YANG")))));
       } // const posts = Object.values(this.props.posts);
       // debugger
       // if (this.state.loaded === false) {

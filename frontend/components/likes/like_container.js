@@ -14,7 +14,7 @@ const msp = (state, ownProps) => {
     })
     const currentUser = state.entities.users[state.session.id]
 
-    debugger
+    // debugger
 
     return ({
         likes,

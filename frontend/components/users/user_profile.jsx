@@ -82,8 +82,8 @@ class UserProfile extends React.Component {
                                 )} 
                             </div>
                         </div>
-                    </div>
-                    
+
+                        
                     <div className="footer-container">
                         <div className="footer-all">
                             <a className="footer-1" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
@@ -92,6 +92,11 @@ class UserProfile extends React.Component {
 
                         </div>
                     </div>
+
+
+
+                    </div>
+                    
                 </div>
                 
             )

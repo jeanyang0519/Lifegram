@@ -1,7 +1,4 @@
 
-
-
-
 json.comments do 
     @comments.each do |comment|
         json.set! comment.id do

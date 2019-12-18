@@ -3,6 +3,7 @@ class Api::PostsController < ApplicationController
     def index 
         @posts = Post.all
         @likes = Like.all 
+        @comments =  Comment.all 
     end
 
     def create

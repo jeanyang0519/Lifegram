@@ -4,7 +4,7 @@ json.user do
 end 
 
 json.posts do 
-    # debugger
+    
     @user.posts.each do |post|
         json.set! post.id do
             json.partial!('/api/posts/post', post: post)

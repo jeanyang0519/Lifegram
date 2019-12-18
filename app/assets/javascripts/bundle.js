@@ -648,8 +648,10 @@ function (_React$Component) {
   _createClass(Like, [{
     key: "handlecreate",
     value: function handlecreate() {
+      // debugger
       this.props.createLike({
-        post_id: this.props.postId
+        likeable_id: this.props.post.id,
+        likeable_type: "Post"
       });
     }
   }, {
@@ -670,7 +672,7 @@ function (_React$Component) {
           currentUser = _this$props.currentUser;
 
       if (likeUsers.includes(currentUser)) {
-        // debugger;
+        debugger;
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "like-icon",
           src: window.redlike,
@@ -680,6 +682,7 @@ function (_React$Component) {
           src: window.comment
         }));
       } else {
+        debugger;
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "like-icon",
           src: window.like,

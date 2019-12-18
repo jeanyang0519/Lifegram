@@ -13,9 +13,12 @@ class Like extends React.Component {
     }
 
     handlecreate() {
-
+// debugger
         this.props.createLike({
-            post_id: this.props.postId
+            
+            likeable_id: this.props.post.id,
+            likeable_type: "Post"
+            
         });
     }
 
@@ -35,7 +38,7 @@ class Like extends React.Component {
 
 
         if (likeUsers.includes(currentUser)) {
-            // debugger;
+            debugger;
             return (
             <div >
                 <img className="like-icon" src={window.redlike} onClick={this.handleremove} />
@@ -43,6 +46,7 @@ class Like extends React.Component {
             </div>
             )
         } else {
+            debugger;
             return (
             <div >
                 <img className="like-icon" src={window.like} onClick={this.handlecreate} />

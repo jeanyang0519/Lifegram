@@ -1,0 +1,35 @@
+.option-1 {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    background-color: white;
+    color: black;
+    font-weight: 500;
+    width: 240px;
+    height: 55px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    font-family: 'proxima-nova', sans-serif;  
+    font-size: 13px;
+    border-bottom: 1px solid #e6e6e6;
+    cursor: pointer;
+}
+
+.option-2 {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 4px 8px;
+    width: 240px;
+    height: 55px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    color: black;
+    font-family: 'proxima-nova', sans-serif;  
+    font-size: 13px;
+    cursor: pointer;
+}

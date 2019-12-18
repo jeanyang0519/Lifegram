@@ -1,34 +1,57 @@
 import React from 'react';
-// import PostIndexItemContainer from './post_index_item_container';
+import PostIndexItemContainer from './post_index_item_container'
 import HeaderContainer from '../header/header_container';
 
+// import PostIndexItem from './post_index_item';
+
 class PostIndex extends React.Component {
-
-
+    
     constructor(props) {
         super(props);
         
-        
+        this.state = {
+            _isMounted: false,
+            loaded: false
+        }
     }
 
     componentDidMount() {
-        this.props.fetchAllPosts()
-            
+        this.state._isMounted = true;
+
+
+        this.props.fetchAllPosts() 
+        this.props.fetchUsers()
+            .then(() => {
+                this.setState({loaded: true})
+            });
     }
+
+   
 
     render() {
         const posts = Object.values(this.props.posts);
-        const post = posts.map(post => (
-            <li key={post.id}>{post.body}</li>
-            ))
-        return (
-            <main>
+        
+        // debugger
+        
+        if (this.state.loaded === false) {
+            return null
+        } else {
+            return (
+            <div className="feed">
                 <HeaderContainer />
-                <ul>
-                    {post}
-                </ul>
-            </main>
-        );
+                {posts.map((post, idx) => {
+                    let user = this.props.users[post.author_id];
+                    return <PostIndexItemContainer
+                        key={idx}
+                        user={user}
+                        post={post} />;
+                })}
+                
+            </div>
+            )
+        }
+
+
     }
 }
 

@@ -30,7 +30,13 @@ class User < ApplicationRecord
     class_name: :Post,
     dependent: :destroy
     
+  has_one_attached :profile_photo, dependent: :destroy  
   has_many :comments 
+  has_many :likes
+
+
+  has_many :followers
+  has_many :followees
   has_many :likes
 
   def self.find_by_credentials(username, password)

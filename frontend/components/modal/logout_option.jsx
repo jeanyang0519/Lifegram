@@ -18,8 +18,8 @@ class LogoutOption extends React.Component {
     render() {
         return (
             <div>
-                <div className="logoutOption" onClick={this.handleLogout}>Log Out</div>
-                <div className="cancelOption" onClick={() => (this.props.closeModal())}>Cancel</div>    
+                <div className="option-1" onClick={this.handleLogout}>Log Out</div>
+                <div className="option-2" onClick={() => (this.props.closeModal())}>Cancel</div>    
             </div>
         )
     }

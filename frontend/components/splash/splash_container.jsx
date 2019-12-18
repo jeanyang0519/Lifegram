@@ -16,9 +16,6 @@ const mdp = (dispatch) => ({
     logout: () => dispatch(logout()),
     login: user => dispatch(login(user)),
     clearErrors: () => dispatch(clearErrors()),
-
-
-
 });
 
 export default connect(msp, mdp)(Splash);

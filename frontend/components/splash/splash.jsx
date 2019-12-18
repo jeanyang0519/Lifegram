@@ -32,7 +32,7 @@ class Splash extends React.Component {
 
     handleDemoSubmit(e) {
         e.preventDefault();
-        const user = { email: "timmy@gmail.com", username: "Timmy", password: "123456" }
+        const user = { email: "jean@gmail.com", username: "Jean", password: "123456" }
         this.props.login(user);
     }
 
@@ -49,7 +49,7 @@ class Splash extends React.Component {
         })
         
             return (
-                <main className="all">
+                <div className="all">
                     <div className="content">
                         <img className="photo" src={window.signupPhoto} />
                         <div className="session">
@@ -74,14 +74,16 @@ class Splash extends React.Component {
                         </div>
                     </div>
                     
-                    <div className="footer-all">
-                        <a className="footer" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
-                        <a className="footer" href="https://github.com/jeanyang0519">GITHUB</a>
-                        <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
+                    <div className="footer-container">
+                        <div className="footer-all">
+                            <a className="footer-1" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
+                            <a className="footer-2" href="https://github.com/jeanyang0519">GITHUB</a>
+                            <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
 
+                        </div>
                     </div>
                     
-                </main>
+                </div>
 
             );
     }

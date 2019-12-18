@@ -1,5 +1,5 @@
 .Nav {
-    //   background-color: transparent;
+      background-color: white;
       border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
       display: flex;
       position: fixed;
@@ -47,6 +47,7 @@
     .logout {
         height: 30px;
         margin-right: 30px;
+        cursor: pointer;
     }
 
     .profile {
@@ -56,6 +57,7 @@
     .add {
         height: 30px;
         margin-right: 30px;
+        cursor: pointer;
     }
     // .Nav-menus {
     //   display: flex;

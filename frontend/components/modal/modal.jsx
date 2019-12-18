@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import PostUploadContainer from '../posts/post_upload_container';
 import LogoutOptionContainer from './logout_option_container'
+import PostOptionContainer from './post_option_container';
 // import LogoutFormContainer from '../session/logout_form_container';
 
 
@@ -18,6 +19,9 @@ function Modal({ modal, closeModal }) {
         case 'logoutOption':
             component = <LogoutOptionContainer />;
             break;
+        case 'postOption':
+            component = <PostOptionContainer/>
+            break;
         default:
             return null;
     }
@@ -30,16 +34,18 @@ function Modal({ modal, closeModal }) {
     );
 }
 
-const mapStateToProps = state => {
+const msp = state => {
+    // debugger
     return {
-        modal: state.modal
+        modal: state.modal,
+        postId: state.ui.currentPostId
     };
 };
 
-const mapDispatchToProps = dispatch => {
+const mdp = dispatch => {
     return {
         closeModal: () => dispatch(closeModal())
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default connect(msp, mdp)(Modal);

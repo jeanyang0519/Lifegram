@@ -74,11 +74,13 @@ class SessionForm extends React.Component {
                             </form>
                         </div>
                     </div>
-                    <div className="footer-all">
-                        <a className="footer" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
-                        <a className="footer" href="https://github.com/jeanyang0519">GITHUB</a>
-                        <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
+                    <div className="footer-container">
+                        <div className="footer-all">
+                            <a className="footer-1" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
+                            <a className="footer-2" href="https://github.com/jeanyang0519">GITHUB</a>
+                            <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
 
+                        </div>
                     </div>
                 </main>
             )
@@ -109,11 +111,13 @@ class SessionForm extends React.Component {
                             </form>
                         </div>
                     </div>
-                    <div className="footer-all">
-                        <a className="footer" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
-                        <a className="footer" href="https://github.com/jeanyang0519">GITHUB</a>
-                        <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
+                    <div className="footer-container">
+                        <div className="footer-all">
+                            <a className="footer-1" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
+                            <a className="footer-2" href="https://github.com/jeanyang0519">GITHUB</a>
+                            <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
 
+                        </div>
                     </div>
                 </main>
             )
@@ -123,7 +127,7 @@ class SessionForm extends React.Component {
                     <SplashContainer />
                 </div>
 
-                //create splash 
+                
             )
         }
         

@@ -49,15 +49,15 @@ user4 = User.create!({
 
 post1 = Post.create!({
     id: 1,
-    location: "Chicago",
-    body: "Can we go back inside?",
-    author_id: 2
+    location: "Hawaii",
+    body: "Let me go back to Hawaii",
+    author_id: 1
 })
 
 post2 = Post.create!({
     id:2,
     location: "Canada",
-    body: "Chilling",
+    body: "Real nature bud",
     author_id: 3
 })
 
@@ -65,6 +65,13 @@ post3 = Post.create!({
     id: 3,
     location: 'New York',
     body: "Chilling in the sunshine",
+    author_id: 1
+})
+
+post4 = Post.create!({
+    id: 4,
+    location: 'Hawaii',
+    body: "I miss hiking a lot.",
     author_id: 1
 })
 
@@ -92,6 +99,38 @@ user1.profile_photo.attach(io: file1, filename: 'profile1.jpg')
 file2 = open('https://lifegram-seeds.s3.amazonaws.com/ny1.jpg')
 post3.photo.attach(io: file2, filename: 'ny1.jpg')
 
+file3 = open('https://lifegram-seeds.s3.amazonaws.com/hawaii1.jpg')
+post1.photo.attach(io: file3, filename: 'hawaii1.jpg')
+
+file4 = open('https://lifegram-seeds.s3.amazonaws.com/canada1.jpg')
+post2.photo.attach(io: file4, filename: 'canada1.jpg')
+
+file5 = open('https://lifegram-seeds.s3.amazonaws.com/hawaii3.jpg')
+post4.photo.attach(io: file5, filename: 'hawaii3.jpg')
+
+comment1 = Comment.create!({
+    command_body: "sooo beautilful!!",
+    post_id: post1.id,
+    user_id: user1.id
+})
+
+comment2 = Comment.create!({
+    command_body: "cool",
+    post_id: post1.id,
+    user_id: user2.id
+})
+
+comment3 = Comment.create!({
+    command_body: "We should go hiking sooon!",
+    post_id: post2.id,
+    user_id: user1.id
+})
+
+comment4 = Comment.create!({
+    command_body: "Classic",
+    post_id: post3.id,
+    user_id: user2.id
+})
 
 
 

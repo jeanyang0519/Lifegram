@@ -1,6 +1,7 @@
 class Api::LikesController < ApplicationController
   def index
     @likes = Like.all
+    # debugger
     render :index
   end
 
@@ -24,7 +25,8 @@ class Api::LikesController < ApplicationController
     @like = Like.find(params[:id])
     # debugger
         if @like.destroy && @like.user_id === current_user.id
-            render :index 
+            # @likes
+            render :show 
         else
             render json: ["Something went wrong"], status: 404
         end 

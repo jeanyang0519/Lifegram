@@ -4,6 +4,7 @@ import { fetchAllComments } from '../../actions/comment_actions';
 import { connect } from 'react-redux';
 import PostIndex from './post_index';
 
+
 const msp = state => ({
     posts: state.entities.posts,
     users: state.entities.users,

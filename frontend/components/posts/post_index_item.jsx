@@ -1,6 +1,7 @@
 import React from 'react';
 import LikeContainer from '../likes/like_container';
 import CommentIndexContainer from '../comments/comment_index_container';
+import CommentFormContainer from '../comments/comment_form_container';
 
 class PostIndexItem extends React.Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class PostIndexItem extends React.Component {
     render() {
         const profilePhoto = this.props.user.profilePhoto ? 
         (this.props.user.profilePhoto) : (window.italy)
-
+// debugger
         // debugger
         return(
             <div className="post-item">
@@ -47,16 +48,18 @@ class PostIndexItem extends React.Component {
                         {/* <img className="comment-icon" src={window.comment}></img> */}
                     </div>
 
-                    <div>
-                        <CommentIndexContainer post={this.props.post} />
-                    </div>
+                    
                     
                 </div>
 
                 <div className="post-body">
-                    <div>{this.props.user.username}</div>
-                    <p>{this.props.post.body}</p>
-    
+                    <div className="post-body-1">
+                        <p className="post-authorname">{this.props.user.username}</p>
+                        <p>{this.props.post.body}</p>
+                    </div>
+                    <div className="post-body-2">
+                        <CommentIndexContainer post={this.props.post} users={this.props.users} />
+                    </div>
                     
                 </div>
 
@@ -64,11 +67,12 @@ class PostIndexItem extends React.Component {
                     {this.props.post.created_at}
                 </div>
 
-                <div className="post-show-comment">
+                <CommentFormContainer postId={this.props.post.id}/>
+                {/* <div className="post-show-comment">
                     <input type="text" placeholder="Add a Comment..." />
                     <a href="#">Post</a>
-                </div>
-
+                </div> */}
+                 
             </div>
 
         )

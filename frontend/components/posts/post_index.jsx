@@ -40,10 +40,11 @@ class PostIndex extends React.Component {
             <div className="feed">
                 <HeaderContainer />
                 {posts.map((post, idx) => {
-                    let user = this.props.users[post.author_id];
-                    
+                    const user = this.props.users[post.author_id];
+                    const users = this.props.users
                     return <PostIndexItemContainer
                         key={idx}
+                        users={users}
                         user={user}
                         post={post}
                         />;

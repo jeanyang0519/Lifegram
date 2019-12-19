@@ -1,6 +1,9 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container';
-// import { fetchPost } from '../../actions/post_actions';
+import LikeContainer from '../likes/like_container';
+import CommentIndexContainer from '../comments/comment_index_container';
+import CommentFormContainer from '../comments/comment_form_container';
+
 
 class PostShow extends React.Component {
     constructor(props) {
@@ -58,17 +61,20 @@ class PostShow extends React.Component {
                                             
                                         <div className="post-show-body-detail">
                                                 {this.props.post.body}
+                                        <CommentIndexContainer post={this.props.post} users={this.props.users} />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="post-icon">
-                                    <img className="like-icon" src={window.like}></img>
-                                    <img className="comment-icon" src={window.comment}></img>
+                                    <LikeContainer post={this.props.post} />
+                                    {/* <img className="like-icon" src={window.like}></img>
+                                    <img className="comment-icon" src={window.comment}></img> */}
                                 </div>
-                                <div className="post-show-comment">
+                            <CommentFormContainer postId={this.props.post.id}/>
+                                {/* <div className="post-show-comment">
                                     <input type="text" placeholder="Add a Comment..."/>
                                     <a href="#">Post</a>
-                                </div>
+                                </div> */}
                         </div>
                     
                     

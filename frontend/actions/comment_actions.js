@@ -13,9 +13,10 @@ const receiveAllComments = (comments) => {
     })
 };
 
-const receiveComment = (comment) => ({
+const receiveComment = ({comment, post}) => ({
     type: RECEIVE_COMMENT,
-    comment
+    comment,
+    post
 });
 
 const deleteComment = id => ({
@@ -26,7 +27,7 @@ const deleteComment = id => ({
 
 
 export const fetchAllComments = () => dispatch => {
-    // debugger
+    debugger
     return CommentAPIUtil.fetchAllComments()
         .then(comments => dispatch(receiveAllComments(comments)))
 };
@@ -34,20 +35,20 @@ export const fetchAllComments = () => dispatch => {
 export const fetchComment = id => dispatch => {
 
     return CommentAPIUtil.fetchComment(id)
-        .then(comment => (dispatch(receiveComment(comment))))
+        .then(payload => (dispatch(receiveComment(payload))))
 };
 
 
 export const updateComment = comment => dispatch => {
     return CommentAPIUtil.updateComment(comment)
-        .then(comment => dispatch(receiveComment(comment)))
+        .then(payload => dispatch(receiveComment(payload)))
         
 };
     
 export const createComment = comment => dispatch => {
-    // debugger
+    debugger
     return CommentAPIUtil.createComment(comment)
-        .then(comment => dispatch(receiveComment(comment)))       
+        .then(payload => dispatch(receiveComment(payload)))       
 };
 
 export const removeComment = id => dispatch => {

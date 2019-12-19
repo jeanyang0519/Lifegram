@@ -1,3 +1,16 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.comment-username {
+    padding-right: 10px;
+    font-weight: 550;
+}
+
+.comment {
+    display: flex;
+
+    p {
+
+        padding-top: 5px;
+    }
+}

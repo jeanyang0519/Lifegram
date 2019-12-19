@@ -75,14 +75,26 @@
 
 .post-body {
     margin: 0 20px;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    .post-body-1 {
+        display: flex;
+        padding-top: 5px;
 
-        div {
+        .post-authorname {
+            padding-right: 10px;
             font-weight: 550;
         }
+        // div {
+        //     font-weight: 550;
+        // }
 
-        p {
-            margin: 5px 0;
-        }
+        // p {
+        //     margin: 5px 0;
+        // }
+    }
+    
+        
 }
 
 .time {

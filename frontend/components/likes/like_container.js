@@ -9,6 +9,7 @@ const msp = (state, ownProps) => {
     const allLikes = state.entities.posts[ownProps.post.id].like_ids;
     const likes = Object.values(state.entities.likes).filter(like =>
         allLikes.includes(like.id));
+        // debugger
     const likeUsers = ownProps.post.like_ids.map(id => {
         return  state.entities.likes[id].user_id
     })

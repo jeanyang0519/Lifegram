@@ -11,8 +11,12 @@ class Api::CommentsController < ApplicationController
   
   def create 
     @comment = Comment.new(comment_params)
+    debugger
+    # @post = Post.find(params[:id])
     @comment.user_id = current_user.id
-
+    # @comment.post_id = @post.id
+    # @comment.post_id = 3
+      debugger
     if @comment.save
       render :show 
     else

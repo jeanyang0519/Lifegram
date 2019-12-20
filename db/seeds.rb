@@ -8,8 +8,10 @@
 
 require 'open-uri'
 
-User.destroy_all
+Comment.destroy_all
+Like.destroy_all
 Post.destroy_all
+User.destroy_all
 
 user1 = User.create!({
     id: 1, 
@@ -109,25 +111,25 @@ file5 = open('https://lifegram-seeds.s3.amazonaws.com/hawaii3.jpg')
 post4.photo.attach(io: file5, filename: 'hawaii3.jpg')
 
 comment1 = Comment.create!({
-    command_body: "sooo beautilful!!",
+    comment_body: "sooo beautilful!!",
     post_id: post1.id,
     user_id: user1.id
 })
 
 comment2 = Comment.create!({
-    command_body: "cool",
+    comment_body: "cool",
     post_id: post1.id,
     user_id: user2.id
 })
 
 comment3 = Comment.create!({
-    command_body: "We should go hiking sooon!",
+    comment_body: "We should go hiking sooon!",
     post_id: post2.id,
     user_id: user1.id
 })
 
 comment4 = Comment.create!({
-    command_body: "Classic",
+    comment_body: "Classic",
     post_id: post3.id,
     user_id: user2.id
 })

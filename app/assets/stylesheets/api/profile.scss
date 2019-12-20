@@ -100,21 +100,22 @@
     }
 }
 
-// .profile-grid {
-//     display: grid;
-//     grid-template-columns: repeat(auto-fit, minmax(293px, 1fr));
-//     grid-gap: 1rem;
-// }
+.profile-grid {
+
+    display: flex;
+    justify-content: center;
+    
+}
 .profile-items {
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto;
     grid-gap: 1rem;
     padding: 0 10%;
 
 
-    max-width: 750px;
-    margin: auto;
+    
+    
 
     
 }

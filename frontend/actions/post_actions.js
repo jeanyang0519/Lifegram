@@ -17,10 +17,11 @@ const receiveAllPosts = ({posts, likes}) => {
     })
 };
 
-const receivePost = ({post, user}) => ({
+const receivePost = ({post, user, likes}) => ({
     type: RECEIVE_POST,
     post,
-    user
+    user,
+    likes
 });
 
 const deletePost = postId => ({

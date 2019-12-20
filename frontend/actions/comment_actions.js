@@ -27,7 +27,7 @@ const deleteComment = id => ({
 
 
 export const fetchAllComments = () => dispatch => {
-    debugger
+    // debugger
     return CommentAPIUtil.fetchAllComments()
         .then(comments => dispatch(receiveAllComments(comments)))
 };

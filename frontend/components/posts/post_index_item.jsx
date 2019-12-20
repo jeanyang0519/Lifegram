@@ -23,9 +23,9 @@ class PostIndexItem extends React.Component {
                         <img className="feed-profile-photo" src={profilePhoto} /> 
                         
                         <div className="feed-user-info">
-                            {this.props.user.username}
-                            <br/>
-                            <span>{this.props.post.location}</span> 
+                            <div>{this.props.user.username}</div>
+                            
+                            <div className="location">{this.props.post.location}</div>
                         </div>
                     </div>
                     

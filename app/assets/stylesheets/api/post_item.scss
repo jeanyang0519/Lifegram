@@ -7,7 +7,7 @@
 
 
     display: grid;
-    grid-template-rows: 60px auto 40px auto 20px 56px;
+    grid-template-rows: 60px auto 50px auto 20px 56px;
     max-width: 600px;
     grid-gap: 6px;
 }
@@ -37,10 +37,20 @@
     // display: flex;
     // flex-direction: column;
     margin-top: 5px;
+    // p {
+    //     padding
+    // }
+
     span {
         font-size: 12px;
         margin-top: 5px;
+        padding: 3px 0;
     }
+}
+
+.location {
+    padding: 3px 0;
+    font-size: 12px;
 }
 
 
@@ -67,6 +77,10 @@
 .like-icon {
     height: 24px;
     margin-right: 12px;
+}
+
+.likes-count {
+    padding: 7px 0px;
 }
 
 .comment-icon {

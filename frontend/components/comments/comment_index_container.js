@@ -10,6 +10,7 @@ const msp = (state, ownProps) => {
     const allComments = state.entities.posts[ownProps.post.id].comment_ids;
     const comments = Object.values(state.entities.comments).filter(comment =>
         allComments.includes(comment.id));
+        // debugger
     // const commenterIds = ownProps.post.comment_ids.map(id => {
     //     return state.entities.comments[id].user_id
     // })

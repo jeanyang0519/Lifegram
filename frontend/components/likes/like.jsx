@@ -42,6 +42,8 @@ class Like extends React.Component {
 
 
     showLike() {
+
+        
         const { likeUsers, currentUser } = this.props;
 
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container';
 import LikeContainer from '../likes/like_container';
-import CommentIndexContainer from '../comments/comment_index_container';
+// import CommentIndexContainer from '../comments/comment_index_container';
 import CommentFormContainer from '../comments/comment_form_container';
+import CommentIndexItemContainer from '../comments/comment_index_item_container'
 
 
 class PostShow extends React.Component {
@@ -12,10 +13,12 @@ class PostShow extends React.Component {
 
     }
     componentDidMount() {
+        debugger
         this.props.fetchPost(this.props.match.params.id)
     }
 
     render() {
+        debugger
         if (this.props.post === undefined || this.props.currentUser === undefined ) {
             return null
         } else {
@@ -56,13 +59,21 @@ class PostShow extends React.Component {
                                     <img className="feed-profile-photo" src={this.props.currentUser.profilePhoto} />
                                     <div className="post-show-body-info">
                                         <div className="post-show-body-username">
+                                            <span className="post-show-authorname">
                                             {this.props.currentUser.username}
+                                            </span>
+                                            {this.props.post.body}
                                         </div>
                                             
                                         <div className="post-show-body-detail">
-                                                {this.props.post.body}
-                                        <CommentIndexContainer post={this.props.post} users={this.props.users} />
+                                                
                                         </div>
+                                               {/* ##currentUser from the post show container */}
+                                            <div className="post-show-comments">
+                                                <CommentIndexItemContainer post={this.props.post}/>
+                                            </div>
+                                        {/* <CommentIndexContainer post={this.props.post} users={this.props.users} /> */}
+                                        
                                     </div>
                                 </div>
                                 <div className="post-icon">

@@ -1943,9 +1943,10 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      var profilePhoto = this.props.user.profilePhoto ? this.props.user.profilePhoto : window.italy; // debugger
+      // const profilePhoto = this.props.user.profilePhoto ? 
+      // (this.props.user.profilePhoto) : (window.italy)
       // debugger
-
+      // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1954,7 +1955,7 @@ function (_React$Component) {
         className: "post-header-user-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "feed-profile-photo",
-        src: profilePhoto
+        src: this.props.user.profilePhoto
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feed-user-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.user.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3622,6 +3623,7 @@ var sessionErrorsReducer = function sessionErrorsReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ERRORS"]:
+      debugger;
       return action.errors;
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
@@ -3987,7 +3989,7 @@ var login = function login(user) {
 var signup = function signup(user) {
   return $.ajax({
     method: 'POST',
-    url: '/api/user',
+    url: '/api/users',
     data: {
       user: user
     }

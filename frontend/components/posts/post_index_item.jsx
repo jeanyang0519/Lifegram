@@ -9,8 +9,8 @@ class PostIndexItem extends React.Component {
     }
 
     render() {
-        const profilePhoto = this.props.user.profilePhoto ? 
-        (this.props.user.profilePhoto) : (window.italy)
+        // const profilePhoto = this.props.user.profilePhoto ? 
+        // (this.props.user.profilePhoto) : (window.italy)
 // debugger
         // debugger
         return(
@@ -20,7 +20,7 @@ class PostIndexItem extends React.Component {
                 <div className="post-header">
                     <div className="post-header-user-info">
                         
-                        <img className="feed-profile-photo" src={profilePhoto} /> 
+                        <img className="feed-profile-photo" src={this.props.user.profilePhoto} /> 
                         
                         <div className="feed-user-info">
                             <div>{this.props.user.username}</div>

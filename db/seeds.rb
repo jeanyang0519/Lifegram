@@ -95,8 +95,14 @@ like3 = Like.create!({
     likeable_id: post3.id
 })
 
-file1 = open('https://lifegram-seeds.s3.amazonaws.com/profile1.jpg')
-user1.profile_photo.attach(io: file1, filename: 'profile1.jpg')
+profile1 = open('https://lifegram-seeds.s3.amazonaws.com/profile1.jpg')
+user1.profile_photo.attach(io: profile1, filename: 'profile1.jpg')
+
+profile2 = open('https://lifegram-seeds.s3.amazonaws.com/timmy.jpg')
+user2.profile_photo.attach(io: profile2, filename: 'timmy.jpg')
+
+profile3 = open('https://lifegram-seeds.s3.amazonaws.com/patrick.jpg')
+user3.profile_photo.attach(io: profile3, filename: 'patrick.jpg')
 
 file2 = open('https://lifegram-seeds.s3.amazonaws.com/ny1.jpg')
 post3.photo.attach(io: file2, filename: 'ny1.jpg')

@@ -1,10 +1,21 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.comment-profile-photo {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    margin-right: 13px;
+    margin: -7px 13px 28px 0;
+}
+
 .comment-username {
     padding-right: 10px;
-    font-weight: 550;
+    font-weight: 700;
+
 }
+
+
 
 .comment {
     display: flex;
@@ -14,3 +25,4 @@
         padding-top: 5px;
     }
 }
+

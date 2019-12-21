@@ -32,7 +32,7 @@ class CommentIndexItem extends React.Component {
         //                     allComments.includes(comment.id));
 
         // debugger
-        debugger
+        // debugger
         // const allthis.props.post.comment_ids
         return (
             <div className="">
@@ -44,7 +44,7 @@ class CommentIndexItem extends React.Component {
                     return (
 
                         <div className="comment" >
-                            {/* <img src={profilePhoto} /> */}
+                            <img className="comment-profile-photo" src={this.props.users[comment.user_id].profilePhoto} />
                             <p className="comment-username">{this.props.users[comment.user_id].username}</p>
                             <p className="comment-body">{comment.comment_body}</p>
                         </div>

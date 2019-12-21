@@ -2,7 +2,7 @@
     background: white;
     border: 0.8px solid #d8d8d8d7;
     border-radius: 3px;
-    margin-top: 60px;
+    margin: 60px;
     overflow: hidden;
 
 
@@ -34,22 +34,23 @@
     margin-right: 13px;
 }
 .feed-user-info {
-    // display: flex;
-    // flex-direction: column;
+    
     margin-top: 5px;
-    // p {
-    //     padding
-    // }
+    
 
-    span {
-        font-size: 12px;
-        margin-top: 5px;
-        padding: 3px 0;
-    }
+    // span {
+    //     font-size: 12px;
+    //     margin-top: 5px;
+    //     padding: 3px 0;
+    // }
+}
+
+.post-authorname {
+    font-weight: 700;
 }
 
 .location {
-    padding: 3px 0;
+    padding: 4px 0;
     font-size: 12px;
 }
 
@@ -97,15 +98,9 @@
 
         .post-authorname {
             padding-right: 10px;
-            font-weight: 550;
+            font-weight: 700;
         }
-        // div {
-        //     font-weight: 550;
-        // }
-
-        // p {
-        //     margin: 5px 0;
-        // }
+       
     }
     
         

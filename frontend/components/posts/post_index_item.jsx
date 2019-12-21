@@ -23,7 +23,7 @@ class PostIndexItem extends React.Component {
                         <img className="feed-profile-photo" src={this.props.user.profilePhoto} /> 
                         
                         <div className="feed-user-info">
-                            <div>{this.props.user.username}</div>
+                            <div className="post-authorname">{this.props.currentUser.username}</div>
                             
                             <div className="location">{this.props.post.location}</div>
                         </div>
@@ -44,8 +44,6 @@ class PostIndexItem extends React.Component {
                     <div className="post-icon">
                         <LikeContainer post={this.props.post}/>
 
-                        {/* {<img className="like-icon" src={window.like}></img>} */}
-                        {/* <img className="comment-icon" src={window.comment}></img> */}
                     </div>
 
                     
@@ -68,11 +66,7 @@ class PostIndexItem extends React.Component {
                 </div>
 
                 <CommentFormContainer postId={this.props.post.id}/>
-                {/* <div className="post-show-comment">
-                    <input type="text" placeholder="Add a Comment..." />
-                    <a href="#">Post</a>
-                </div> */}
-                 
+               
             </div>
 
         )

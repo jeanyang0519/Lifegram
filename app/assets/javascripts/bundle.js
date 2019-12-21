@@ -135,7 +135,6 @@ var deleteComment = function deleteComment(id) {
 
 var fetchAllComments = function fetchAllComments() {
   return function (dispatch) {
-    // debugger
     return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllComments"]().then(function (comments) {
       return dispatch(receiveAllComments(comments));
     });
@@ -157,7 +156,6 @@ var updateComment = function updateComment(comment) {
 };
 var createComment = function createComment(comment) {
   return function (dispatch) {
-    debugger;
     return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["createComment"](comment).then(function (payload) {
       return dispatch(receiveComment(payload));
     });
@@ -846,15 +844,18 @@ function (_React$Component) {
         // const comments = Object.values(state.entities.comments).filter(comment =>
         //                     allComments.includes(comment.id));
         // debugger
-
-        debugger; // const allthis.props.post.comment_ids
+        // debugger
+        // const allthis.props.post.comment_ids
 
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: ""
         }, commentsForPost.map(function (comment) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "comment"
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+            className: "comment-profile-photo",
+            src: _this.props.users[comment.user_id].profilePhoto
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
             className: "comment-username"
           }, _this.props.users[comment.user_id].username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
             className: "comment-body"
@@ -1959,7 +1960,9 @@ function (_React$Component) {
         src: this.props.user.profilePhoto
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feed-user-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.user.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-authorname"
+      }, this.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "location"
       }, this.props.post.location))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "post-option",
@@ -2104,7 +2107,7 @@ function (_React$Component) {
   _createClass(PostShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      debugger;
+      // debugger
       this.props.fetchPost(this.props.match.params.id);
     }
   }, {
@@ -2112,8 +2115,7 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      debugger;
-
+      // debugger
       if (this.props.post === undefined || this.props.currentUser === undefined) {
         return null;
       } else {
@@ -2137,7 +2139,11 @@ function (_React$Component) {
           src: this.props.currentUser.profilePhoto
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "feed-user-info"
-        }, this.props.currentUser.username, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.post.location))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "post-authorname"
+        }, this.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "location"
+        }, this.props.post.location))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "post-option",
           src: window.option,
           onClick: function onClick() {
@@ -2145,22 +2151,20 @@ function (_React$Component) {
           }
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "post-show-body"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "feed-profile-photo",
-          src: this.props.currentUser.profilePhoto
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "post-show-body-info"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "post-show-body-username"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "post-show-authorname"
-        }, this.props.currentUser.username), this.props.post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "post-show-body-detail"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "comment"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "comment-profile-photo",
+          src: this.props.currentUser.profilePhoto
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "comment-username"
+        }, this.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "comment-body"
+        }, this.props.post.body)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "post-show-comments"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_index_item_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
           post: this.props.post
-        })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "post-icon"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_likes_like_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
           post: this.props.post
@@ -3555,8 +3559,7 @@ var postsReducer = function postsReducer() {
       return newState;
 
     case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__["RECEIVE_COMMENT"]:
-      debugger; // newState[action.comment.id] = action.comment
-
+      // newState[action.comment.id] = action.comment
       newState[action.comment.post_id].comment_ids.push(action.comment.id);
       return newState;
 

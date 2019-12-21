@@ -13,11 +13,7 @@
     
 }
 
-// .profile-header-content {
-//     padding: 0 1rm;
-//      grid-row-gap: 100px;
-//      grid-column-gap: 1.5rem;
-// }
+
 
 .profile-header {
     display: grid;
@@ -25,19 +21,13 @@
     
 }
 
-// .profile-posts-all{
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: flex-start;
-//     margin: auto;
-//     width: 80%;
-//     max-width: 940px;
-// }
+
 
 .profile-photo {
     height: 150px;
     border-radius: 50%;
     grid-column-start: 2;
+    justify-self: center
     // place-self: center;
 }
 
@@ -63,7 +53,7 @@
     }
 
     .user-info-name {
-        font-weight: 600;
+        font-weight: 700;
     }
 }
 

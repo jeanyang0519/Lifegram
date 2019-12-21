@@ -13,12 +13,12 @@ class PostShow extends React.Component {
 
     }
     componentDidMount() {
-        debugger
+        // debugger
         this.props.fetchPost(this.props.match.params.id)
     }
 
     render() {
-        debugger
+        // debugger
         if (this.props.post === undefined || this.props.currentUser === undefined ) {
             return null
         } else {
@@ -42,9 +42,9 @@ class PostShow extends React.Component {
                                     <div className="post-header-user-info">
                                         <img className="feed-profile-photo" src={this.props.currentUser.profilePhoto} />
                                         <div className="feed-user-info">
-                                            {this.props.currentUser.username}
-                                            <br />
-                                            <span>{this.props.post.location}</span>
+                                            <div className="post-authorname">{this.props.currentUser.username}</div>
+                                            
+                                            <div className="location">{this.props.post.location}</div>
                                         </div>
                                     </div>
 
@@ -56,25 +56,17 @@ class PostShow extends React.Component {
                                 </div>
                             
                                 <div className="post-show-body">
-                                    <img className="feed-profile-photo" src={this.props.currentUser.profilePhoto} />
-                                    <div className="post-show-body-info">
-                                        <div className="post-show-body-username">
-                                            <span className="post-show-authorname">
-                                            {this.props.currentUser.username}
-                                            </span>
-                                            {this.props.post.body}
-                                        </div>
-                                            
-                                        <div className="post-show-body-detail">
-                                                
-                                        </div>
-                                               {/* ##currentUser from the post show container */}
-                                            <div className="post-show-comments">
-                                                <CommentIndexItemContainer post={this.props.post}/>
-                                            </div>
-                                        {/* <CommentIndexContainer post={this.props.post} users={this.props.users} /> */}
+                                    <div className="comment">
+                                        
+                                        <img className="comment-profile-photo" src={this.props.currentUser.profilePhoto} />
+                                        <p className="comment-username">{this.props.currentUser.username}</p>
+                                        <p className="comment-body">{this.props.post.body}</p>
                                         
                                     </div>
+                                    <div className="post-show-comments">
+                                        <CommentIndexItemContainer post={this.props.post}/>
+                                    </div>
+
                                 </div>
                                 <div className="post-icon">
                                     <LikeContainer post={this.props.post} />

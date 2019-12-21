@@ -88,7 +88,7 @@ class PostForm extends React.Component {
                         Upload
                         <input id="file-upload" type="file" accept="image/*" onChange={this.handleFile} />
                     </label>
-                    {/* <label htmlFor="photo"></label> */}
+                    
                     
                 </div>
             )
@@ -103,7 +103,7 @@ class PostForm extends React.Component {
                         
                         <button className="postButton" onClick={this.handleSubmit}>Post</button>
                         
-                        {/* <button onClick={this.handleCancel}>Cancel</button> */}
+                        
                     </div>
                 </div>
             )

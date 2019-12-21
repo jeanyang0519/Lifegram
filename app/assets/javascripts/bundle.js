@@ -1816,7 +1816,8 @@ function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      var posts = Object.values(this.props.posts); // debugger
+      var posts = Object.values(this.props.posts); // const postsReverse = posts.reverse();
+      // debugger
 
       if (this.state.loaded === false) {
         return null;

@@ -30,7 +30,7 @@ class PostIndex extends React.Component {
 
     render() {
         const posts = Object.values(this.props.posts);
-        
+        // const postsReverse = posts.reverse();
         // debugger
         
         if (this.state.loaded === false) {
@@ -39,7 +39,7 @@ class PostIndex extends React.Component {
             return (
             <div className="feed">
                 <HeaderContainer />
-                {posts.map((post, idx) => {
+                    {posts.map((post, idx) => {
                     const user = this.props.users[post.author_id];
                     const users = this.props.users
                     return <PostIndexItemContainer

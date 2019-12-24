@@ -4,11 +4,11 @@ import { closeModal } from '../../actions/modal_actions';
 import { withRouter } from 'react-router';
 
 
-const msp = (state, ownProps) => {
-    // debugger
+const msp = (state) => {
+    
     return ({
-        // currentUser: state.entities.users[state.session.id],
-        // post: state.entities.posts[ownProps.match.params.postId]
+        
+        
         postId: state.ui.currentPostId
     })
     

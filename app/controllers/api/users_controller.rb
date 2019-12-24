@@ -1,8 +1,7 @@
 class Api::UsersController < ApplicationController
   def index
     @users = User.all 
-    # @posts = Post.all
-    # debugger
+   
     render :index
   end 
   def create

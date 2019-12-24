@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PostUploadContainer from '../posts/post_upload_container';
 import LogoutOptionContainer from './logout_option_container'
 import PostOptionContainer from './post_option_container';
+import EditProfileOption from './edit_profile_option';
 // import LogoutFormContainer from '../session/logout_form_container';
 
 
@@ -22,6 +23,9 @@ function Modal({ modal, closeModal }) {
         case 'postOption':
             component = <PostOptionContainer/>
             break;
+        case 'editProfileOption':
+            component = <EditProfileOption />
+            break;
         default:
             return null;
     }
@@ -35,7 +39,7 @@ function Modal({ modal, closeModal }) {
 }
 
 const msp = state => {
-    // debugger
+    
     return {
         modal: state.modal,
         postId: state.ui.currentPostId

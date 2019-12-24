@@ -3,6 +3,7 @@ import { logout } from '../../actions/session_actions';
 import { fetchUser } from '../../actions/user_action';
 import { fetchAllPosts } from '../../actions/post_actions';
 import UserProfile from './user_profile';
+import { openModal } from '../../actions/modal_actions';
 // import { openModal, closeModal } from '../../actions/modal_actions';
 
 
@@ -13,7 +14,6 @@ const msp = (state, ownProps) => {
     
     let posts = [];
     if (user) {
-        // debugger
          posts = user.post_ids.map(id => state.entities.posts[id])
     } else {
         posts = [null];
@@ -29,7 +29,8 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => ({
     logout: () => dispatch(logout()),
     fetchUser: id => dispatch(fetchUser(id)),
-    fetchAllPosts: () => dispatch(fetchAllPosts())
+    fetchAllPosts: () => dispatch(fetchAllPosts()),
+    openModal: modal => dispatch(openModal(modal))
 });
 
 export default connect(msp, mdp)(UserProfile);

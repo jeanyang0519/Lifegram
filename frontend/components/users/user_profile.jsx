@@ -1,8 +1,8 @@
 import React from 'react';
-// import PostIndexItemContainer from './post_index_item_container'
 import HeaderContainer from '../header/header_container';
 import UserProfileItem from './user_profile_item';
-// import PostIndexItem from './post_index_item';
+// import { openModal } from '../../actions/modal_actions';
+
 
 class UserProfile extends React.Component {
 
@@ -16,25 +16,16 @@ class UserProfile extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
-        // this.props.fetchUser(this.props.match.params.id)
-        // this.props.fetchPost(this.props.match.params.id)
-
         this.props.fetchAllPosts()
             .then(() => {
                 this.setState({ loaded: true })
-            });
-        // this.props.fetchUser(id)
-        //     .then(() => {
-        //         this.setState({ loaded: true })
-        //     });
+            });  
     }
 
 
 
     render() {
-        // const { user } = this.props.user
-        // debugger
+        
         if (this.state.loaded === false) {
             
             return null
@@ -51,7 +42,7 @@ class UserProfile extends React.Component {
                             <div className="user-info">
                                 <div className="user-info-username">
                                     {this.props.user.username}
-                                    <img src={window.settings} />
+                                    <img src={window.settings} onClick={() => this.props.openModal('editProfileOption')}/>
                                     
                                 </div>
                                 <div className="user-info-name">
@@ -60,13 +51,10 @@ class UserProfile extends React.Component {
                                 <div className="user-info-bio">
                                     {this.props.user.bio}
                                 </div>
-                            </div>
-
-                            {/* <div className='profile-setting'>
-                                
-                            </div> */}
+                            </div>   
                             
                         </div>
+
                         <div className="profile-middle-line">
                             <section className="profile-middle">    
                                 <img src={window.menu} />

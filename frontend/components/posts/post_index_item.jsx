@@ -19,11 +19,11 @@ class PostIndexItem extends React.Component {
                 
                 <div className="post-header">
                     <div className="post-header-user-info">
-                        
-                        <img className="feed-profile-photo" src={this.props.user.profilePhoto} /> 
-                        
+                        <div className="feed-profile-photo">
+                            <img  src={this.props.user.profilePhoto} /> 
+                        </div>
                         <div className="feed-user-info">
-                            <div className="post-authorname">{this.props.currentUser.username}</div>
+                            <div className="post-authorname">{this.props.user.username}</div>
                             
                             <div className="location">{this.props.post.location}</div>
                         </div>

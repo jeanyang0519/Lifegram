@@ -834,7 +834,6 @@ function (_React$Component) {
   _createClass(CommentIndexItem, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // debugger
       this.props.fetchUsers();
     }
   }, {
@@ -845,30 +844,20 @@ function (_React$Component) {
       if (this.props === undefined || this.props.users === undefined) {
         return null;
       } else {
-        // debugger
-        // const profilePhoto = this.props.user.profilePhoto ?
-        // (this.props.user.profilePhoto) : (window.italy)
-        // debugger
         var allCommentIds = this.props.post.comment_ids;
         var commentsForPost = this.props.comments.filter(function (comment) {
           return allCommentIds.includes(comment.id);
-        }); // this.props.comments.filter(comment => {
-        // })
-        // const comments = Object.values(state.entities.comments).filter(comment =>
-        //                     allComments.includes(comment.id));
-        // debugger
-        // debugger
-        // const allthis.props.post.comment_ids
-
+        });
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: ""
         }, commentsForPost.map(function (comment) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "comment"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "comment-profile-photo"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-            className: "comment-profile-photo",
             src: _this.props.users[comment.user_id].profilePhoto
-          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
             className: "comment-username"
           }, _this.props.users[comment.user_id].username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
             className: "comment-body"
@@ -904,30 +893,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var msp = function msp(state, ownProps) {
-  // debugger
-  // const allComments = state.entities.posts[ownProps.post.id].comment_ids;
-  var comments = Object.values(state.entities.comments); // .filter(comment =>
-  // allComments.includes(comment.id));
-  // const commenterIds = ownProps.post.comment_ids.map(id => {
-  //     return state.entities.comments[id].user_id
-  // })
-
+var msp = function msp(state) {
+  var comments = Object.values(state.entities.comments);
   return {
     comments: comments,
-    // commenterIds,
     users: state.entities.users
   };
 };
 
 var mdp = function mdp(dispatch) {
   return {
-    // fetchAllComments: () => dispatch(fetchAllComments()),
     fetchUsers: function fetchUsers(users) {
       return dispatch(Object(_actions_user_action__WEBPACK_IMPORTED_MODULE_0__["fetchUsers"])(users));
-    } // createComment: comment => dispatch(createComment(comment)),
-    // removeComment: id => dispatch(removeComment(id))
-
+    }
   };
 };
 
@@ -1470,6 +1448,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _logout_option_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./logout_option_container */ "./frontend/components/modal/logout_option_container.js");
 /* harmony import */ var _post_option_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./post_option_container */ "./frontend/components/modal/post_option_container.js");
 /* harmony import */ var _edit_profile_option__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./edit_profile_option */ "./frontend/components/modal/edit_profile_option.jsx");
+/* harmony import */ var _users_update_profile_photo_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../users/update_profile_photo_container */ "./frontend/components/users/update_profile_photo_container.js");
+
 
 
 
@@ -1493,16 +1473,16 @@ function Modal(_ref) {
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_post_upload_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
       break;
 
+    case 'update':
+      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_users_update_profile_photo_container__WEBPACK_IMPORTED_MODULE_7__["default"], null);
+      break;
+
     case 'logoutOption':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_logout_option_container__WEBPACK_IMPORTED_MODULE_4__["default"], null);
       break;
 
     case 'postOption':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_option_container__WEBPACK_IMPORTED_MODULE_5__["default"], null);
-      break;
-
-    case 'editProfileOption':
-      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_profile_option__WEBPACK_IMPORTED_MODULE_6__["default"], null);
       break;
 
     default:
@@ -2049,14 +2029,15 @@ function (_React$Component) {
         className: "post-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-header-user-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feed-profile-photo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "feed-profile-photo",
         src: this.props.user.profilePhoto
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feed-user-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-authorname"
-      }, this.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.user.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "location"
       }, this.props.post.location))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "post-option",
@@ -2120,8 +2101,8 @@ __webpack_require__.r(__webpack_exports__);
 var msp = function msp(state) {
   return {
     currentUser: state.entities.users[state.session.id],
-    posts: state.entities.posts,
-    users: state.entities.users
+    posts: state.entities.posts // users: state.entities.users
+
   };
 };
 
@@ -2228,10 +2209,11 @@ function (_React$Component) {
           className: "post-header"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "post-header-user-info"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "feed-profile-photo"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "feed-profile-photo",
           src: this.props.currentUser.profilePhoto
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "feed-user-info"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "post-authorname"
@@ -2247,10 +2229,11 @@ function (_React$Component) {
           className: "post-show-body"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "comment"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "comment-profile-photo"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "comment-profile-photo",
           src: this.props.currentUser.profilePhoto
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "comment-username"
         }, this.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "comment-body"
@@ -3110,69 +3093,70 @@ function (_React$Component) {
 
     _classCallCheck(this, ProfileEdit);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(ProfileEdit).call(this, props)); // this.state = this.props.user;
-
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ProfileEdit).call(this, props));
     _this.state = {
       name: _this.props.user.name,
-      bio: _this.props.user.bio
+      bio: _this.props.user.bio,
+      profilePhoto: _this.props.user.profilePhoto
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.update = _this.update.bind(_assertThisInitialized(_this));
     return _this;
-  } // not sure
-
+  }
 
   _createClass(ProfileEdit, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      debugger;
       this.props.fetchUser(this.props.match.params.id);
     }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      // let currentUser = this.props.user;
+      var _this2 = this;
+
+      // let currentUser = this.props.user
       var currentUser = {
         id: this.props.user.id
       };
       currentUser.name = this.state.name;
       currentUser.bio = this.state.bio;
+      currentUser.profilePhoto = this.state.profilePhoto;
       e.preventDefault();
-      debugger;
       this.props.updateUser(currentUser).then(function () {
-        debugger;
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
-          to: "/users/:id}"
-        });
-      }); // this.props.updateUser(this.props.match.params.id);
-      // this.props.updateUser(
-      //     this.setState({
-      //         name: this.state.name,
-      //         bio: this.state.bio
-      //     })
-      // );
+        return _this2.props.history.push("/users/".concat(currentUser.id, "/"));
+      });
     }
   }, {
     key: "update",
     value: function update(field) {
-      var _this2 = this;
+      var _this3 = this;
 
       return function (e) {
-        return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
+        return _this3.setState(_defineProperty({}, field, e.currentTarget.value));
       };
     }
   }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
       // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-edit-all"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-edit-form",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_update_profile_photo_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        user: this.props.user
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "edit-photo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "edit-profile-photo",
+        src: this.props.user.profilePhoto
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this4.props.openModal('update');
+        },
+        className: ""
+      }, "Change Profile Photo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "edit-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "edit-title"
@@ -3231,14 +3215,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var msp = function msp(state, ownProps) {
-  debugger;
   return {
     user: state.entities.users[ownProps.match.params.id]
   }; // currentUser: state.entities.users[state.session.id]
 };
 
 var mdp = function mdp(dispatch) {
-  debugger;
   return {
     updateUser: function updateUser(id) {
       return dispatch(Object(_actions_user_action__WEBPACK_IMPORTED_MODULE_2__["updateUser"])(id));
@@ -3248,6 +3230,9 @@ var mdp = function mdp(dispatch) {
     },
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"])());
+    },
+    openModal: function openModal(modal) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["openModal"])(modal));
     }
   };
 };
@@ -3299,14 +3284,24 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(UpdateProfilePhoto).call(this, props));
     _this.state = {
+      // name: this.props.user.name,
+      // bio: this.props.user.bio,
       photoFile: null,
       photoUrl: null
-    };
+    }; // this.update = this.update.bind(this);
+
     _this.handleFile = _this.handleFile.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleCancel = _this.handleCancel.bind(_assertThisInitialized(_this));
     return _this;
-  }
+  } // componentDidMount() {
+  //     debugger
+  //     this.props.fetchUser(this.props.match.params.id);
+  // }
+  // update(field) {
+  //     return e => this.setState({ [field]: e.currentTarget.value });
+  // }
+
 
   _createClass(UpdateProfilePhoto, [{
     key: "handleFile",
@@ -3337,14 +3332,17 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       var _this3 = this;
 
-      e.preventDefault();
+      // let currentUser = { id: this.props.user.id }
+      // currentUser.name = this.state.name;
+      // currentUser.bio = this.state.bio;
+      e.preventDefault(); // this.props.updateUser(currentUser)
+
       var formData = new FormData();
 
       if (this.state.photoFile) {
         formData.append('user[profile_photo]', this.state.photoFile);
       }
 
-      debugger;
       this.props.updateUserPhoto(this.props.user.id, formData).then(function () {
         _this3.setState({
           photoFile: null,
@@ -3368,10 +3366,15 @@ function (_React$Component) {
 
       if (this.state.photoFile === null) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "upload-1"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          className: "edit-updload-form"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "edit-icon",
+          src: window.user
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "edit-message"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Upload a Profile Photo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Share with your friends")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
           htmlFor: "file-upload",
-          className: "nextbutton"
+          className: "edit-upload-button"
         }, "Upload", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           id: "file-upload",
           type: "file",
@@ -3380,15 +3383,13 @@ function (_React$Component) {
         })));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "upload-2"
+          className: "edit-updload-form"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "preview"
-        }, preview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "previewContent"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "postButton",
+          className: "edit-preview"
+        }, preview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "edit-submit-button",
           onClick: this.handleSubmit
-        }, "Submit")));
+        }, "Submit"));
       }
     }
   }]);
@@ -3418,6 +3419,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var msp = function msp(state) {
+  return {
+    user: state.entities.users[state.session.id]
+  };
+};
+
 var mdp = function mdp(dispatch) {
   return {
     updateUserPhoto: function updateUserPhoto(id, data) {
@@ -3429,7 +3436,7 @@ var mdp = function mdp(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, mdp)(_update_profile_photo__WEBPACK_IMPORTED_MODULE_3__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_update_profile_photo__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
@@ -3510,10 +3517,12 @@ function (_React$Component) {
           className: "profile-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "profile-header"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "profile-photo"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "profile-photo",
+          className: "profile-photo-img",
           src: this.props.user.profilePhoto
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "user-info"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "user-info-username"

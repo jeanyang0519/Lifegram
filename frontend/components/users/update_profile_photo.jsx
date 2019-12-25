@@ -4,15 +4,26 @@ class UpdateProfilePhoto extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            // name: this.props.user.name,
+            // bio: this.props.user.bio,
             photoFile: null,
             photoUrl: null
         }
 
-
+        // this.update = this.update.bind(this);
         this.handleFile = this.handleFile.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleCancel = this.handleCancel.bind(this)
     }
+
+    // componentDidMount() {
+    //     debugger
+    //     this.props.fetchUser(this.props.match.params.id);
+    // }
+
+    // update(field) {
+    //     return e => this.setState({ [field]: e.currentTarget.value });
+    // }
 
     handleFile(e) {
         const file = e.currentTarget.files[0];
@@ -28,7 +39,12 @@ class UpdateProfilePhoto extends React.Component {
     }
 
     handleSubmit(e) {
+        // let currentUser = { id: this.props.user.id }
+        // currentUser.name = this.state.name;
+        // currentUser.bio = this.state.bio;
         e.preventDefault();
+
+        // this.props.updateUser(currentUser)
         const formData = new FormData();
 
         
@@ -37,7 +53,7 @@ class UpdateProfilePhoto extends React.Component {
 
             formData.append('user[profile_photo]', this.state.photoFile);
         }
-        debugger
+        
         this.props.updateUserPhoto(this.props.user.id ,formData)
             .then(() => {
                 this.setState({
@@ -65,12 +81,13 @@ class UpdateProfilePhoto extends React.Component {
 
         if (this.state.photoFile === null) {
             return (
-                <div className="upload-1">
-                    {/* <img className="polaroid" src={window.polaroidPhoto} /> */}
-                    {/* <span className="uploadsign1">Upload a Photo</span> */}
-
-                    {/* <span className="uploadsign2">Share with your friends</span> */}
-                    <label htmlFor="file-upload" className="nextbutton">
+                <div className="edit-updload-form">
+                    <img className="edit-icon" src={window.user} />
+                    <div className='edit-message'>
+                        <p>Upload a Profile Photo</p>
+                        <span>Share with your friends</span>
+                    </div>
+                    <label htmlFor="file-upload" className="edit-upload-button">
                         Upload
                         <input id="file-upload" type="file" accept="image/*" onChange={this.handleFile} />
                     </label>
@@ -80,17 +97,14 @@ class UpdateProfilePhoto extends React.Component {
             )
         } else {
             return (
-                <div className="upload-2">
-                    <div className="preview">{preview}</div>
-                    <div className="previewContent">
-                        {/* <span className="newPost">New Post</span> */}
-                        {/* <input className="addLocation" type="text" value={this.state.location} placeholder="Add location" onChange={this.handleInput('location')} /> */}
-                        {/* <textarea className="body" value={this.state.body} placeholder="Write a caption..." onChange={this.handleInput('body')}></textarea> */}
+                <div className="edit-updload-form">
+                    <div className="edit-preview">{preview}</div>
+                    
 
-                        <button className="postButton" onClick={this.handleSubmit}>Submit</button>
+                    <button className="edit-submit-button" onClick={this.handleSubmit}>Submit</button>
 
 
-                    </div>
+                    
                 </div>
             )
         }

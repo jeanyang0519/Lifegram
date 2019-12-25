@@ -5,29 +5,20 @@ import { connect } from 'react-redux';
 import CommentIndexItem from './comment_index_item';
 
 
-const msp = (state, ownProps) => {
-    // debugger
-    // const allComments = state.entities.posts[ownProps.post.id].comment_ids;
+const msp = (state) => {
+    
     const comments = Object.values(state.entities.comments)
-    // .filter(comment =>
-        // allComments.includes(comment.id));
-
-
-    // const commenterIds = ownProps.post.comment_ids.map(id => {
-    //     return state.entities.comments[id].user_id
-    // })
+    
     return ({
         comments,
-        // commenterIds,
         users: state.entities.users
     });
 };
 
 const mdp = dispatch => ({
-    // fetchAllComments: () => dispatch(fetchAllComments()),
+    
     fetchUsers: users => dispatch(fetchUsers(users))
-    // createComment: comment => dispatch(createComment(comment)),
-    // removeComment: id => dispatch(removeComment(id))
+    
 });
 
 export default withRouter(connect(msp, mdp)(CommentIndexItem));

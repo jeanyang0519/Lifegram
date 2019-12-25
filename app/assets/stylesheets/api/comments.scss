@@ -4,9 +4,16 @@
 .comment-profile-photo {
     width: 42px;
     height: 42px;
-    border-radius: 50%;
+    
     margin-right: 13px;
     margin: -7px 13px 28px 0;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
 }
 
 .comment-username {

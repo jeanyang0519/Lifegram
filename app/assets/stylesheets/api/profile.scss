@@ -1,13 +1,13 @@
 .profile-all {
     display: grid;
-    // grid-template-columns: 1fr 2fr;
+    
     grid-template-rows: repeat(2, auto);
-    // grid-column-gap: 1.5rem;
+    
     align-items: center;
     margin-top: 134px;
     grid-row-gap: 50px;
 
-    // padding: 0px 20%;
+    
 
     font-family: 'proxima-nova', sans-serif;  
     
@@ -25,10 +25,17 @@
 
 .profile-photo {
     height: 150px;
-    border-radius: 50%;
+    width: 150px;
     grid-column-start: 2;
     justify-self: center
-    // place-self: center;
+    
+}
+    
+.profile-photo-img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 

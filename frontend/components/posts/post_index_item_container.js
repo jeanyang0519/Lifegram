@@ -10,7 +10,7 @@ const msp = state => {
     return ({
     currentUser: state.entities.users[state.session.id],
     posts: state.entities.posts,
-    users: state.entities.users
+    // users: state.entities.users
     })
 }
 

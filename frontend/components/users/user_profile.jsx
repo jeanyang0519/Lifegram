@@ -37,17 +37,18 @@ class UserProfile extends React.Component {
                     <HeaderContainer />
                     <div className="profile-all">
                         <div className="profile-header">
-                            
-                            <img className="profile-photo" src={this.props.user.profilePhoto} /> 
+                            <div className="profile-photo">
+                                <img className="profile-photo-img" src={this.props.user.profilePhoto} /> 
+                            </div>
                             
                             <div className="user-info">
                                 <div className="user-info-username">
                                     {this.props.user.username}
-                                    {/* <button>Edit Profile</button> */}
+                                    
                                     <div className="edit-profile-button">
                                         <Link to={`/users/${this.props.user.id}/edit`} className="edit-link"   >Edit Profile</Link>
                                     </div>
-                                    {/* <img src={window.settings} onClick={() => this.props.openModal('editProfileOption')}/> */}
+                                    
                                     
                                 </div>
                                 <div className="user-info-name">

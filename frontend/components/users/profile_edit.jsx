@@ -6,41 +6,39 @@ import UpdateProfilePhotoContainer from './update_profile_photo_container';
 class ProfileEdit extends React.Component {
     constructor(props) {
         super(props)
-        // this.state = this.props.user;
+        
         this.state = {
             name: this.props.user.name,
-            bio: this.props.user.bio
+            bio: this.props.user.bio,
+            profilePhoto: this.props.user.profilePhoto
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
         
     }
-    // not sure
+    
     componentDidMount() {
-        debugger
+        
         this.props.fetchUser(this.props.match.params.id);
     }
 
     handleSubmit(e) {
-        // let currentUser = this.props.user;
+        // let currentUser = this.props.user
         let currentUser = { id: this.props.user.id }
         currentUser.name = this.state.name;
         currentUser.bio = this.state.bio;
+        currentUser.profilePhoto = this.state.profilePhoto
         e.preventDefault();
-        debugger
-        this.props.updateUser(currentUser).then(() => {
-            debugger
-            <Redirect to="/users/:id}"/>
-        });
+        
+        this.props.updateUser(currentUser)
+            .then(
 
-        // this.props.updateUser(this.props.match.params.id);
-        // this.props.updateUser(
-        //     this.setState({
-        //         name: this.state.name,
-        //         bio: this.state.bio
-        //     })
-        // );
+                () => this.props.history.push(`/users/${currentUser.id}/`)
+            )
+
+
+        
     }
 
     update(field) {
@@ -55,9 +53,12 @@ class ProfileEdit extends React.Component {
                     <HeaderContainer />
                 </div>
                 <div className="profile-edit-form" onSubmit={this.handleSubmit}>
-                    <div>
-                        <UpdateProfilePhotoContainer user={this.props.user}/>
-                        {/* <img className="edit-profile-photo" src={this.props.user.profilePhoto} /> */}
+                    <div className="edit-photo">
+                        <div>
+                            <img className="edit-profile-photo" src={this.props.user.profilePhoto} />
+                        </div>
+                        <button onClick={() => this.props.openModal('update')} className="">Change Profile Photo</button>
+                        
                     </div>
                     <div className="edit-content">
                         <h3 className='edit-title'>Edit Profile</h3>

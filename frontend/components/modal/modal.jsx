@@ -5,6 +5,7 @@ import PostUploadContainer from '../posts/post_upload_container';
 import LogoutOptionContainer from './logout_option_container'
 import PostOptionContainer from './post_option_container';
 import EditProfileOption from './edit_profile_option';
+import UpdateProfilePhotoContainer from '../users/update_profile_photo_container';
 // import LogoutFormContainer from '../session/logout_form_container';
 
 
@@ -17,15 +18,16 @@ function Modal({ modal, closeModal }) {
         case 'upload':
             component = <PostUploadContainer />;
             break;
+        case 'update':
+            component = <UpdateProfilePhotoContainer />;
+            break;
         case 'logoutOption':
             component = <LogoutOptionContainer />;
             break;
         case 'postOption':
             component = <PostOptionContainer/>
             break;
-        case 'editProfileOption':
-            component = <EditProfileOption />
-            break;
+        
         default:
             return null;
     }

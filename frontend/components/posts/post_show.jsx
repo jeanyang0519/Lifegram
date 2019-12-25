@@ -40,7 +40,12 @@ class PostShow extends React.Component {
                             {/* post-header is the same as post-index-item */}
                                 <div className="post-header">
                                     <div className="post-header-user-info">
-                                        <img className="feed-profile-photo" src={this.props.currentUser.profilePhoto} />
+                                        <div className="feed-profile-photo">
+                                            <img src={this.props.currentUser.profilePhoto} />
+                                        </div>
+
+
+                                        {/* <img className="feed-profile-photo" src={this.props.currentUser.profilePhoto} /> */}
                                         <div className="feed-user-info">
                                             <div className="post-authorname">{this.props.currentUser.username}</div>
                                             
@@ -57,8 +62,12 @@ class PostShow extends React.Component {
                             
                                 <div className="post-show-body">
                                     <div className="comment">
-                                        
-                                        <img className="comment-profile-photo" src={this.props.currentUser.profilePhoto} />
+                                        {/* <div className="feed-profile-photo">
+                                            <img src={this.props.currentUser.profilePhoto} />
+                                        </div> */}
+                                        <div className="comment-profile-photo">
+                                            <img src={this.props.currentUser.profilePhoto} />
+                                        </div>
                                         <p className="comment-username">{this.props.currentUser.username}</p>
                                         <p className="comment-body">{this.props.post.body}</p>
                                         

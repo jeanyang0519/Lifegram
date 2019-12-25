@@ -16,6 +16,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show 
+    debugger
     @user = User.find(params[:id])
     @posts = @user.posts
     render :show

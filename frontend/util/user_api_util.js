@@ -9,3 +9,10 @@ export const fetchUsers = () => {
         url: `/api/users`
     })
 }
+
+export const updateUser = id => {
+    return $.ajax({
+        url: `/api/users/${id}`,
+        data: {id}
+    })
+}

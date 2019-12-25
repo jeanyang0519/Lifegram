@@ -1,6 +1,7 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container';
 import UserProfileItem from './user_profile_item';
+import { Link } from 'react-router-dom'
 // import { openModal } from '../../actions/modal_actions';
 
 
@@ -42,7 +43,11 @@ class UserProfile extends React.Component {
                             <div className="user-info">
                                 <div className="user-info-username">
                                     {this.props.user.username}
-                                    <img src={window.settings} onClick={() => this.props.openModal('editProfileOption')}/>
+                                    {/* <button>Edit Profile</button> */}
+                                    <div>
+                                        <Link to={`/users/${this.props.user.id}/edit`} className="edit-profile">Edit Profile</Link>
+                                    </div>
+                                    {/* <img src={window.settings} onClick={() => this.props.openModal('editProfileOption')}/> */}
                                     
                                 </div>
                                 <div className="user-info-name">
@@ -90,27 +95,7 @@ class UserProfile extends React.Component {
             )
         }
 
-        // const posts = Object.values(this.props.posts);
-
-        // debugger
-
-        // if (this.state.loaded === false) {
-        //     return null
-        // } else {
-        //     return (
-        //         <div className="feed">
-        //             <HeaderContainer />
-        //             {posts.map((post, idx) => {
-        //                 let user = this.props.users[post.author_id];
-        //                 return <PostIndexItemContainer
-        //                     key={idx}
-        //                     user={user}
-        //                     post={post} />;
-        //             })}
-
-        //         </div>
-        //     )
-        // }
+        
 
 
     }

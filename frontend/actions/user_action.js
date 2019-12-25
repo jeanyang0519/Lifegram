@@ -27,3 +27,13 @@ export const fetchUsers = () => dispatch => {
             )});
 };
 
+export const updateUser = id => dispatch => {
+    debugger
+    return UserAPIUtil.updateUser(id) 
+        .then(( {user} ) => {
+            // debugger
+            dispatch(receiveUser(user))
+        }
+        );
+}
+

@@ -1,0 +1,18 @@
+.profile-edit-all {
+    display: grid;
+    grid-template-rows: 78px auto 78px;
+}
+
+
+.profile-edit-form {
+    height: 500px;
+    width: 750px;
+
+    
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    
+    justify-self: center;
+    
+    display: grid;
+}

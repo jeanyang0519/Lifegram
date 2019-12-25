@@ -1,6 +1,23 @@
+.edit-profile-button {
+    font-size: 14px;
+   
+}
+.edit-link {
+    
+    text-decoration: none;
+    color: black;
+    
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+
 .profile-edit-all {
     display: grid;
-    grid-template-rows: 78px auto 78px;
+        height: 100vh;
+    grid-template-rows: auto auto 78px;
+    font-family: 'proxima-nova', sans-serif;
 }
 
 
@@ -15,4 +32,58 @@
     justify-self: center;
     
     display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.edit-profile-photo {
+    height: 50px;
+}
+
+.edit-content {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    padding: 33px 0;
+    grid-gap: 30px;
+}
+
+.edit-title {
+    font-size: 17px;
+}
+
+.edit-name {
+    background-color: #FAFAFA;
+    width: 90%;
+    padding: 12px;
+    font-size: 13px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ebebeb;
+    margin: 10px 0;
+}
+
+.edit-bio {
+    background-color: #FAFAFA;
+    width: 90%;
+    height: 150px;
+    padding: 12px;
+    font-size: 13px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ebebeb;
+    margin: 10px 0;
+}
+
+.edit-button {
+        width: 80px;
+    height: 35px;
+    background-color: #3897f0;
+    color: white;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    
+    font-size: small;
+    cursor: pointer;
 }

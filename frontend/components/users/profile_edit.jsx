@@ -1,5 +1,6 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container';
+import {Redirect} from 'react-router-dom';
 
 class ProfileEdit extends React.Component {
     constructor(props) {
@@ -16,23 +17,29 @@ class ProfileEdit extends React.Component {
     }
     // not sure
     componentDidMount() {
+        debugger
         this.props.fetchUser(this.props.match.params.id);
     }
 
     handleSubmit(e) {
         // let currentUser = this.props.user;
-        // currentUser.name = this.state.name;
-        // currentUser.bio = this.state.bio;
+        let currentUser = { id: this.props.user.id }
+        currentUser.name = this.state.name;
+        currentUser.bio = this.state.bio;
         e.preventDefault();
         debugger
-        // this.props.updateUser(currentUser);
+        this.props.updateUser(currentUser).then(() => {
+            debugger
+            <Redirect to="/users/:id}"/>
+        });
+
         // this.props.updateUser(this.props.match.params.id);
-        this.props.updateUser(
-            this.setState({
-                name: this.state.name,
-                bio: this.state.bio
-            })
-        );
+        // this.props.updateUser(
+        //     this.setState({
+        //         name: this.state.name,
+        //         bio: this.state.bio
+        //     })
+        // );
     }
 
     update(field) {
@@ -47,23 +54,31 @@ class ProfileEdit extends React.Component {
                     <HeaderContainer />
                 </div>
                 <div className="profile-edit-form" onSubmit={this.handleSubmit}>
-                    <h3>Edit Profile</h3>
-                    <div className="edit-name">
-                        Name
-                        <input
-                            type='text'
-                            value={this.state.name}
-                            onChange={this.update('name')}
-                        />
+                    <div>
+                        <img className="edit-profile-photo" src={this.props.user.profilePhoto} />
                     </div>
-                    <div className="edit-bio">
-                        bio
-                        <textarea
-                            value={this.state.bio}
-                            onChange={this.update('bio')}
-                        />
+                    <div className="edit-content">
+                        <h3 className='edit-title'>Edit Profile</h3>
+                        <div >
+                            Name
+                            <input
+                                className="edit-name"
+                                type='text'
+                                value={this.state.name}
+                                onChange={this.update('name')}
+                            />
+                        </div>
+                        <div >
+                            Bio
+                            <br/>
+                            <textarea 
+                                className="edit-bio"
+                                value={this.state.bio}
+                                onChange={this.update('bio')}
+                            />
+                        </div>
+                        <button className="edit-button" onClick={this.handleSubmit}>Update</button>
                     </div>
-                    <button onClick={this.handleSubmit}>Update</button>
                 </div>
                 <div className="footer-container">
                     <div className="footer-all">

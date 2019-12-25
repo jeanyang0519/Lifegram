@@ -488,9 +488,11 @@ var receiveUsers = function receiveUsers(users) {
 
 var fetchUser = function fetchUser(id) {
   return function (dispatch) {
+    debugger;
     return _util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchUser"](id).then(function (_ref) {
       var user = _ref.user;
-      return dispatch(receiveUser(user));
+      debugger;
+      dispatch(receiveUser(user));
     });
   };
 };
@@ -3060,6 +3062,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _header_header_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../header/header_container */ "./frontend/components/header/header_container.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -3079,6 +3082,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -3108,22 +3112,32 @@ function (_React$Component) {
   _createClass(ProfileEdit, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      debugger;
       this.props.fetchUser(this.props.match.params.id);
     }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       // let currentUser = this.props.user;
-      // currentUser.name = this.state.name;
-      // currentUser.bio = this.state.bio;
+      var currentUser = {
+        id: this.props.user.id
+      };
+      currentUser.name = this.state.name;
+      currentUser.bio = this.state.bio;
       e.preventDefault();
-      debugger; // this.props.updateUser(currentUser);
-      // this.props.updateUser(this.props.match.params.id);
-
-      this.props.updateUser(this.setState({
-        name: this.state.name,
-        bio: this.state.bio
-      }));
+      debugger;
+      this.props.updateUser(currentUser).then(function () {
+        debugger;
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
+          to: "/users/:id}"
+        });
+      }); // this.props.updateUser(this.props.match.params.id);
+      // this.props.updateUser(
+      //     this.setState({
+      //         name: this.state.name,
+      //         bio: this.state.bio
+      //     })
+      // );
     }
   }, {
     key: "update",
@@ -3143,20 +3157,26 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-edit-form",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Edit Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "edit-name"
-      }, "Name", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "edit-profile-photo",
+        src: this.props.user.profilePhoto
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "edit-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "edit-title"
+      }, "Edit Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Name", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "edit-name",
         type: "text",
         value: this.state.name,
         onChange: this.update('name')
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "edit-bio"
-      }, "bio", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Bio", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        className: "edit-bio",
         value: this.state.bio,
         onChange: this.update('bio')
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "edit-button",
         onClick: this.handleSubmit
-      }, "Update")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Update"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-all"
@@ -3308,9 +3328,11 @@ function (_React$Component) {
           className: "user-info"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "user-info-username"
-        }, this.props.user.username, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+        }, this.props.user.username, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "edit-profile-button"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
           to: "/users/".concat(this.props.user.id, "/edit"),
-          className: "edit-profile"
+          className: "edit-link"
         }, "Edit Profile"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "user-info-name"
         }, this.props.user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -4268,11 +4290,12 @@ var fetchUsers = function fetchUsers() {
     url: "/api/users"
   });
 };
-var updateUser = function updateUser(id) {
+var updateUser = function updateUser(user) {
   return $.ajax({
-    url: "/api/users/".concat(id),
+    url: "/api/users/".concat(user.id),
+    method: 'PATCH',
     data: {
-      id: id
+      user: user
     }
   });
 };

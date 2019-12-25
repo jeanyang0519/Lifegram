@@ -14,8 +14,13 @@ const receiveUsers = (users) => ({
 
 
 export const fetchUser = id => dispatch => {
+    debugger
     return UserAPIUtil.fetchUser(id)
-        .then(({user}) => dispatch(receiveUser(user)));
+        .then(({user}) => {
+            debugger
+            dispatch(receiveUser(user))
+        }
+        );
 };
 
 

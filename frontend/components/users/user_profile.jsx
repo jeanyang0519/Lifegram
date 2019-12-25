@@ -44,8 +44,8 @@ class UserProfile extends React.Component {
                                 <div className="user-info-username">
                                     {this.props.user.username}
                                     {/* <button>Edit Profile</button> */}
-                                    <div>
-                                        <Link to={`/users/${this.props.user.id}/edit`} className="edit-profile">Edit Profile</Link>
+                                    <div className="edit-profile-button">
+                                        <Link to={`/users/${this.props.user.id}/edit`} className="edit-link"   >Edit Profile</Link>
                                     </div>
                                     {/* <img src={window.settings} onClick={() => this.props.openModal('editProfileOption')}/> */}
                                     

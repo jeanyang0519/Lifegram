@@ -38,7 +38,15 @@ export const updateUser = id => dispatch => {
         .then(( {user} ) => {
             // debugger
             dispatch(receiveUser(user))
-        }
-        );
+        });
+}
+
+export const updateUserPhoto = (id, data) => dispatch => {
+    debugger
+    return UserAPIUtil.updateUserPhoto(id, data)
+        .then(({ user }) => {
+            debugger
+            dispatch(receiveUser(user))
+        });
 }
 

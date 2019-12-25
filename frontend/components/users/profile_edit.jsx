@@ -1,6 +1,7 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container';
 import {Redirect} from 'react-router-dom';
+import UpdateProfilePhotoContainer from './update_profile_photo_container';
 
 class ProfileEdit extends React.Component {
     constructor(props) {
@@ -55,7 +56,8 @@ class ProfileEdit extends React.Component {
                 </div>
                 <div className="profile-edit-form" onSubmit={this.handleSubmit}>
                     <div>
-                        <img className="edit-profile-photo" src={this.props.user.profilePhoto} />
+                        <UpdateProfilePhotoContainer user={this.props.user}/>
+                        {/* <img className="edit-profile-photo" src={this.props.user.profilePhoto} /> */}
                     </div>
                     <div className="edit-content">
                         <h3 className='edit-title'>Edit Profile</h3>

@@ -17,7 +17,7 @@ class CommentIndex extends React.Component {
                 {this.props.comments.map((comment, idx) => {
                     
                     return(
-                        <div className="comment">
+                        <div key={idx} className="comment">
                             <p className="comment-username">{this.props.users[comment.user_id].username}</p>
                             <p className="comment-body">{comment.comment_body}</p>
                         </div>

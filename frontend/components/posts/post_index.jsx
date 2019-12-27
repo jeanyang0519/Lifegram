@@ -17,7 +17,7 @@ class PostIndex extends React.Component {
 
     componentDidMount() {
         this.state._isMounted = true;
-        // debugger
+        
         this.props.fetchAllComments()
         this.props.fetchAllPosts() 
         this.props.fetchUsers()
@@ -30,8 +30,6 @@ class PostIndex extends React.Component {
 
     render() {
         const posts = Object.values(this.props.posts);
-        // const postsReverse = posts.reverse();
-        // debugger
         
         if (this.state.loaded === false) {
             return null

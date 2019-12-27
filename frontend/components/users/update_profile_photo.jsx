@@ -4,27 +4,17 @@ class UpdateProfilePhoto extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            // name: this.props.user.name,
-            // bio: this.props.user.bio,
             photoFile: null,
             photoUrl: null
         }
 
-        // this.update = this.update.bind(this);
+        
         this.handleFile = this.handleFile.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleCancel = this.handleCancel.bind(this)
     }
 
-    // componentDidMount() {
-    //     debugger
-    //     this.props.fetchUser(this.props.match.params.id);
-    // }
-
-    // update(field) {
-    //     return e => this.setState({ [field]: e.currentTarget.value });
-    // }
-
+    
     handleFile(e) {
         const file = e.currentTarget.files[0];
         const reader = new FileReader();
@@ -39,12 +29,8 @@ class UpdateProfilePhoto extends React.Component {
     }
 
     handleSubmit(e) {
-        // let currentUser = { id: this.props.user.id }
-        // currentUser.name = this.state.name;
-        // currentUser.bio = this.state.bio;
+        
         e.preventDefault();
-
-        // this.props.updateUser(currentUser)
         const formData = new FormData();
 
         

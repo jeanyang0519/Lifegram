@@ -1,5 +1,14 @@
 .profile-all {
     display: grid;
+    grid-gap: 67px;
+    grid-template-rows: auto 60px;
+    background: #FAFAFA;
+    height: 100vh;
+}
+
+.user-profile {
+    display: grid;
+        font-family: 'proxima-nova', sans-serif;  
     
     grid-template-rows: repeat(2, auto);
     
@@ -9,7 +18,6 @@
 
     
 
-    font-family: 'proxima-nova', sans-serif;  
     
 }
 
@@ -17,7 +25,8 @@
 
 .profile-header {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 100px;
+    grid-template-columns: 1fr 2fr;
     
 }
 
@@ -26,8 +35,8 @@
 .profile-photo {
     height: 150px;
     width: 150px;
-    grid-column-start: 2;
-    justify-self: center
+    
+    justify-self: end;
     
 }
     
@@ -40,7 +49,7 @@
 
 
 .user-info {
-    grid-column-start: 3;
+    
     display: grid;
 
     div {
@@ -64,36 +73,32 @@
     }
 }
 
-// .profile-setting {
-//     place-self: center stretch;
-    
-// }
 
 .profile-middle-line {
     border-top: 1px solid rgba(0, 0, 0, 0.0975);
     display: grid;
     margin: 0 10%;
 
-    // place-self: center;
+    
 }
 
 .profile-middle {
     place-self: center;
     border-top: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
 
     img {
-        // height: 12px;
-        // margin-right: 6px;
+        
 
         padding-top: 8px;
-    height: 25px;
-    margin-right: 6px;
+        height: 12px;
+        margin-right: 6px;
     }
-    span {
+    div {
+        padding-top: 8px;
         font-size: 12px;
-        align-self: start;
-        // align-self: start;
-        // place-self: center;
+        
     }
 }
 
@@ -110,11 +115,6 @@
     grid-gap: 1rem;
     padding: 0 10%;
 
-
-    
-    
-
-    
 }
 
 .profile-post-wrapper {
@@ -123,10 +123,61 @@
 }
 
 .profile-post {
-        width: 100%;
-        height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    
-  
 }
+
+
+
+.counts-wrapper {
+    background-color: black;
+    height: 293px;
+    width: 293px;
+    opacity: 0;
+    margin-top: -297px;
+    display: grid;
+
+       
+    .counts {
+
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        
+        grid-column-gap: 17px;
+        place-self: center;
+
+        img {
+            height: 18px;
+            
+            
+        }
+        div {
+            font-size: 18px;
+            color: white;
+            
+            font-family: 'proxima-nova', sans-serif;  
+        }
+    }
+} 
+
+
+.profile-post-wrapper:hover .counts-wrapper{
+    opacity: 0.5;
+}
+
+.zero-post {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 30px;
+    img {
+        place-self: center;
+        height: 150px;
+    }
+    p {
+        place-self: center;
+        font-size: 18px;
+    }
+}
+
 

@@ -1,20 +1,27 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container';
 import LikeContainer from '../likes/like_container';
-// import CommentIndexContainer from '../comments/comment_index_container';
 import CommentFormContainer from '../comments/comment_form_container';
 import CommentIndexItemContainer from '../comments/comment_index_item_container'
+import { time } from '../../util/time_api_util';
+import { Link } from 'react-router-dom';
+
 
 
 class PostShow extends React.Component {
     constructor(props) {
         super(props);
 
+        // this.state = {
+        //     loaded: false
+        // }
 
     }
     componentDidMount() {
         // debugger
         this.props.fetchPost(this.props.match.params.id)
+        this.props.fetchUsers()
+        
     }
 
     render() {
@@ -41,7 +48,9 @@ class PostShow extends React.Component {
                                 <div className="post-header">
                                     <div className="post-header-user-info">
                                         <div className="feed-profile-photo">
-                                            <img src={this.props.currentUser.profilePhoto} />
+                                            <Link to={`/users/${this.props.currentUser.id}`}>
+                                                <img src={this.props.currentUser.profilePhoto} />
+                                            </Link>
                                         </div>
 
 
@@ -55,18 +64,18 @@ class PostShow extends React.Component {
 
                                     <img className="post-option" src={window.option}
                                         onClick={() => {
-                                            this.props.openModal('postOption', this.props.post.id)
+                                            this.props.openModal('showOption', this.props.post.id)
                                         }} />
 
                                 </div>
                             
                                 <div className="post-show-body">
                                     <div className="comment">
-                                        {/* <div className="feed-profile-photo">
-                                            <img src={this.props.currentUser.profilePhoto} />
-                                        </div> */}
+                                        
                                         <div className="comment-profile-photo">
-                                            <img src={this.props.currentUser.profilePhoto} />
+                                            <Link to={`/users/${this.props.currentUser.id}`}>
+                                                <img src={this.props.currentUser.profilePhoto} />
+                                            </Link>
                                         </div>
                                         <p className="comment-username">{this.props.currentUser.username}</p>
                                         <p className="comment-body">{this.props.post.body}</p>
@@ -79,14 +88,12 @@ class PostShow extends React.Component {
                                 </div>
                                 <div className="post-icon">
                                     <LikeContainer post={this.props.post} />
-                                    {/* <img className="like-icon" src={window.like}></img>
-                                    <img className="comment-icon" src={window.comment}></img> */}
+                                    <div className='show-time'>
+                                        {time(this.props.post.created_at)}
+                                    </div>
                                 </div>
-                            <CommentFormContainer postId={this.props.post.id}/>
-                                {/* <div className="post-show-comment">
-                                    <input type="text" placeholder="Add a Comment..."/>
-                                    <a href="#">Post</a>
-                                </div> */}
+                                <CommentFormContainer postId={this.props.post.id}/>
+                                
                         </div>
                     
                     

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 class Header extends React.Component {
     render() {
         return (
-            <nav className="Nav">
+            <div className="nav">
                 <div className="headerLeft">
                     <Link to="/">
                         <img className="icon" src={window.icon} />
@@ -31,8 +31,8 @@ class Header extends React.Component {
                 </div>       
                  
                 
-            </nav>
-        );
+            </div>
+        )
     }
 }
 export default Header;

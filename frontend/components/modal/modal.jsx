@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PostUploadContainer from '../posts/post_upload_container';
 import LogoutOptionContainer from './logout_option_container'
 import PostOptionContainer from './post_option_container';
-import EditProfileOption from './edit_profile_option';
+import ShowOptionContainer from './show_option_container';
 import UpdateProfilePhotoContainer from '../users/update_profile_photo_container';
 // import LogoutFormContainer from '../session/logout_form_container';
 
@@ -27,7 +27,9 @@ function Modal({ modal, closeModal }) {
         case 'postOption':
             component = <PostOptionContainer/>
             break;
-        
+        case 'showOption':
+            component = <ShowOptionContainer />
+            break;
         default:
             return null;
     }

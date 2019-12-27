@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Like extends React.Component {
     constructor(props) {
@@ -52,7 +53,9 @@ class Like extends React.Component {
             return (
             <div >
                 <img className="like-icon" src={window.redlike} onClick={this.handleremove} />
+                <Link to={`/posts/${this.props.post.id}`}>
                 <img className="comment-icon" src={window.comment} />
+                    </Link>
             </div>
             )
         } else {
@@ -60,7 +63,9 @@ class Like extends React.Component {
             return (
             <div >
                 <img className="like-icon" src={window.like} onClick={this.handlecreate} />
+                    <Link to={`/posts/${this.props.post.id}`}>
                 <img className="comment-icon" src={window.comment} />
+                    </Link>
             </div>
             )
         }

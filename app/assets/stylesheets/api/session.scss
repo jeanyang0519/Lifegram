@@ -13,7 +13,7 @@
     
     grid-template-rows: auto 40px;
     
-    // background-color: red;
+  
     
 }
 .content {
@@ -22,8 +22,7 @@
     align-items: center;
     font-family: 'proxima-nova', sans-serif;  
      
-    /* width: 100%; */
-    /* flex-direction: column; */
+  
 } 
 
 
@@ -36,12 +35,11 @@
     margin: 20px 65px;
 }
 .subtitle {
-    /* margin: 10px 5px 30px; */
+   
 
     color: #999;
     text-align: center;
     font-weight: 500;
-    /* line-height: 20px; */
     font-size: 16px;
     margin: 0 30px 30px;
 }
@@ -86,7 +84,7 @@
 }
 
 .button {
-    /* padding: 5px 9px; */
+    
     padding: 10px 20px;
      width: 80%;
     background-color: #3897f0;
@@ -96,7 +94,7 @@
     border-radius: 3px;
     font-size: 12px;
     cursor: pointer;
-    /* margin: 50px; */
+    
 }
 
 button {
@@ -126,7 +124,6 @@ button:focus {
   width: 80%;
   margin-bottom: 5px;
   margin-bottom: 10px;
-  /* padding: 9px 0 7px 8px; */
   padding: 10px 0 10px 10px;
   border: 1px solid #e6e6e6;
   box-sizing: border-box;
@@ -140,8 +137,7 @@ button:focus {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
-    /* justify-content: center; */
-    /* align-items: center; */
+    
 }
 
 .errors {
@@ -170,25 +166,21 @@ button:focus {
     align-self: center;
 
     a {
+        color: #003569;
+        font-weight: 700;
         text-decoration: none;
-        color: rgb(29, 108, 160);
-        font-weight: 500;
         align-self: center;
         justify-self: center;
     }
     
 }
 
-// .footer-1 {
-//     text-decoration: none;
-//     color: rgb(29, 108, 160);
-//     font-weight: 500;
-// }
+
 
 .span {
     text-decoration: none;
     color: #8c8f92c0;
-    font-weight: 600;
+    font-weight: 700;
     align-self: center;
     justify-self: center;
 }

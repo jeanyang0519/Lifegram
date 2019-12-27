@@ -2,7 +2,9 @@
 import { fetchUsers } from '../../actions/user_action'
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+
 import CommentIndexItem from './comment_index_item';
+import { fetchAllComments } from '../../actions/comment_actions';
 
 
 const msp = (state) => {
@@ -16,7 +18,7 @@ const msp = (state) => {
 };
 
 const mdp = dispatch => ({
-    
+    fetchAllComments: () => dispatch(fetchAllComments()),
     fetchUsers: users => dispatch(fetchUsers(users))
     
 });

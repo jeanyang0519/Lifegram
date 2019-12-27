@@ -14,10 +14,9 @@ const receiveUsers = (users) => ({
 
 
 export const fetchUser = id => dispatch => {
-    debugger
     return UserAPIUtil.fetchUser(id)
         .then(({user}) => {
-            debugger
+    
             dispatch(receiveUser(user))
         }
         );
@@ -33,19 +32,17 @@ export const fetchUsers = () => dispatch => {
 };
 
 export const updateUser = id => dispatch => {
-    debugger
     return UserAPIUtil.updateUser(id) 
         .then(( {user} ) => {
-            // debugger
+            
             dispatch(receiveUser(user))
         });
 }
 
 export const updateUserPhoto = (id, data) => dispatch => {
-    debugger
     return UserAPIUtil.updateUserPhoto(id, data)
         .then(({ user }) => {
-            debugger
+    
             dispatch(receiveUser(user))
         });
 }

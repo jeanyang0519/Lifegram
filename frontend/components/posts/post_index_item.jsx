@@ -2,16 +2,22 @@ import React from 'react';
 import LikeContainer from '../likes/like_container';
 import CommentIndexContainer from '../comments/comment_index_container';
 import CommentFormContainer from '../comments/comment_form_container';
+import { Link } from 'react-router-dom';
+import { time } from '../../util/time_api_util';
 
 class PostIndexItem extends React.Component {
     constructor(props) {
         super(props)
+
+       
     }
+
+    
 
     render() {
         // const profilePhoto = this.props.user.profilePhoto ? 
         // (this.props.user.profilePhoto) : (window.italy)
-// debugger
+
         // debugger
         return(
             <div className="post-item">
@@ -20,7 +26,9 @@ class PostIndexItem extends React.Component {
                 <div className="post-header">
                     <div className="post-header-user-info">
                         <div className="feed-profile-photo">
-                            <img  src={this.props.user.profilePhoto} /> 
+                            <Link to={`/users/${this.props.user.id}`}>
+                                <img  src={this.props.user.profilePhoto} /> 
+                            </Link>
                         </div>
                         <div className="feed-user-info">
                             <div className="post-authorname">{this.props.user.username}</div>
@@ -62,7 +70,7 @@ class PostIndexItem extends React.Component {
                 </div>
 
                 <div className="time">
-                    {this.props.post.created_at}
+                    {time(this.props.post.created_at)}
                 </div>
 
                 <CommentFormContainer postId={this.props.post.id}/>

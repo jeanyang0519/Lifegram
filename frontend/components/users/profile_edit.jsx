@@ -47,6 +47,7 @@ class ProfileEdit extends React.Component {
 
     render() {
         // debugger
+        // if (this.props.user.id === this.props.)
         return (
             <div className="profile-edit-all">
                 <div>

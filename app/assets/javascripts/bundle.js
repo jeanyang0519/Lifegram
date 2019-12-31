@@ -2701,8 +2701,8 @@ function (_React$Component) {
     value: function handleDemoSubmit(e) {
       e.preventDefault();
       var user = {
-        email: "timmy@gmail.com",
-        username: "Timmy",
+        email: "jean@gmail.com",
+        username: "jean0519",
         password: "123456"
       };
       this.props.login(user);
@@ -2977,7 +2977,7 @@ function (_React$Component) {
       e.preventDefault();
       var user = {
         email: "jean@gmail.com",
-        username: "Jean",
+        username: "jean0519",
         password: "123456"
       };
       this.props.login(user);
@@ -3574,15 +3574,12 @@ function (_React$Component) {
       if (this.props.user === undefined) {
         this.props.fetchUsers();
       }
-    }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
-      // const { userId, getUser, users } = this.props;
-      if (this.props.user === undefined || prevProps.posts !== this.props.posts) {
-        this.props.fetchAllPosts();
-      }
-    }
+    } // componentDidUpdate(prevProps) {
+    //     if (this.props.user === undefined || prevProps.posts !== this.props.posts) {
+    //         this.props.fetchAllPosts()
+    //     }
+    // }
+
   }, {
     key: "renderEdit",
     value: function renderEdit() {
@@ -54262,7 +54259,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

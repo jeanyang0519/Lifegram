@@ -15,7 +15,7 @@ User.destroy_all
 
 user1 = User.create!({
     id: 1, 
-    username: "Jean",
+    username: "jean0519",
     password: '123456',
     email: 'jean@gmail.com',
     name: 'Jean',
@@ -24,7 +24,7 @@ user1 = User.create!({
 
 user2 = User.create!({
     id: 2,
-    username: "Timmy",
+    username: "timmyyy5583",
     password: '123456',
     email: 'timmy@gmail.com',
     name: 'Timmy',
@@ -33,7 +33,7 @@ user2 = User.create!({
 
 user3 = User.create!({
     id: 3,
-    username: "Patrick",
+    username: "pat__rick334",
     password: '123456',
     email: 'patrick@gmail.com',
     name: 'Patrick',
@@ -42,7 +42,7 @@ user3 = User.create!({
 
 user4 = User.create!({
     id: 4,
-    username: "Json",
+    username: "jjson88f8",
     password: '123456',
     email: 'json@gmail.com',
     name: 'Json',

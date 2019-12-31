@@ -32,12 +32,12 @@ class UserProfile extends React.Component {
         }
     }
 
-    componentDidUpdate(prevProps) {
-        // const { userId, getUser, users } = this.props;
-        if (this.props.user === undefined || prevProps.posts !== this.props.posts) {
-            this.props.fetchAllPosts()
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    
+    //     if (this.props.user === undefined || prevProps.posts !== this.props.posts) {
+    //         this.props.fetchAllPosts()
+    //     }
+    // }
 
 
 

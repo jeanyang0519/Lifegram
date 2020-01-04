@@ -11,9 +11,9 @@
   Lifegram is a social media platform inspired by Instagram for people who enjoy sharing their life snippets.
 </h4>
 
-
+<p align="center">
 <img align="left" width="350px" height="300px" src="app/assets/images/ss3.png" > <img align="right" width="370px" height="300px" src="app/assets/images/ss1.png" >
-
+</p>
 
 
 <br/><br/>

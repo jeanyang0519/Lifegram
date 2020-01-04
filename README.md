@@ -12,7 +12,7 @@
 </h4>
 
 <p align="center">
-<img align="left" width="350px" height="300px" src="app/assets/images/ss3.png" > <img align="right" width="370px" height="300px" src="app/assets/images/ss1.png" >
+<img align="left" width="500px" height="300px" src="app/assets/images/ss3.png" > <img align="right" width="500px" height="300px" src="app/assets/images/ss1.png" >
 </p>
 
 

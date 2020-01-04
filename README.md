@@ -3,7 +3,7 @@
 <a href="https://lifegram.herokuapp.com/#/">Live Demo</a>
 
 <p align="center">
-  <img src="app/assets/images/logo.png" >
+  <img width="250px" src="app/assets/images/logo.png" >
 
 
 
@@ -11,14 +11,13 @@
   Lifegram is a social media platform inspired by Instagram for people who enjoy sharing their life snippets.
 </h4>
 
-<p align="center">
 
-  <img height="300px" src="https://lifegram-seeds.s3.amazonaws.com/2.png" >
+<img align="left" width="350px" height="300px" src="app/assets/images/ss3.png" > <img align="right" width="370px" height="300px" src="app/assets/images/ss1.png" >
 
-</p>
-<img align="left" width="350px" src="app/assets/images/ss1.png" >
-<img align="right" width="350px"  src="app/assets/images/ss2.png" >  
 
+
+<br/><br/>
+<br/><br/>
 <br/><br/>
 
 ## Technologies

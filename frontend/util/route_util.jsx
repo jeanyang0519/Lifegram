@@ -28,3 +28,4 @@ const msp = state => {
 
 export const AuthRoute = withRouter(connect(msp, null)(Auth));
 export const ProtectedRoute = withRouter(connect(msp, null)(Protected));
+

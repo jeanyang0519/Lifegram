@@ -12,8 +12,14 @@
 </h4>
 
 <p align="center">
-  <img height="500px" src="https://lifegram-seeds.s3.amazonaws.com/2.png" >
+
+  <img height="300px" src="https://lifegram-seeds.s3.amazonaws.com/2.png" >
+
 </p>
+<img align="left" width="350px" src="app/assets/images/ss1.png" >
+<img align="right" width="350px"  src="app/assets/images/ss2.png" >  
+
+<br/><br/>
 
 ## Technologies
 * Ruby 

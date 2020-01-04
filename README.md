@@ -12,8 +12,8 @@
 </h4>
 
 <p float="left">
-<img  width="480px" src="app/assets/images/ss3.png" > 
-<img  width="520px" src="app/assets/images/ss1.png" >
+<img  width="400px" src="app/assets/images/ss3.png" > 
+<img  width="400px" src="app/assets/images/ss1.png" >
 </p>
 
 

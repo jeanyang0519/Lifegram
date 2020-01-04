@@ -6,11 +6,11 @@
   <img src="app/assets/images/logo.png" >
 
 
-<br/><br/>
-<h3 align="center" >
+
+<h4 align="center" >
   Lifegram is a social media platform inspired by Instagram for people who enjoy sharing their life snippets.
-</h3>
-<br/><br/>
+</h4>
+
 <p align="center">
   <img height="500px" src="https://lifegram-seeds.s3.amazonaws.com/2.png" >
 </p>
@@ -35,10 +35,11 @@
 ## Code Highlights
 * Render Function 
 
-I built a `renderEdit` function to make sure that only the current user can edit the profile page. To this end, this function will only show the edit profile button when if the user id is the same as current user id.
+  I built a `renderEdit` function to make sure that only the current user can edit the profile page. To this end, this function will only show the edit profile button when if the user id is the same as current user id.
 
-```
+```JavaScript
 // frontend/users/user_profile.jsx
+
 renderEdit() {
         
         if (this.props.user.id === this.props.currentUser.id) {
@@ -55,9 +56,9 @@ renderEdit() {
 
 * Custom Modal
 
-I implemented a custom modal component to dynamically render various modals throughout the website. Modals are used to show the different options to upload photos, to logout users, to update user profiles, to go to the post show page, and go back to the index page.
+  I implemented a custom modal component to dynamically render various modals throughout the website. Modals are used to show the different options to upload photos, to logout users, to update user profiles, to go to the post show page, and go back to the index page.
 
-```
+```JavaScript
 // frontend/components/modal.jsx
 
 function Modal({ modal, closeModal }) {

@@ -11,14 +11,12 @@
   Lifegram is a social media platform inspired by Instagram for people who enjoy sharing their life snippets.
 </h4>
 
-<p align="center">
-<img align="left" width="500px" height="300px" src="app/assets/images/ss3.png" > <img align="right" width="500px" height="300px" src="app/assets/images/ss1.png" >
+<p float="left">
+<img  width="500px" src="app/assets/images/ss3.png" > 
+<img  width="550px" src="app/assets/images/ss1.png" >
 </p>
 
 
-<br/><br/>
-<br/><br/>
-<br/><br/>
 
 ## Technologies
 * Ruby 

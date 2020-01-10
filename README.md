@@ -1,15 +1,12 @@
-# Lifegram
-
-<a href="https://lifegram.herokuapp.com/#/">Live Demo</a>
-
 <p align="center">
   <img width="250px" src="app/assets/images/logo.png" >
+</p>
 
+## Background and Overview
+<a href="https://lifegram.herokuapp.com/#/">Live Demo</a>
 
+Lifegram is a social media platform inspired by Instagram for people who enjoy sharing their life snippets with posts, image uploads, comments, and likes functions.
 
-<h4 align="center" >
-  Lifegram is a social media platform inspired by Instagram for people who enjoy sharing their life snippets.
-</h4>
 
 <p float="left">
 <img  width="380px" src="app/assets/images/ss3.png" > 
@@ -26,6 +23,10 @@
 * Redux
 * PostGreSQL
 * AWS S3
+* Sass
+* CSS
+* HTML
+* Heroku
 
 ## Features 
 * User authentication
@@ -36,9 +37,9 @@
 
 
 ## Code Highlights
-* Render Function 
+### Render Function 
 
-  I built a `renderEdit` function to make sure that only the current user can edit the profile page. To this end, this function will only show the edit profile button when if the user id is the same as current user id.
+  I built a `renderEdit` function to make sure that users can edit their own profile pages. I used an if statement to secure that the edit profile button will only be showed if the user's profile id is the same as current user id.
 
 ```JavaScript
 // frontend/users/user_profile.jsx
@@ -57,9 +58,9 @@ renderEdit() {
     }
 ```
 
-* Custom Modal
+### Custom Modal
 
-  I implemented a custom modal component to dynamically render various modals throughout the website. Modals are used to show the different options to upload photos, to logout users, to update user profiles, to go to the post show page, and go back to the index page.
+  I implemented a custom modal component to dynamically render various modals throughout the website. I used `switch` to make sure that only the certain component will be executed when a user click a button. Modals are used to show the different options to upload photos, to logout users, to update user profiles, to go to the post show page, and go back to the index page.
 
 ```JavaScript
 // frontend/components/modal.jsx

@@ -43,6 +43,8 @@ Lifegram is a social media platform inspired by Instagram for people who enjoy s
 
   I built a `renderEdit` function to make sure that users can edit their own profile pages. I used an if statement to secure that the edit profile button will only be showed if the user's profile id is the same as current user id.
 
+  
+
 ```JavaScript
 // frontend/users/user_profile.jsx
 
@@ -63,6 +65,8 @@ renderEdit() {
 ### Custom Modal
 
   I implemented a custom modal component to dynamically render various modals throughout the website. I used `switch` to make sure that only the certain component will be executed when a user click a button. Modals are used to show the different options to upload photos, to logout users, to update user profiles, to go to the post show page, and go back to the index page.
+
+  <img src='app/assets/images/modal.gif' width='100%'/>
 
 ```JavaScript
 // frontend/components/modal.jsx

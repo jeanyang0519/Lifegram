@@ -5,7 +5,7 @@
 ## Background and Overview
 <a href="https://lifegram.herokuapp.com/#/">Live Demo</a>
 
-Lifegram is a social media platform inspired by Instagram for people who enjoy sharing their life snippets with posts, image uploads, comments, and likes functions.
+Lifegram is a social media platform inspired by Instagram for people who enjoy sharing their life snippets with posts, image uploads, comments, and likes functions. 
 
 <img src='app/assets/images/lifegram.gif' width='100%'/>
 

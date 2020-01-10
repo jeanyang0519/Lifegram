@@ -24,7 +24,6 @@ class ProfileEdit extends React.Component {
     }
 
     handleSubmit(e) {
-        // let currentUser = this.props.user
         let currentUser = { id: this.props.user.id }
         currentUser.name = this.state.name;
         currentUser.bio = this.state.bio;
@@ -46,8 +45,7 @@ class ProfileEdit extends React.Component {
     }
 
     render() {
-        // debugger
-        // if (this.props.user.id === this.props.)
+        
         return (
             <div className="profile-edit-all">
                 <div>

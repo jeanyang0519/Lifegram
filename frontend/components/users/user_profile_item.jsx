@@ -19,7 +19,7 @@ class UserProfileItem extends React.Component {
 
     render() {
         return (
-            <Link to={`/posts/${this.props.post.id}`}>
+            <Link className='postlink' to={`/posts/${this.props.post.id}`}>
                 <div className="profile-post-wrapper">
 
                     <img className="profile-post"src={this.props.post.photoUrl} />

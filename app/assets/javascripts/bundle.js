@@ -2322,12 +2322,14 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "footer-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "footer-1",
+          href: "https://jeanyang0519.github.io/jeanyang0519/"
+        }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: "https://www.linkedin.com/in/jean-yang-327497156"
         }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "footer-2",
           href: "https://github.com/jeanyang0519"
-        }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "https://angel.co/jean-yang-5"
+        }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "span",
           href: "#"
         }, "\xA9 2019 LIFEGRAM FROM JEAN YANG"))));
@@ -3053,12 +3055,14 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "footer-all"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "footer-1",
+        href: "https://jeanyang0519.github.io/jeanyang0519/"
+      }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         href: "https://www.linkedin.com/in/jean-yang-327497156"
       }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "footer-2",
         href: "https://github.com/jeanyang0519"
-      }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        href: "https://angel.co/jean-yang-5"
+      }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "span",
         href: "#"
       }, "\xA9 2019 LIFEGRAM FROM JEAN YANG"))));
@@ -3188,7 +3192,6 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       var _this2 = this;
 
-      // let currentUser = this.props.user
       var currentUser = {
         id: this.props.user.id
       };
@@ -3214,8 +3217,6 @@ function (_React$Component) {
     value: function render() {
       var _this4 = this;
 
-      // debugger
-      // if (this.props.user.id === this.props.)
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-edit-all"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3252,12 +3253,14 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-all"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "footer-1",
+        href: "https://jeanyang0519.github.io/jeanyang0519/"
+      }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://www.linkedin.com/in/jean-yang-327497156"
       }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "footer-2",
         href: "https://github.com/jeanyang0519"
-      }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://angel.co/jean-yang-5"
+      }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "span",
         href: "#"
       }, "\xA9 2019 LIFEGRAM FROM JEAN YANG"))));
@@ -3652,12 +3655,14 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "footer-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "footer-1",
+          href: "https://jeanyang0519.github.io/jeanyang0519/"
+        }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: "https://www.linkedin.com/in/jean-yang-327497156"
         }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "footer-2",
           href: "https://github.com/jeanyang0519"
-        }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "https://angel.co/jean-yang-5"
+        }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "span",
           href: "#"
         }, "\xA9 2019 LIFEGRAM FROM JEAN YANG"))));
@@ -3791,6 +3796,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "postlink",
         to: "/posts/".concat(this.props.post.id)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-post-wrapper"

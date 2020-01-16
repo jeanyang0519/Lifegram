@@ -3,7 +3,8 @@
     grid-gap: 67px;
     grid-template-rows: auto 60px;
     background: #FAFAFA;
-    height: 100vh;
+    // z-index: 1;
+    // height: 100vh;
 }
 
 .user-profile {
@@ -120,6 +121,7 @@
 .profile-post-wrapper {
     height: 293px;
     width: 293px;
+
 }
 
 .profile-post {
@@ -137,6 +139,12 @@
     opacity: 0;
     margin-top: -297px;
     display: grid;
+
+    position: relative;
+    z-index: -1;
+
+    
+    
 
        
     .counts {
@@ -164,7 +172,9 @@
 
 .profile-post-wrapper:hover .counts-wrapper{
     opacity: 0.5;
-    
+
+    position: relative;
+    z-index: 0;
 }
 
 .zero-post {
@@ -180,5 +190,6 @@
         font-size: 18px;
     }
 }
+
 
 

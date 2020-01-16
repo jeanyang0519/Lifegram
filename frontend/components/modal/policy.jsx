@@ -20,16 +20,7 @@ class PostOption extends React.Component {
                 <div className='policy-content'>
                     <img src={window.logo} alt=""/>
                     <div>
-                        {/* Live your life with no regrets
-                        <br/>
-                        Post your lifegram with no shame */}
-                        
-                        Live Your Life, Post Your Lifegram
-
-                        {/* Live Your Life
-                        <br/>
-                        Post Your Lifegram */}
-                        
+                        Live Your Life, Post Your Lifegram                        
                     </div>
                     <p>
                         Here at Lifegram there are no deletes or edits.

@@ -5,6 +5,7 @@ import PostUploadContainer from '../posts/post_upload_container';
 import LogoutOptionContainer from './logout_option_container'
 import PostOptionContainer from './post_option_container';
 import ShowOptionContainer from './show_option_container';
+import PolicyContainer from './policy_container';
 import UpdateProfilePhotoContainer from '../users/update_profile_photo_container';
 // import LogoutFormContainer from '../session/logout_form_container';
 
@@ -29,6 +30,9 @@ function Modal({ modal, closeModal }) {
             break;
         case 'showOption':
             component = <ShowOptionContainer />
+            break;
+        case 'policy':
+            component = <PolicyContainer />
             break;
         default:
             return null;

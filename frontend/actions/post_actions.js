@@ -34,10 +34,6 @@ const receivePostErrors = errors => ({
     errors
 });
 
-// const receiveCurrentPost = postId => ({
-//     type: RECEIVE_CURRENT_POST,
-//     postId
-// })
 
 export const fetchAllPosts = () => dispatch => {
     return PostAPIUtil.fetchAllPosts()
@@ -72,7 +68,7 @@ export const updatePost = post => dispatch => {
 };
 
 export const createPost = post => dispatch => {
-    // debugger
+    
     return PostAPIUtil.createPost(post)
         .then(
             post => dispatch(receivePost(post)),

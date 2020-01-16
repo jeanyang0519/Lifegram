@@ -320,11 +320,7 @@ var receivePostErrors = function receivePostErrors(errors) {
     type: RECEIVE_POST_ERRORS,
     errors: errors
   };
-}; // const receiveCurrentPost = postId => ({
-//     type: RECEIVE_CURRENT_POST,
-//     postId
-// })
-
+};
 
 var fetchAllPosts = function fetchAllPosts() {
   return function (dispatch) {
@@ -362,7 +358,6 @@ var updatePost = function updatePost(post) {
 };
 var createPost = function createPost(post) {
   return function (dispatch) {
-    // debugger
     return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["createPost"](post).then(function (post) {
       return dispatch(receivePost(post));
     }, function (error) {
@@ -4297,9 +4292,11 @@ var uiReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_user_action__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/user_action */ "./frontend/actions/user_action.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/post_actions */ "./frontend/actions/post_actions.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_3__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -4315,11 +4312,13 @@ var usersReducer = function usersReducer() {
       return Object.assign({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
 
     case _actions_user_action__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USER"]:
-      return Object(lodash__WEBPACK_IMPORTED_MODULE_2__["merge"])({}, state, _defineProperty({}, action.user.id, action.user));
-    // return Object.assign({}, state, {[action.user.id]: action.user})
+      return Object(lodash__WEBPACK_IMPORTED_MODULE_3__["merge"])({}, state, _defineProperty({}, action.user.id, action.user));
 
     case _actions_user_action__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USERS"]:
       return action.users;
+
+    case _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_POST"]:
+      return Object(lodash__WEBPACK_IMPORTED_MODULE_3__["merge"])({}, state, _defineProperty({}, action.user.id, action.user));
 
     default:
       return state;

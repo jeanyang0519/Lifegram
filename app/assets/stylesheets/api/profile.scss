@@ -2,14 +2,13 @@
     display: grid;
     grid-gap: 67px;
     grid-template-rows: auto 60px;
-    background: #FAFAFA;
-    // z-index: 1;
-    // height: 100vh;
+    // background: #FAFAFA;
+    height: 100vh;
 }
 
 .user-profile {
     display: grid;
-        font-family: 'proxima-nova', sans-serif;  
+    font-family: 'proxima-nova', sans-serif;  
     
     grid-template-rows: repeat(2, auto);
     
@@ -36,7 +35,7 @@
 .profile-photo {
     height: 150px;
     width: 150px;
-    
+    align-self: center;
     justify-self: end;
     
 }
@@ -52,14 +51,18 @@
 .user-info {
     
     display: grid;
+    grid-gap: 15px;
 
     div {
         place-self: center stretch;
+        width: 55%;
+        line-height: 1.5;
     }
 
     .user-info-username {
         font-size: 28px;
         display: grid;
+        width: 100%;
         grid-template-columns: 1fr 1fr;
         img {
             height: 25px;

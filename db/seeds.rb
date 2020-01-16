@@ -19,7 +19,7 @@ user1 = User.create!({
     password: '123456',
     email: 'jean@gmail.com',
     name: 'Jean',
-    bio: 'Nature lover'
+    bio: 'I am a full stack software engineer, proficient with React, Redux, and Rails. Loves hiking, traveling, and squash. Based in New York City.'
 })
 
 user2 = User.create!({
@@ -93,6 +93,12 @@ like3 = Like.create!({
     user_id: 3,
     likeable_type: 'Post',
     likeable_id: post3.id
+})
+
+like4 = Like.create!({
+    user_id: 3,
+    likeable_type: 'Post',
+    likeable_id: post1.id
 })
 
 profile1 = open('https://lifegram-seeds.s3.amazonaws.com/profile1.jpg')

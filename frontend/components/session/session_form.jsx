@@ -76,8 +76,10 @@ class SessionForm extends React.Component {
                     </div>
                     <div className="footer-container">
                         <div className="footer-all">
-                            <a className="footer-1" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
-                            <a className="footer-2" href="https://github.com/jeanyang0519">GITHUB</a>
+                            <a href="https://jeanyang0519.github.io/jeanyang0519/">ABOUT ME</a>
+                            <a href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
+                            <a href="https://github.com/jeanyang0519">GITHUB</a>
+                            <a href="https://angel.co/jean-yang-5">ANGEL LIST</a>
                             <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
 
                         </div>
@@ -113,8 +115,10 @@ class SessionForm extends React.Component {
                     </div>
                     <div className="footer-container">
                         <div className="footer-all">
-                            <a className="footer-1" href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
-                            <a className="footer-2" href="https://github.com/jeanyang0519">GITHUB</a>
+                            <a href="https://jeanyang0519.github.io/jeanyang0519/">ABOUT ME</a>
+                            <a href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
+                            <a href="https://github.com/jeanyang0519">GITHUB</a>
+                            <a href="https://angel.co/jean-yang-5">ANGEL LIST</a>
                             <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
 
                         </div>

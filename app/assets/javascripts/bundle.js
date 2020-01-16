@@ -2766,12 +2766,14 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "footer-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "footer-1",
+          href: "https://jeanyang0519.github.io/jeanyang0519/"
+        }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: "https://www.linkedin.com/in/jean-yang-327497156"
         }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "footer-2",
           href: "https://github.com/jeanyang0519"
-        }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "https://angel.co/jean-yang-5"
+        }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "span",
           href: "#"
         }, "\xA9 2019 LIFEGRAM FROM JEAN YANG"))));
@@ -2831,12 +2833,14 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "footer-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "footer-1",
+          href: "https://jeanyang0519.github.io/jeanyang0519/"
+        }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: "https://www.linkedin.com/in/jean-yang-327497156"
         }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "footer-2",
           href: "https://github.com/jeanyang0519"
-        }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "https://angel.co/jean-yang-5"
+        }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "span",
           href: "#"
         }, "\xA9 2019 LIFEGRAM FROM JEAN YANG"))));

@@ -70,6 +70,7 @@
     border-radius: 5px;
     border: 1px solid #ebebeb;
     margin: 10px 0;
+    resize: none;
 }
 
 .edit-button {
@@ -102,7 +103,7 @@
         color: #3897F0;
         font-weight: 700;
         font-size: 14px;
-        // outline: 0;
+        background: transparent;
         cursor: pointer;
         align-self: start;
     }

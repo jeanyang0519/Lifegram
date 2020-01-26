@@ -32,7 +32,6 @@ class ProfileEdit extends React.Component {
         
         this.props.updateUser(currentUser)
             .then(
-
                 () => this.props.history.push(`/users/${currentUser.id}/`)
             )
 
@@ -82,12 +81,12 @@ class ProfileEdit extends React.Component {
                         <button className="edit-button" onClick={this.handleSubmit}>Update</button>
                     </div>
                 </div>
-                <div className="footer-container">
+                <div className=" -container">
                     <div className="footer-all">
-                        <a href="https://jeanyang0519.github.io/jeanyang0519/">ABOUT ME</a>
-                        <a href="https://www.linkedin.com/in/jean-yang-327497156">LINKEDIN</a>
-                        <a href="https://github.com/jeanyang0519">GITHUB</a>
-                        <a href="https://angel.co/jean-yang-5">ANGEL LIST</a>
+                        <a href="https://jeanyang0519.github.io/jeanyang0519/" rel="noopener noreferrer" target="_blank">ABOUT ME</a>
+                        <a href="https://www.linkedin.com/in/jean-yang-327497156" rel="noopener noreferrer" target="_blank">LINKEDIN</a>
+                        <a href="https://github.com/jeanyang0519" rel="noopener noreferrer" target="_blank">GITHUB</a>
+                        <a href="https://angel.co/jean-yang-5" rel="noopener noreferrer" target="_blank">ANGEL LIST</a>
                         <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
 
                     </div>

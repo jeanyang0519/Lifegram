@@ -2015,7 +2015,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
- // import PostIndexItem from './post_index_item';
+
 
 var PostIndex =
 /*#__PURE__*/
@@ -2431,13 +2431,21 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "footer-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://jeanyang0519.github.io/jeanyang0519/"
+          href: "https://jeanyang0519.github.io/jeanyang0519/",
+          rel: "noopener noreferrer",
+          target: "_blank"
         }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://www.linkedin.com/in/jean-yang-327497156"
+          href: "https://www.linkedin.com/in/jean-yang-327497156",
+          rel: "noopener noreferrer",
+          target: "_blank"
         }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://github.com/jeanyang0519"
+          href: "https://github.com/jeanyang0519",
+          rel: "noopener noreferrer",
+          target: "_blank"
         }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://angel.co/jean-yang-5"
+          href: "https://angel.co/jean-yang-5",
+          rel: "noopener noreferrer",
+          target: "_blank"
         }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "span",
           href: "#"
@@ -2766,7 +2774,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
- // import GreetingContainer from './greeting_container';
 
 
 
@@ -2880,13 +2887,21 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "footer-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://jeanyang0519.github.io/jeanyang0519/"
+          href: "https://jeanyang0519.github.io/jeanyang0519/",
+          rel: "noopener noreferrer",
+          target: "_blank"
         }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://www.linkedin.com/in/jean-yang-327497156"
+          href: "https://www.linkedin.com/in/jean-yang-327497156",
+          rel: "noopener noreferrer",
+          target: "_blank"
         }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://github.com/jeanyang0519"
+          href: "https://github.com/jeanyang0519",
+          rel: "noopener noreferrer",
+          target: "_blank"
         }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://angel.co/jean-yang-5"
+          href: "https://angel.co/jean-yang-5",
+          rel: "noopener noreferrer",
+          target: "_blank"
         }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "span",
           href: "#"
@@ -2947,13 +2962,21 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "footer-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://jeanyang0519.github.io/jeanyang0519/"
+          href: "https://jeanyang0519.github.io/jeanyang0519/",
+          rel: "noopener noreferrer",
+          target: "_blank"
         }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://www.linkedin.com/in/jean-yang-327497156"
+          href: "https://www.linkedin.com/in/jean-yang-327497156",
+          rel: "noopener noreferrer",
+          target: "_blank"
         }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://github.com/jeanyang0519"
+          href: "https://github.com/jeanyang0519",
+          rel: "noopener noreferrer",
+          target: "_blank"
         }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://angel.co/jean-yang-5"
+          href: "https://angel.co/jean-yang-5",
+          rel: "noopener noreferrer",
+          target: "_blank"
         }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "span",
           href: "#"
@@ -3168,13 +3191,21 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "footer-all"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        href: "https://jeanyang0519.github.io/jeanyang0519/"
+        href: "https://jeanyang0519.github.io/jeanyang0519/",
+        rel: "noopener noreferrer",
+        target: "_blank"
       }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        href: "https://www.linkedin.com/in/jean-yang-327497156"
+        href: "https://www.linkedin.com/in/jean-yang-327497156",
+        rel: "noopener noreferrer",
+        target: "_blank"
       }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        href: "https://github.com/jeanyang0519"
+        href: "https://github.com/jeanyang0519",
+        rel: "noopener noreferrer",
+        target: "_blank"
       }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        href: "https://angel.co/jean-yang-5"
+        href: "https://angel.co/jean-yang-5",
+        rel: "noopener noreferrer",
+        target: "_blank"
       }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "span",
         href: "#"
@@ -3362,17 +3393,25 @@ function (_React$Component) {
         className: "edit-button",
         onClick: this.handleSubmit
       }, "Update"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "footer-container"
+        className: " -container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-all"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://jeanyang0519.github.io/jeanyang0519/"
+        href: "https://jeanyang0519.github.io/jeanyang0519/",
+        rel: "noopener noreferrer",
+        target: "_blank"
       }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://www.linkedin.com/in/jean-yang-327497156"
+        href: "https://www.linkedin.com/in/jean-yang-327497156",
+        rel: "noopener noreferrer",
+        target: "_blank"
       }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://github.com/jeanyang0519"
+        href: "https://github.com/jeanyang0519",
+        rel: "noopener noreferrer",
+        target: "_blank"
       }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://angel.co/jean-yang-5"
+        href: "https://angel.co/jean-yang-5",
+        rel: "noopener noreferrer",
+        target: "_blank"
       }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "span",
         href: "#"
@@ -3407,8 +3446,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var msp = function msp(state, ownProps) {
   return {
-    user: state.entities.users[ownProps.match.params.id] // currentUser: state.entities.users[state.session.id]
-
+    user: state.entities.users[ownProps.match.params.id]
   };
 };
 
@@ -3768,13 +3806,21 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "footer-all"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://jeanyang0519.github.io/jeanyang0519/"
+          href: "https://jeanyang0519.github.io/jeanyang0519/",
+          rel: "noopener noreferrer",
+          target: "_blank"
         }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://www.linkedin.com/in/jean-yang-327497156"
+          href: "https://www.linkedin.com/in/jean-yang-327497156",
+          rel: "noopener noreferrer",
+          target: "_blank"
         }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://github.com/jeanyang0519"
+          href: "https://github.com/jeanyang0519",
+          rel: "noopener noreferrer",
+          target: "_blank"
         }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://angel.co/jean-yang-5"
+          href: "https://angel.co/jean-yang-5",
+          rel: "noopener noreferrer",
+          target: "_blank"
         }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "span",
           href: "#"
@@ -3810,7 +3856,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import { openModal, closeModal } from '../../actions/modal_actions';
+
 
 var msp = function msp(state, ownProps) {
   var user = state.entities.users[ownProps.match.params.id];
@@ -3897,13 +3943,7 @@ function (_React$Component) {
     _classCallCheck(this, UserProfileItem);
 
     return _possibleConstructorReturn(this, _getPrototypeOf(UserProfileItem).call(this, props));
-  } // componentDidUpdate(prevProps) {
-  //     // const { userId, getUser, users } = this.props;
-  //     if (users[userId] === undefined || prevProps.match.params.userId !== this.props.match.params.userId) {
-  //         this.props.fetchAllPosts()
-  //     }
-  // }
-
+  }
 
   _createClass(UserProfileItem, [{
     key: "render",

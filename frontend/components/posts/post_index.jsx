@@ -2,7 +2,6 @@ import React from 'react';
 import PostIndexItemContainer from './post_index_item_container'
 import HeaderContainer from '../header/header_container';
 
-// import PostIndexItem from './post_index_item';
 
 class PostIndex extends React.Component {
     

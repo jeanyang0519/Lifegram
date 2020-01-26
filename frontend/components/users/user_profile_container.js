@@ -4,7 +4,7 @@ import { fetchUser, fetchUsers } from '../../actions/user_action';
 import { fetchAllPosts } from '../../actions/post_actions';
 import UserProfile from './user_profile';
 import { openModal } from '../../actions/modal_actions';
-// import { openModal, closeModal } from '../../actions/modal_actions';
+
 
 
 

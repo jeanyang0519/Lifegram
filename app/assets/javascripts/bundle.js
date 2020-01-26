@@ -3393,8 +3393,6 @@ function (_React$Component) {
         className: "edit-button",
         onClick: this.handleSubmit
       }, "Update"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: " -container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-all"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://jeanyang0519.github.io/jeanyang0519/",
@@ -3415,7 +3413,7 @@ function (_React$Component) {
       }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "span",
         href: "#"
-      }, "\xA9 2019 LIFEGRAM FROM JEAN YANG"))));
+      }, "\xA9 2019 LIFEGRAM FROM JEAN YANG")));
     }
   }]);
 

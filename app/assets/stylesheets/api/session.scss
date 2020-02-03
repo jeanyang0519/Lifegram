@@ -154,14 +154,14 @@ button:focus {
 
 .footer-all {
     display: grid;
-    width: 80%;
+    width: 55%;
     height: 40px;
     font-size: 12px;
     font-family: 'proxima-nova', sans-serif;  
     justify-self: center;
     
 
-    grid-template-columns: repeat(5, 1fr) ;
+    grid-template-columns: repeat(5, auto) ;
 
     align-self: center;
 

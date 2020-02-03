@@ -2208,9 +2208,11 @@ function (_React$Component) {
         src: this.props.user.profilePhoto
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feed-user-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+        to: "/users/".concat(this.props.user.id)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-authorname"
-      }, this.props.user.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.user.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "location"
       }, this.props.post.location))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "post-option",
@@ -2229,9 +2231,11 @@ function (_React$Component) {
         className: "post-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-body-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+        to: "/users/".concat(this.props.user.id)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "post-authorname"
-      }, this.props.user.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.post.body)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.user.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.post.body)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-body-2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
         post: this.props.post,

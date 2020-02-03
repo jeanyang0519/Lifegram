@@ -31,7 +31,9 @@ class PostIndexItem extends React.Component {
                             </Link>
                         </div>
                         <div className="feed-user-info">
-                            <div className="post-authorname">{this.props.user.username}</div>
+                            <Link to={`/users/${this.props.user.id}`}>
+                                <div className="post-authorname">{this.props.user.username}</div>
+                            </Link>
                             
                             <div className="location">{this.props.post.location}</div>
                         </div>
@@ -60,7 +62,9 @@ class PostIndexItem extends React.Component {
 
                 <div className="post-body">
                     <div className="post-body-1">
-                        <p className="post-authorname">{this.props.user.username}</p>
+                        <Link to={`/users/${this.props.user.id}`}>
+                            <p className="post-authorname">{this.props.user.username}</p>
+                        </Link>
                         <p>{this.props.post.body}</p>
                     </div>
                     <div className="post-body-2">

@@ -16,6 +16,9 @@
     justify-content: center;
     align-items: center;
     font-family: 'proxima-nova', sans-serif;  
+    span {
+        font-size: 18px;
+    }
 }
 
 .upload-2 {
@@ -128,7 +131,7 @@ input[type="file"] {
 }
 
 .body {
-    
+    resize: none;
     background-color: #FAFAFA;
     width: 90%;
     height: 150px;

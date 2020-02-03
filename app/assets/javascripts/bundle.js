@@ -3745,12 +3745,7 @@ function (_React$Component) {
       if (this.props.user === undefined) {
         this.props.fetchUsers();
       }
-    } // componentDidUpdate(prevProps) {
-    //     if (this.props.user === undefined || prevProps.posts !== this.props.posts) {
-    //         this.props.fetchAllPosts()
-    //     }
-    // }
-
+    }
   }, {
     key: "renderEdit",
     value: function renderEdit() {
@@ -3791,7 +3786,12 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       if (this.state.loaded === false) {
-        return null;
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "loading"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: window.instagram,
+          alt: ""
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "from"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "JEAN YANG")));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "profile-all"

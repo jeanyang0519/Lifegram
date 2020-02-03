@@ -32,12 +32,7 @@ class UserProfile extends React.Component {
         }
     }
 
-    // componentDidUpdate(prevProps) {
     
-    //     if (this.props.user === undefined || prevProps.posts !== this.props.posts) {
-    //         this.props.fetchAllPosts()
-    //     }
-    // }
 
 
 
@@ -86,7 +81,16 @@ class UserProfile extends React.Component {
         
         if (this.state.loaded === false) {
             
-            return null
+            return (
+                <div className="loading">
+                    <img src={window.instagram} alt="" />
+                    <div>
+                        <span>from</span>
+                        <p>JEAN YANG</p>
+                    </div>
+
+                </div>
+            )
         } else {
             
             return (

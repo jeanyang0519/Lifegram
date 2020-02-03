@@ -852,9 +852,11 @@ function (_React$Component) {
             className: "comment"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "comment-profile-photo"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+            to: "/users/".concat(_this.props.users[comment.user_id].id)
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
             src: _this.props.users[comment.user_id].profilePhoto
-          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
             to: "/users/".concat(_this.props.users[comment.user_id].id)
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
             className: "comment-username"
@@ -2390,9 +2392,11 @@ function (_React$Component) {
           src: this.props.currentUser.profilePhoto
         }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "feed-user-info"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
+          to: "/users/".concat(this.props.currentUser.id)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "post-authorname"
-        }, this.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.props.currentUser.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "location"
         }, this.props.post.location))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "post-option",

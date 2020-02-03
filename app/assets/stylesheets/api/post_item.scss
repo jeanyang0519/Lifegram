@@ -40,7 +40,10 @@
 .feed-user-info {
     
     margin-top: 5px;
-    
+    a {
+        text-decoration: none;
+        color: black;
+    }
 }
 
 .post-authorname {

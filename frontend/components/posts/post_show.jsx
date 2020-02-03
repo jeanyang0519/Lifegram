@@ -56,7 +56,9 @@ class PostShow extends React.Component {
 
                                         {/* <img className="feed-profile-photo" src={this.props.currentUser.profilePhoto} /> */}
                                         <div className="feed-user-info">
-                                            <div className="post-authorname">{this.props.currentUser.username}</div>
+                                            <Link to={`/users/${this.props.currentUser.id}`}>
+                                                <div className="post-authorname">{this.props.currentUser.username}</div>
+                                            </Link>
                                             
                                             <div className="location">{this.props.post.location}</div>
                                         </div>
@@ -77,9 +79,9 @@ class PostShow extends React.Component {
                                                 <img src={this.props.currentUser.profilePhoto} />
                                             </Link>
                                         </div>
-                                    <Link to={`/users/${this.props.currentUser.id}`}>
-                                        <p className="comment-username">{this.props.currentUser.username}</p>
-                                    </Link>
+                                        <Link to={`/users/${this.props.currentUser.id}`}>
+                                            <p className="comment-username">{this.props.currentUser.username}</p>
+                                        </Link>
                                         <p className="comment-body">{this.props.post.body}</p>
                                         
                                     </div>

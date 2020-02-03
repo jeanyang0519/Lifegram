@@ -32,11 +32,13 @@ class CommentIndexItem extends React.Component {
 
                             <div key={idx} className="comment" >
                                 <div className="comment-profile-photo">
-                                    <Link to={`/users/${this.props.users[comment.user_id].id}`}>
+                                    {/* <Link to={`/users/${this.props.users[comment.user_id].id}`}> */}
                                         <img src={this.props.users[comment.user_id].profilePhoto} />
-                                    </Link>
+                                    {/* </Link> */}
                                 </div>
-                                <p className="comment-username">{this.props.users[comment.user_id].username}</p>
+                                <Link to={`/users/${this.props.users[comment.user_id].id}`}>
+                                    <p className="comment-username">{this.props.users[comment.user_id].username}</p>
+                                </Link>
                                 <p className="comment-body">{comment.comment_body}</p>
                             </div>
                         );

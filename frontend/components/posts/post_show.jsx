@@ -77,7 +77,9 @@ class PostShow extends React.Component {
                                                 <img src={this.props.currentUser.profilePhoto} />
                                             </Link>
                                         </div>
+                                    <Link to={`/users/${this.props.currentUser.id}`}>
                                         <p className="comment-username">{this.props.currentUser.username}</p>
+                                    </Link>
                                         <p className="comment-body">{this.props.post.body}</p>
                                         
                                     </div>

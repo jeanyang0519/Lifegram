@@ -31,7 +31,16 @@ class PostIndex extends React.Component {
         const posts = Object.values(this.props.posts);
         
         if (this.state.loaded === false) {
-            return null
+            return (
+                <div className="loading">
+                    <img src={window.instagram} alt=""/>
+                    <div>
+                        <span>from</span>
+                        <p>JEAN YANG</p>
+                    </div>
+
+                </div>
+            )
         } else {
             return (
             <div className="feed">

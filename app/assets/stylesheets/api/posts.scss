@@ -8,3 +8,35 @@
     background-color: #FAFAFA;
     padding: 95px 0 30px;
 }
+
+.loading {
+    display: grid;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    grid-template-rows: auto 70px;
+    img {
+        place-self: center;
+        height: 75px;
+    }
+    div {
+        display: grid;
+        grid-gap: 5px;
+        align-self: start;
+        letter-spacing: 1.1px;
+    }
+    span {
+        justify-self: center;
+            color: #999999cc;
+    font-size: 12px;
+    }
+    p {
+        justify-self: center;
+        font-size: 14px;
+        
+        background: linear-gradient(to right, #ff8a00 0%, #da1b60 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    
+    }
+}

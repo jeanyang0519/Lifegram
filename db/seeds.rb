@@ -125,7 +125,7 @@ post4.photo.attach(io: file5, filename: 'hawaii3.jpg')
 comment1 = Comment.create!({
     comment_body: "sooo beautilful!!",
     post_id: post1.id,
-    user_id: user1.id
+    user_id: user3.id
 })
 
 comment2 = Comment.create!({

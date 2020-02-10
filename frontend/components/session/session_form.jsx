@@ -95,6 +95,18 @@ class SessionForm extends React.Component {
                                 <img className="logo" src={window.logo} />
                                 <p className="subtitle">Sign up to see photos and videos from your friends.</p>
                                 <div className="input-all">
+                                    {/* <div class="field">
+                                        <input className="input" type="email" name="email" id="email" placeholder=" " onChange={this.update("email")} value={this.state.email} />
+                                        <label for="email">Email</label>
+                                    </div>
+                                    <div class="field">
+                                        <input className="input" type="text" name="fullname" id="fullname" placeholder=" " onChange={this.update("username")} value={this.state.username}/>
+                                        <label for="fullname">Full Name</label>
+                                    </div>
+                                    <div class="field">
+                                        <input className="input" type="password" name="password" id="password" placeholder=" " onChange={this.update("password")} value={this.state.password}/>
+                                            <label for="password">Password</label>
+                                    </div> */}
                                     <input className="input" placeholder="Email" type="text" onChange={this.update("email")} value={this.state.email} />
                                     <input className="input" type="text" placeholder="Username" onChange={this.update("username")} value={this.state.username} />
                                     <input className="input" type="password" placeholder="Password" onChange={this.update("password")} value={this.state.password} />
@@ -108,7 +120,6 @@ class SessionForm extends React.Component {
                             </form>
                             <form className="session-right-2">
                                 Have an account? <Link className="link" to="/login">Log in</Link>
-
                             </form>
                         </div>
                     </div>

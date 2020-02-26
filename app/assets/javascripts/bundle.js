@@ -923,6 +923,117 @@ var mdp = function mdp(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/footers/footer.js":
+/*!***********************************************!*\
+  !*** ./frontend/components/footers/footer.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Footer =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Footer, _React$Component);
+
+  function Footer() {
+    _classCallCheck(this, Footer);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Footer).apply(this, arguments));
+  }
+
+  _createClass(Footer, [{
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "footer-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "footer-all"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://jeanyang0519.github.io/jeanyang0519/",
+        rel: "noopener noreferrer",
+        target: "_blank"
+      }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://www.linkedin.com/in/jean-yang-327497156",
+        rel: "noopener noreferrer",
+        target: "_blank"
+      }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://github.com/jeanyang0519",
+        rel: "noopener noreferrer",
+        target: "_blank"
+      }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: function onClick() {
+          return _this.props.openModal('policy');
+        }
+      }, "POLICY"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "span",
+        href: "#"
+      }, "\xA9 2019 LIFEGRAM FROM JEAN YANG")));
+    }
+  }]);
+
+  return Footer;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Footer);
+
+/***/ }),
+
+/***/ "./frontend/components/footers/footer_container.js":
+/*!*********************************************************!*\
+  !*** ./frontend/components/footers/footer_container.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer */ "./frontend/components/footers/footer.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
+
+ // const msp = state => ({
+//     currentUser: state.entities.users[state.session.id]
+// });
+
+var mdp = function mdp(dispatch) {
+  return {
+    openModal: function openModal(modal) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(modal));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, mdp)(_footer__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
 /***/ "./frontend/components/header/header.jsx":
 /*!***********************************************!*\
   !*** ./frontend/components/header/header.jsx ***!
@@ -995,12 +1106,6 @@ function (_React$Component) {
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "headerRight"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "policy",
-        src: window.plane,
-        onClick: function onClick() {
-          return _this.props.openModal('policy');
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "add",
         src: window.add,
         onClick: function onClick() {
@@ -2327,6 +2432,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _comments_comment_index_item_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../comments/comment_index_item_container */ "./frontend/components/comments/comment_index_item_container.js");
 /* harmony import */ var _util_time_api_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../util/time_api_util */ "./frontend/util/time_api_util.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _footers_footer_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../footers/footer_container */ "./frontend/components/footers/footer_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2353,6 +2459,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var PostShow =
 /*#__PURE__*/
 function (_React$Component) {
@@ -2361,15 +2468,12 @@ function (_React$Component) {
   function PostShow(props) {
     _classCallCheck(this, PostShow);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(PostShow).call(this, props)); // this.state = {
-    //     loaded: false
-    // }
+    return _possibleConstructorReturn(this, _getPrototypeOf(PostShow).call(this, props));
   }
 
   _createClass(PostShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // debugger
       this.props.fetchPost(this.props.match.params.id);
       this.props.fetchUsers();
     }
@@ -2378,7 +2482,6 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      // debugger
       if (this.props.post === undefined || this.props.currentUser === undefined) {
         return null;
       } else {
@@ -2445,30 +2548,7 @@ function (_React$Component) {
           className: "show-time"
         }, Object(_util_time_api_util__WEBPACK_IMPORTED_MODULE_5__["time"])(this.props.post.created_at))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_form_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
           postId: this.props.post.id
-        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "footer-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "footer-all"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://jeanyang0519.github.io/jeanyang0519/",
-          rel: "noopener noreferrer",
-          target: "_blank"
-        }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://www.linkedin.com/in/jean-yang-327497156",
-          rel: "noopener noreferrer",
-          target: "_blank"
-        }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://github.com/jeanyang0519",
-          rel: "noopener noreferrer",
-          target: "_blank"
-        }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://angel.co/jean-yang-5",
-          rel: "noopener noreferrer",
-          target: "_blank"
-        }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "span",
-          href: "#"
-        }, "\xA9 2019 LIFEGRAM FROM JEAN YANG"))));
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footers_footer_container__WEBPACK_IMPORTED_MODULE_7__["default"], null));
       }
     }
   }]);
@@ -2762,6 +2842,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _splash_splash_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../splash/splash_container */ "./frontend/components/splash/splash_container.jsx");
+/* harmony import */ var _footers_footer_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../footers/footer_container */ "./frontend/components/footers/footer_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -2781,6 +2862,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -2891,30 +2973,7 @@ function (_React$Component) {
         }, "Don't have an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           className: "link",
           to: "/signup"
-        }, "Sign up")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "footer-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "footer-all"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://jeanyang0519.github.io/jeanyang0519/",
-          rel: "noopener noreferrer",
-          target: "_blank"
-        }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://www.linkedin.com/in/jean-yang-327497156",
-          rel: "noopener noreferrer",
-          target: "_blank"
-        }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://github.com/jeanyang0519",
-          rel: "noopener noreferrer",
-          target: "_blank"
-        }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://angel.co/jean-yang-5",
-          rel: "noopener noreferrer",
-          target: "_blank"
-        }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "span",
-          href: "#"
-        }, "\xA9 2019 LIFEGRAM FROM JEAN YANG"))));
+        }, "Sign up")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footers_footer_container__WEBPACK_IMPORTED_MODULE_3__["default"], null));
       } else if (this.props.formType === 'signup') {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
           className: "all"
@@ -2966,30 +3025,7 @@ function (_React$Component) {
         }, "Have an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           className: "link",
           to: "/login"
-        }, "Log in")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "footer-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "footer-all"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://jeanyang0519.github.io/jeanyang0519/",
-          rel: "noopener noreferrer",
-          target: "_blank"
-        }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://www.linkedin.com/in/jean-yang-327497156",
-          rel: "noopener noreferrer",
-          target: "_blank"
-        }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://github.com/jeanyang0519",
-          rel: "noopener noreferrer",
-          target: "_blank"
-        }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://angel.co/jean-yang-5",
-          rel: "noopener noreferrer",
-          target: "_blank"
-        }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "span",
-          href: "#"
-        }, "\xA9 2019 LIFEGRAM FROM JEAN YANG"))));
+        }, "Log in")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footers_footer_container__WEBPACK_IMPORTED_MODULE_3__["default"], null));
       } else if (this.props.formType === 'logout') {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_splash_container__WEBPACK_IMPORTED_MODULE_2__["default"], null));
       }
@@ -3056,6 +3092,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _footers_footer_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../footers/footer_container */ "./frontend/components/footers/footer_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -3077,9 +3114,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
- // import PostUploadContainer from '../posts/post_upload_container';
-// import HeaderContainer from '../header/header_container';
-// import PostIndexContainer from '../posts/post_index_container';
+
+
 
 var Splash =
 /*#__PURE__*/
@@ -3195,30 +3231,7 @@ function (_React$Component) {
       }, "Have an account?  ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["Link"], {
         className: "link",
         to: "/login"
-      }, "Log in")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "footer-container"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "footer-all"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        href: "https://jeanyang0519.github.io/jeanyang0519/",
-        rel: "noopener noreferrer",
-        target: "_blank"
-      }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        href: "https://www.linkedin.com/in/jean-yang-327497156",
-        rel: "noopener noreferrer",
-        target: "_blank"
-      }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        href: "https://github.com/jeanyang0519",
-        rel: "noopener noreferrer",
-        target: "_blank"
-      }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        href: "https://angel.co/jean-yang-5",
-        rel: "noopener noreferrer",
-        target: "_blank"
-      }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: "span",
-        href: "#"
-      }, "\xA9 2019 LIFEGRAM FROM JEAN YANG"))));
+      }, "Log in")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_footers_footer_container__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
   }]);
 
@@ -3677,6 +3690,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _header_header_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../header/header_container */ "./frontend/components/header/header_container.js");
 /* harmony import */ var _user_profile_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user_profile_item */ "./frontend/components/users/user_profile_item.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _footers_footer_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../footers/footer_container */ "./frontend/components/footers/footer_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3694,6 +3708,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -3808,30 +3823,7 @@ function (_React$Component) {
           className: "profile-middle"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: window.grid
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "POSTS"))), this.renderPosts()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "footer-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "footer-all"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://jeanyang0519.github.io/jeanyang0519/",
-          rel: "noopener noreferrer",
-          target: "_blank"
-        }, "ABOUT ME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://www.linkedin.com/in/jean-yang-327497156",
-          rel: "noopener noreferrer",
-          target: "_blank"
-        }, "LINKEDIN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://github.com/jeanyang0519",
-          rel: "noopener noreferrer",
-          target: "_blank"
-        }, "GITHUB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://angel.co/jean-yang-5",
-          rel: "noopener noreferrer",
-          target: "_blank"
-        }, "ANGEL LIST"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "span",
-          href: "#"
-        }, "\xA9 2019 LIFEGRAM FROM JEAN YANG"))));
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "POSTS"))), this.renderPosts()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footers_footer_container__WEBPACK_IMPORTED_MODULE_4__["default"], null));
       }
     }
   }]);
@@ -54441,7 +54433,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

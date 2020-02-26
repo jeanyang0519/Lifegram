@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SplashContainer from '../splash/splash_container';
+import Footer from '../footers/footer_container';
 
 
 class SessionForm extends React.Component {
@@ -73,16 +74,7 @@ class SessionForm extends React.Component {
                             </form>
                         </div>
                     </div>
-                    <div className="footer-container">
-                        <div className="footer-all">
-                            <a href="https://jeanyang0519.github.io/jeanyang0519/" rel="noopener noreferrer" target="_blank">ABOUT ME</a>
-                            <a href="https://www.linkedin.com/in/jean-yang-327497156" rel="noopener noreferrer" target="_blank">LINKEDIN</a>
-                            <a href="https://github.com/jeanyang0519" rel="noopener noreferrer" target="_blank">GITHUB</a>
-                            <a href="https://angel.co/jean-yang-5" rel="noopener noreferrer" target="_blank">ANGEL LIST</a>
-                            <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
-
-                        </div>
-                    </div>
+                    <Footer/>
                 </main>
             )
         } else if (this.props.formType === 'signup') {
@@ -95,18 +87,6 @@ class SessionForm extends React.Component {
                                 <img className="logo" src={window.logo} />
                                 <p className="subtitle">Sign up to see photos and videos from your friends.</p>
                                 <div className="input-all">
-                                    {/* <div class="field">
-                                        <input className="input" type="email" name="email" id="email" placeholder=" " onChange={this.update("email")} value={this.state.email} />
-                                        <label for="email">Email</label>
-                                    </div>
-                                    <div class="field">
-                                        <input className="input" type="text" name="fullname" id="fullname" placeholder=" " onChange={this.update("username")} value={this.state.username}/>
-                                        <label for="fullname">Full Name</label>
-                                    </div>
-                                    <div class="field">
-                                        <input className="input" type="password" name="password" id="password" placeholder=" " onChange={this.update("password")} value={this.state.password}/>
-                                            <label for="password">Password</label>
-                                    </div> */}
                                     <input className="input" placeholder="Email" type="email" onChange={this.update("email")} value={this.state.email} />
                                     <input className="input" type="text" placeholder="Username" onChange={this.update("username")} value={this.state.username} />
                                     <input className="input" type="password" placeholder="Password" onChange={this.update("password")} value={this.state.password} />
@@ -123,16 +103,7 @@ class SessionForm extends React.Component {
                             </form>
                         </div>
                     </div>
-                    <div className="footer-container">
-                        <div className="footer-all">
-                            <a href="https://jeanyang0519.github.io/jeanyang0519/" rel="noopener noreferrer" target="_blank">ABOUT ME</a>
-                            <a href="https://www.linkedin.com/in/jean-yang-327497156" rel="noopener noreferrer" target="_blank">LINKEDIN</a>
-                            <a href="https://github.com/jeanyang0519" rel="noopener noreferrer" target="_blank">GITHUB</a>
-                            <a href="https://angel.co/jean-yang-5" rel="noopener noreferrer" target="_blank">ANGEL LIST</a>
-                            <span className="span" href="#">© 2019 LIFEGRAM FROM JEAN YANG</span>
-
-                        </div>
-                    </div>
+                    <Footer />
                 </main>
             )
         }  else if (this.props.formType === 'logout') {

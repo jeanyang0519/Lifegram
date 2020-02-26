@@ -22,7 +22,7 @@ class Header extends React.Component {
                         
                         
                 <div className="headerRight">
-                    <img className="policy" src={window.plane} onClick={() => (this.props.openModal('policy'))} />
+                    {/* <img className="policy" src={window.plane} onClick={() => (this.props.openModal('policy'))} /> */}
                     <img className="add" src={window.add} onClick={() => (this.props.openModal('upload'))} />
                     <Link to={`/users/${this.props.currentUser.id}`}>
                         <img className="profile" src={window.profile}/>

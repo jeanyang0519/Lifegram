@@ -1,0 +1,35 @@
+.footer-container {
+    display: grid;
+}
+
+.footer-all {
+    display: grid;
+    width: 55%;
+    height: 40px;
+    font-size: 12px;
+    font-family: 'proxima-nova', sans-serif;  
+    justify-self: center;
+    
+
+    grid-template-columns: repeat(5, auto) ;
+
+    align-self: center;
+
+    a {
+        color: #003569;
+        font-weight: 700;
+        text-decoration: none;
+        align-self: center;
+        justify-self: center;
+    }
+    
+    div {
+        cursor: pointer;
+        color: #003569;
+        font-weight: 700;
+        text-decoration: none;
+        align-self: center;
+        justify-self: center;
+    }
+    
+}

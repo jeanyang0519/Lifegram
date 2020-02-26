@@ -57,7 +57,7 @@ class Splash extends React.Component {
                                 <img className="logo" src={window.logo} />
                                 <p className="subtitle">Sign up to see photos and videos from your friends.</p>
                                 <div className="input-all">
-                                    <input className="input" placeholder="Email" type="text" onChange={this.update("email")} value={this.state.email} />
+                                    <input className="input" placeholder="Email" type="email" onChange={this.update("email")} value={this.state.email} />
                                     <input className="input" type="text" placeholder="Username" onChange={this.update("username")} value={this.state.username} />
                                     <input className="input" type="password" placeholder="Password" onChange={this.update("password")} value={this.state.password} />
                                     <br />

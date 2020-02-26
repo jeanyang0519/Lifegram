@@ -48,7 +48,6 @@ class PostForm extends React.Component {
         formData.append('post[location]', this.state.location);
         
         if (this.state.photoFile) {
-            
             formData.append('post[photo]', this.state.photoFile);
         }
         
@@ -60,16 +59,11 @@ class PostForm extends React.Component {
                     photoFile: null,
                     photoUrl: null
                 });
-                
-                
+                       
                 this.props.closeModal()
             })
 
     }
-
-    
-
-
 
     handleCancel() {
         this.props.closeModal();

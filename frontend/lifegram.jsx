@@ -9,7 +9,7 @@ import { createLike, removeLike } from './actions/like_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
-    // const store = configureStore();
+    
     
 
     let store;
@@ -28,15 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ReactDOM.render(<Root store={store} />, root);
 
-    //test 
-    window.logout = logout
-    window.getState = store.getState;
-    window.dispatch = store.dispatch; 
-    window.store = store;
-    // window.handleImage = handleImage;
-    window.createPost = createPost;
-    window.removePost = removePost;
-    window.createLike = createLike;
-    window.removeLike = removeLike;
+  
 
 });

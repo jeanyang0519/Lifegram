@@ -16,7 +16,6 @@ const deleteLike = ({like, post}) => ({
 });
 
 export const createLike = like => dispatch => {
-    // debugger
     return LikeAPIUtil.createLike(like)
         .then(payload => dispatch(receiveLike(payload)));
 };

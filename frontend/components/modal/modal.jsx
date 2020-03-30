@@ -7,7 +7,7 @@ import PostOptionContainer from './post_option_container';
 import ShowOptionContainer from './show_option_container';
 import PolicyContainer from './policy_container';
 import UpdateProfilePhotoContainer from '../users/update_profile_photo_container';
-// import LogoutFormContainer from '../session/logout_form_container';
+
 
 
 function Modal({ modal, closeModal }) {
